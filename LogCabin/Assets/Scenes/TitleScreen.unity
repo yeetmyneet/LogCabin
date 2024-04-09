@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.653364, g: 0.7741451, b: 0.8349377, a: 1}
+  m_IndirectSpecularColor: {r: 0.653364, g: 0.77414525, b: 0.8349377, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -935,15 +935,15 @@ RectTransform:
   m_GameObject: {fileID: 352268247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 932740829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56, y: 418}
-  m_SizeDelta: {x: 247.9506, y: 50}
+  m_AnchoredPosition: {x: -0.000030518, y: 363}
+  m_SizeDelta: {x: 396.2, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &352268249
 MonoBehaviour:
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -140.57104, w: 0}
+  m_margin: {x: 0.9095154, y: 0, z: -0.50727844, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2279,6 +2279,8 @@ GameObject:
   - component: {fileID: 932740832}
   - component: {fileID: 932740831}
   - component: {fileID: 932740830}
+  - component: {fileID: 932740835}
+  - component: {fileID: 932740834}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -2383,6 +2385,34 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &932740834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932740828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21bbeac526ba3654181f2c8eb7ecf0f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 932740835}
+  FadeInDelay: 0
+  CanvasRemoveDelay: 6
+  fadeInDuration: 6
+--- !u!225 &932740835
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932740828}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &948648142
 GameObject:
   m_ObjectHideFlags: 0
