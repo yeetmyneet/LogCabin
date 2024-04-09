@@ -5,11 +5,11 @@ using UnityEngine;
 public class FadeInEffect : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] float FadeInDelay = 8f;
+    [SerializeField] float FadeInDelay = 0f;
     [SerializeField] float CanvasRemoveDelay = 6f;
     [SerializeField] float fadeInDuration = 6f;
 
-    void Start()
+    void Awake()
     {
         // Get the CanvasGroup component attached to the Canvas
         canvasGroup = GetComponent<CanvasGroup>();
@@ -48,11 +48,11 @@ public class FadeInEffect : MonoBehaviour
         canvasGroup.alpha = 1f;
         Debug.Log("alpha is finally set to 1, waiting for certain amount of seconds");
 
-        yield return new WaitForSeconds(CanvasRemoveDelay);
-        Debug.Log("waited for a certain amount of seconds");
+        //yield return new WaitForSeconds(CanvasRemoveDelay);
+        //Debug.Log("waited for a certain amount of seconds");
         
-        canvasGroup.alpha = 0;
-        Debug.Log("set canvas alpha to 0");
+        //canvasGroup.alpha = 0;
+        //Debug.Log("set canvas alpha to 0");
 
     }
 }
