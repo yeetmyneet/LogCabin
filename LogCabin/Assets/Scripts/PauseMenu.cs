@@ -5,43 +5,74 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-	[SerializeField] Canvas pauseMenu;
+    private bool isPaused = false;
+    public GameObject[] objectsToDisableOnPause; // Array of objects to disable
+    public GameObject[] uiElementsToShowOnPause; // Array of UI elements to show on pause
     void Update()
-	{
+    {
+        // Check for input or condition to pause the game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
+    }
 
-		if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 1)
-		{
-			Time.timeScale = 0;
-			pauseMenu.enabled = true;
-			Cursor.lockState = CursorLockMode.Confined;
-		}
-		else if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 0)
-		{
-			Resume();
-		}
-	}
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
 
-	public void Resume()
-	{
-		Time.timeScale = 1;
-		pauseMenu.enabled = false;
-		Cursor.lockState = CursorLockMode.Locked;
-	}
+        // Pause or resume the game based on the isPaused state
+        if (isPaused)
+        {
+            PauseGame();
+        }
+        else
+        {
+            ResumeGame();
+        }
+    }
+    public void PauseGame()
+    {
+        Time.timeScale = 0f; // Set time scale to 0 to pause the game
 
-	public void ExitGame()
-	{
-		Application.Quit();
-	}
+        // Disable specified objects
+        foreach (GameObject obj in objectsToDisableOnPause)
+        {
+            obj.SetActive(false);
+        }
 
-	public void LoadMainMenu()
-	{
-		Time.timeScale = 1;
-		SceneManager.LoadScene("Main Menu");
-	}
+        // Show specified UI elements
+        foreach (GameObject uiElement in uiElementsToShowOnPause)
+        {
+            uiElement.SetActive(true);
+        }
 
-	public void LoadPauseMenu()
-	{
-		Time.timeScale = 0;
-		pauseMenu.enabled = true;
-	}
+        // Add other pause-related actions if needed
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f; // Set time scale to 1 to resume the game
+
+        // Enable specified objects
+        foreach (GameObject obj in objectsToDisableOnPause)
+        {
+            obj.SetActive(true);
+        }
+
+        // Hide specified UI elements
+        foreach (GameObject uiElement in uiElementsToShowOnPause)
+        {
+            uiElement.SetActive(false);
+        }
+
+        // Add other resume-related actions if needed
+    }
+    public void QuitGame()
+    {
+        // Set boolean value to true
+        PlayerPrefs.SetInt("ComingFromGame", 1);
+        PlayerPrefs.Save(); // Save the changes
+        SceneManager.LoadScene("TitleScreen");
+    }
 }

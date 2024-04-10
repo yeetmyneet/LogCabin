@@ -149,7 +149,7 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    public void Start()
+    void Start()
     {
         if(lockCursor)
         {
@@ -196,7 +196,6 @@ public class FirstPersonController : MonoBehaviour
         }
 
         #endregion
-
     }
 
     float camRotation;
