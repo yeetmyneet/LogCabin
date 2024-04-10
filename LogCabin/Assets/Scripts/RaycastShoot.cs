@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RaycastShoot : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,10 @@ public class RaycastShoot : MonoBehaviour
                 if (hit.collider != null)
                 {
                     Debug.Log(hit.collider.name);
-                    if (hit.collider.gameObject.tag == "Enemy")
+                    if (hit.collider.gameObject.tag == "Generator")
                     {
-                        Destroy(hit.collider.gameObject);
+                        //Destroy(hit.collider.gameObject);
+                        
                     }
                 }
             }
