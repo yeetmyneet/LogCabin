@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FadeOutEffect : MonoBehaviour
 {
@@ -9,7 +10,13 @@ public class FadeOutEffect : MonoBehaviour
     [SerializeField] float CanvasRemoveDelay = 6f;
     [SerializeField] float fadeOutDuration = 6f;
     [SerializeField] public AudioSource select;
+    public Image fadeImage;
+    public float fadeDuration = 1f;
 
+    private void Awake()
+    {
+        fadeImage.color = new Color(0f, 0f, 0f, 0f);
+    }
     public void FadeOut()
     {
         // Get the CanvasGroup component attached to the Canvas
@@ -55,5 +62,32 @@ public class FadeOutEffect : MonoBehaviour
         //canvasGroup.alpha = 0;
         //Debug.Log("set canvas alpha to 0");
 
+    }
+    void QuitGame()
+    {
+        StartCoroutine(FadeOutAndQuitRoutine());
+    }
+
+    IEnumerator FadeOutAndQuitRoutine()
+    {
+        // Make sure the image is fully transparent at the beginning
+        fadeImage.color = new Color(0f, 0f, 0f, 0f);
+
+        // Fade out
+        float timer = 0f;
+        while (timer < fadeDuration)
+        {
+            float alpha = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            fadeImage.color = new Color(0f, 0f, 0f, alpha);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure fully faded
+        fadeImage.color = new Color(0f, 0f, 0f, 1f);
+
+        // Quit the application
+        Debug.Log("Quitting application");
+        Application.Quit();
     }
 }
