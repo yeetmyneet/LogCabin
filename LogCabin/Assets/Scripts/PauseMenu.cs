@@ -6,17 +6,16 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
 	[SerializeField] Canvas pauseMenu;
-
-	// Update is called once per frame
-	void Update()
+    void Update()
 	{
 
-		if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
+		if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 1)
 		{
 			Time.timeScale = 0;
 			pauseMenu.enabled = true;
+			Cursor.lockState = CursorLockMode.Confined;
 		}
-		else if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 0)
+		else if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 0)
 		{
 			Resume();
 		}
@@ -26,6 +25,7 @@ public class PauseMenu : MonoBehaviour
 	{
 		Time.timeScale = 1;
 		pauseMenu.enabled = false;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	public void ExitGame()
