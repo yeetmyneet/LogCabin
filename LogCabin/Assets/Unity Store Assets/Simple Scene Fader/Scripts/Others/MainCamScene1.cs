@@ -13,5 +13,8 @@ public class MainCamScene1 : MonoBehaviour {
 	public void OpenScene2Button ( ) {
 		SimpleSceneFader.ChangeSceneWithFade ("Test Scene 2");
 	}
-
+    public void Quit()
+    {
+		SimpleSceneFader.ChangeSceneWithFade("QuitGame");
+    }
 }
