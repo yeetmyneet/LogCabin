@@ -6,16 +6,17 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
 	[SerializeField] Canvas pauseMenu;
+
     void Update()
 	{
-
-		if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 1)
+		if (Input.GetKeyDown(KeyCode.O) && Time.timeScale == 1)
 		{
+			Debug.Log("pressed o");
 			Time.timeScale = 0;
 			pauseMenu.enabled = true;
 			Cursor.lockState = CursorLockMode.Confined;
 		}
-		else if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 0)
+		if (Input.GetKeyDown(KeyCode.O) && Time.timeScale == 0)
 		{
 			Resume();
 		}

@@ -151,6 +151,7 @@ public class FirstPersonController : MonoBehaviour
 
     public void Start()
     {
+
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -363,6 +364,16 @@ public class FirstPersonController : MonoBehaviour
         {
             HeadBob();
         }
+
+        /*if (Time.timeScale == 0)
+        {
+            cameraCanMove = false;
+        }
+
+        else if (Time.timeScale == 1)
+        {
+            cameraCanMove = true;
+        }*/
     }
 
     void FixedUpdate()
