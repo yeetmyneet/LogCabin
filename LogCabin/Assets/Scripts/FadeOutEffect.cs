@@ -6,9 +6,8 @@ using UnityEngine.UI;
 public class FadeOutEffect : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] float FadeOutDelay = 0f;
-    [SerializeField] float CanvasRemoveDelay = 6f;
-    [SerializeField] float fadeOutDuration = 6f;
+    [SerializeField] float FadeOutDelay;
+    [SerializeField] float fadeOutDuration;
     [SerializeField] public AudioSource select;
     public Image fadeImage;
     public float fadeDuration = 1f;

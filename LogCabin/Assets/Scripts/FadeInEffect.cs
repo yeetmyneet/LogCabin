@@ -5,9 +5,8 @@ using UnityEngine;
 public class FadeInEffect : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] float FadeInDelay = 0f;
-    [SerializeField] float CanvasRemoveDelay = 6f;
-    [SerializeField] float fadeInDuration = 6f;
+    [SerializeField] float FadeInDelay;
+    [SerializeField] float fadeInDuration;
 
     void Awake()
     {

@@ -2619,11 +2619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 932740835}
   FadeInDelay: 0
-  CanvasRemoveDelay: 0
   fadeInDuration: 6
-  menuControls:
-  - {fileID: 1936020577}
-  - {fileID: 1203539715}
 --- !u!225 &932740835
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2746,7 +2742,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 932740835}
   FadeOutDelay: 0
-  CanvasRemoveDelay: 0
   fadeOutDuration: 1
   select: {fileID: 0}
   fadeImage: {fileID: 837597283}
