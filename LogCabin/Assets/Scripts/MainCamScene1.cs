@@ -17,4 +17,12 @@ public class MainCamScene1 : MonoBehaviour {
     {
 		SimpleSceneFader.ChangeSceneWithFade("QuitGame");
     }
+	public void Credits()
+    {
+		SimpleSceneFader.ChangeSceneWithFade("Credits");
+    }
+	public void MainMenu()
+    {
+		SimpleSceneFader.ChangeSceneWithFade("MainMenu");
+    }
 }

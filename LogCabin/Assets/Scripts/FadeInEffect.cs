@@ -10,6 +10,7 @@ public class FadeInEffect : MonoBehaviour
 
     void Awake()
     {
+        
         // Get the CanvasGroup component attached to the Canvas
         canvasGroup = GetComponent<CanvasGroup>();
         Debug.Log("found CanvasGroup");
