@@ -15,6 +15,7 @@ public class FadeInEffect : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();
         Debug.Log("found CanvasGroup");
 
+        canvasGroup.interactable = false;
         // Set the CanvasGroup alpha to 0 initially
         canvasGroup.alpha = 0;
         Debug.Log("Set CanvasGroup Alpha to 0.");
@@ -31,7 +32,6 @@ public class FadeInEffect : MonoBehaviour
         Debug.Log("waiting for specified amount of seconds");
 
         // Gradually increase the alpha over time
-        canvasGroup.interactable = false;
         float duration = fadeInDuration; // Adjust the duration as needed
         float startTime = Time.time;
 
@@ -47,9 +47,8 @@ public class FadeInEffect : MonoBehaviour
 
         // Ensure the final alpha is set to 1
         canvasGroup.alpha = 1f;
-        Debug.Log("alpha is finally set to 1, waiting for certain amount of seconds");
+        Debug.Log("alpha is finally set to 1");
         canvasGroup.interactable = true;
-
         //yield return new WaitForSeconds(CanvasRemoveDelay);
         //Debug.Log("waited for a certain amount of seconds");
 
