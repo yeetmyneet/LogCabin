@@ -365,7 +365,7 @@ public class FirstPersonController : MonoBehaviour
             HeadBob();
         }
 
-        /*if (Time.timeScale == 0)
+        if (Time.timeScale == 0)
         {
             cameraCanMove = false;
         }
@@ -373,7 +373,7 @@ public class FirstPersonController : MonoBehaviour
         else if (Time.timeScale == 1)
         {
             cameraCanMove = true;
-        }*/
+        }
     }
 
     void FixedUpdate()

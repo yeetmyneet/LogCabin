@@ -7,18 +7,18 @@ public class PauseMenu : MonoBehaviour
 {
 	[SerializeField] Canvas pauseMenu;
 
+    private void Start()
+    {
+		pauseMenu.enabled = false;
+    }
+
     void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.O) && Time.timeScale == 1)
+		if (Input.GetKeyDown(KeyCode.L) && Time.timeScale == 1)
 		{
-			Debug.Log("pressed o");
-			Time.timeScale = 0;
 			pauseMenu.enabled = true;
+			Time.timeScale = 0;
 			Cursor.lockState = CursorLockMode.Confined;
-		}
-		if (Input.GetKeyDown(KeyCode.O) && Time.timeScale == 0)
-		{
-			Resume();
 		}
 	}
 
@@ -43,6 +43,7 @@ public class PauseMenu : MonoBehaviour
 	public void LoadPauseMenu()
 	{
 		Time.timeScale = 0;
+		Cursor.lockState = CursorLockMode.Confined;
 		pauseMenu.enabled = true;
 	}
 }
