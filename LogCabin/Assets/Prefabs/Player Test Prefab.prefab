@@ -863,6 +863,8 @@ MonoBehaviour:
   sliderObject: {fileID: 5354348903478155053}
   scriptToDisable: {fileID: 1488376157489666247}
   sliderSpeedRate: 50
+  sprintAndReticle: {fileID: 7949453835333370171}
+  maxInteractionDistance: 5
 --- !u!1 &5354348903478155053
 GameObject:
   m_ObjectHideFlags: 0
