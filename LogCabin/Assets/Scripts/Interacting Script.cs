@@ -27,7 +27,7 @@ public class InteractingScript : MonoBehaviour
     void Update()
     {
         // Check if E is pressed
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && isLookingAtGenerator)
         {
             isEPressed = true;
             // Disable the specified script
@@ -58,7 +58,7 @@ public class InteractingScript : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.CompareTag(generatorTag))
+            if (hit.collider.CompareTag(generatorTag) && Vector3.Distance(transform.position, hit.transform.position) <= maxInteractionDistance)
             {
                 // Player is looking at an object with the specified tag
                 isLookingAtGenerator = true;
