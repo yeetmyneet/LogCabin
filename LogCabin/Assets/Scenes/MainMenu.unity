@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.055680573, g: 0.07258258, b: 0.114834316, a: 1}
+  m_IndirectSpecularColor: {r: 0.123692416, g: 0.14431605, b: 0.19804147, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3239,7 +3239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 932740835}
   FadeInDelay: 0
-  fadeInDuration: 6
+  fadeInDuration: 4
 --- !u!225 &932740835
 CanvasGroup:
   m_ObjectHideFlags: 0
