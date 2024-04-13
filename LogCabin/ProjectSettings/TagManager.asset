@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - SceneFader
   - Generator
+  - Wood Floor
   layers:
   - Default
   - TransparentFX
