@@ -9,11 +9,12 @@ TagManager:
   - SceneFader
   - Generator
   - Wood Floor
+  - snow
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 

@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class FootstepSound : MonoBehaviour
 {
-    public AudioSource footstepsSound;
+    public float stepRate = 0.5f;
+    public float stepCooldown;
+    public AudioSource source;
+    public AudioClip footstep;
 
-    [SerializeField] AudioClip wood;
-    [SerializeField] AudioClip snow;
-
-    RaycastHit hit;
-    public Transform RayStart;
-    public float range;
-    public LayerMask layerMask;
-
-    private void Footstep()
+    private void Update()
     {
-        if(Physics.Raycast(RayStart.position, RayStart.transform.up * -1, out hit, range, layerMask))
+        stepCooldown -= Time.deltaTime;
+        if ((Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f) && stepCooldown < 0f)
         {
-            if (hit.collider.CompareTag("Wood Floor"))
-            {
-                PlayFootstepSoundL()
-            }
+            source.pitch = 1f + Random.Range(-0.2f, 0.2f);
+            source.PlayOneShot(footstep, 0.9f);
+            stepCooldown = stepRate;
         }
     }
 }
