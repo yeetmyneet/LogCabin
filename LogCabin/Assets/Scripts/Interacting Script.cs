@@ -42,6 +42,12 @@ public class InteractingScript : MonoBehaviour
         // If E is held down, increment the slider value
         if (isEPressed) { slider.value += sliderSpeedRate / 100; }
         else { slider.value = 0f; }
+        if (slider.value == 100f)
+        {
+            isEPressed = false;
+            scriptToDisable.enabled = true;
+            sliderObject.SetActive(false);
+        }
 
         // Cast a ray from the center of the screen
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
