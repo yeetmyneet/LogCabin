@@ -123,22 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &24284467 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7967514212622073192, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 1699847399}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &24284469 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 544850670295433960, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 1699847399}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24284467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &76038961
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,11 +215,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &406450178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4459864851551516604, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 1699847399}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &593442614 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -446,11 +425,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1155569432 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5438192484180589161, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 1699847399}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1156642719
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +530,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1467532404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8195693559990523602, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 1699847399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1699847399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -564,30 +543,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 197980071011233016, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
+    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: sliderSpeedRate
+      value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: slider
-      value: 
-      objectReference: {fileID: 24284469}
-    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: objectToShow
-      value: 
-      objectReference: {fileID: 1155569432}
-    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: sliderObject
-      value: 
-      objectReference: {fileID: 24284467}
-    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: scriptToDisable
-      value: 
-      objectReference: {fileID: 593442614}
-    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: sprintAndReticle
-      value: 
-      objectReference: {fileID: 406450178}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 561.6226
@@ -632,10 +591,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstPersonController
       objectReference: {fileID: 0}
-    - target: {fileID: 7967514212622073192, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 6549093881368065742, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: FPC
+      value: 
+      objectReference: {fileID: 593442614}
+    - target: {fileID: 6549093881368065742, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: scriptToDisable
+      value: 
+      objectReference: {fileID: 1467532404}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
