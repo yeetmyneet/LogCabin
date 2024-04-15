@@ -165,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6555443650470269943, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: m_IsActive
@@ -282,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6555443650470269943, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: m_IsActive
@@ -714,6 +714,19 @@ MonoBehaviour:
   stepCooldown: 0
   source: {fileID: 268260631}
   footstep: {fileID: 8300000, guid: 83a657a7bb8d34d32925009e759abc8c, type: 3}
+--- !u!114 &268260647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268260622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2311424edafbc494184a07ae86c8ba99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashlight: {fileID: 1006672726}
 --- !u!4 &273492780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7431666735180143259, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
@@ -774,7 +787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
@@ -899,7 +912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 432.69
+      value: 414.26
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -935,6 +948,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: enableJump
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: enableZoom
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -975,6 +992,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       insertIndex: -1
       addedObject: {fileID: 268260639}
+    - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 268260647}
     - targetCorrespondingSourceObject: {fileID: 4459864851310106424, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1357604789}
@@ -1105,7 +1125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
@@ -1332,7 +1352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
@@ -15508,6 +15528,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7431666735180143259, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
   m_PrefabInstance: {fileID: 1265547797}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1006672726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8195693559990523602, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 485426624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1008263199
 GameObject:
   m_ObjectHideFlags: 0
@@ -19965,7 +19990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6555443650470269943, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: m_IsActive
@@ -20289,7 +20314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6555443650470269943, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: m_IsActive
@@ -21099,7 +21124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6317672751797125516, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
