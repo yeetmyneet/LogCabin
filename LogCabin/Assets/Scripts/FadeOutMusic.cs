@@ -21,6 +21,7 @@ public class FadeOutMusic : MonoBehaviour
         StartCoroutine(FadeOut());
     }
 
+    #region Fade Out Coroutine
     IEnumerator FadeOut()
     {
         // Get the initial volume of the music
@@ -40,4 +41,5 @@ public class FadeOutMusic : MonoBehaviour
         musicSource.volume = 0;
         musicSource.Stop();
     }
+    #endregion Fade Out Coroutine
 }
