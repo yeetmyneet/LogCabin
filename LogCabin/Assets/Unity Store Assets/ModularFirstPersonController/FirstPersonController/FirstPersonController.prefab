@@ -1130,7 +1130,7 @@ MonoBehaviour:
   slider: {fileID: 544850670295433960}
   sliderObject: {fileID: 7967514212622073192}
   scriptToDisable: {fileID: 4459864850019384740}
-  sliderSpeedRate: 50
+  sliderSpeedRate: 25
   sprintAndReticle: {fileID: 4459864851551516604}
   maxInteractionDistance: 5
 --- !u!1 &4459864851397454630
@@ -2190,8 +2190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 6325989413862582020}
-  scriptToDisable: {fileID: 0}
-  FPC: {fileID: 0}
+  scriptToDisable: {fileID: 8195693559990523602}
+  FPC: {fileID: 4459864850019384740}
 --- !u!1 &7696530969843040504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,5 +2563,10 @@ PrefabInstance:
 --- !u!4 &8189837835876243806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4777606630871252, guid: d86ca2f4159e6a942abd8dfc52b38395, type: 3}
+  m_PrefabInstance: {fileID: 8194544900015458698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8195693559990523602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1175331865632600, guid: d86ca2f4159e6a942abd8dfc52b38395, type: 3}
   m_PrefabInstance: {fileID: 8194544900015458698}
   m_PrefabAsset: {fileID: 0}
