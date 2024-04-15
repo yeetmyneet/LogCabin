@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class FadeOutEffect : MonoBehaviour
 {
+    #region Variables and Objects
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] float FadeOutDelay;
     [SerializeField] float fadeOutDuration;
     [SerializeField] public AudioSource select;
     public Image fadeImage;
     public float fadeDuration = 1f;
-
+    #endregion Variables and Objects
     private void Awake()
     {
         fadeImage.color = new Color(0f, 0f, 0f, 0f);
