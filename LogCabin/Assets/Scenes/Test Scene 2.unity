@@ -506,7 +506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5602939438307616037, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: m_RenderMode
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5602939438307616037, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
       propertyPath: m_CastShadows
