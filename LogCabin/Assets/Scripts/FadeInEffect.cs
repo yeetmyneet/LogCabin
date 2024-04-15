@@ -7,6 +7,8 @@ public class FadeInEffect : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] float FadeInDelay;
     [SerializeField] float fadeInDuration;
+    private string booleanKey = "IsEnabled";
+    public GameObject enabledObject;
 
     void Awake()
     {
@@ -18,12 +20,21 @@ public class FadeInEffect : MonoBehaviour
         canvasGroup.alpha = 0;
         Debug.Log("Set CanvasGroup Alpha to 0.");
 
+
         StartCoroutine(FadeInAfterDelay(FadeInDelay));
         Debug.Log("Starting the fade in");
+    }
+    public void SaveBoolean(bool value)
+    {
+        // Convert boolean value to integer (1 for true, 0 for false) and save to PlayerPrefs
+        PlayerPrefs.SetInt(booleanKey, value ? 1 : 0);
+        PlayerPrefs.Save(); // Save PlayerPrefs to disk
     }
 
     IEnumerator FadeInAfterDelay(float delay)
     {
+        bool isEnabled = PlayerPrefs.GetInt(booleanKey, 1) == 1;
+        enabledObject.SetActive(isEnabled);
         yield return new WaitForSeconds(delay);
         Debug.Log("waiting for specified amount of seconds");
 

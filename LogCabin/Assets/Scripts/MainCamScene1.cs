@@ -13,4 +13,10 @@ public class MainCamScene1 : MonoBehaviour {
 		SimpleSceneFader.ChangeSceneWithFade("QuitGame");
     }
     #endregion Quit
+    #region Endless Mode
+    public void Endless()
+    {
+        SimpleSceneFader.ChangeSceneWithFade("Scripting Test Scene");
+    }
+    #endregion Endless Mode
 }
