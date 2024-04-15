@@ -4,25 +4,18 @@ using UnityEngine;
 
 public class FlashlightToggle : MonoBehaviour
 {
-    [SerializeField] GameObject flashlight;
+    [SerializeField] Light flashlight;
 
     private void Start()
     {
-        flashlight.SetActive(false);
+        flashlight = GetComponent<Light>();
     }
 
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            flashlight.SetActive(true);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            flashlight.SetActive(false);
+            flashlight.enabled = !flashlight.enabled;
         }
 
     }
