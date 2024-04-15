@@ -13,9 +13,8 @@ public class FlashlightToggle : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.G))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            Debug.Log("click");
             flashlight.enabled = !flashlight.enabled;
         }
 
