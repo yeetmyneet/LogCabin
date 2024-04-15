@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
 	[SerializeField] Canvas pauseMenu;
+	[SerializeField] GameObject scriptToDisable;
+	[SerializeField] FirstPersonController FPC;
 
     private void Start()
     {
@@ -19,6 +21,8 @@ public class PauseMenu : MonoBehaviour
 			pauseMenu.enabled = true;
 			Time.timeScale = 0;
 			Cursor.lockState = CursorLockMode.Confined;
+			FPC.enabled = false;
+			scriptToDisable.SetActive(false);
 		}
 	}
 
@@ -26,6 +30,8 @@ public class PauseMenu : MonoBehaviour
 	{
 		Time.timeScale = 1;
 		pauseMenu.enabled = false;
+		scriptToDisable.SetActive(true);
+		FPC.enabled = true;
 		Cursor.lockState = CursorLockMode.Locked;
 	}
 
