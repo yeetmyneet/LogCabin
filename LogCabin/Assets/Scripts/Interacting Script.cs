@@ -39,10 +39,10 @@ public class InteractingScript : MonoBehaviour
             scriptToDisable.enabled = true;
             sliderObject.SetActive(false);
         }
-        // If E is held down, increment the slider value and update the visual representation
+        // If E is held down, increment the slider value
         if (isEPressed) { slider.value += sliderSpeedRate / 100; }
-
         else { slider.value = 0f; }
+
         // Cast a ray from the center of the screen
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
@@ -56,6 +56,7 @@ public class InteractingScript : MonoBehaviour
 
         else { isLookingAtGenerator = false; }
 
+        //Enables the text if we're looking at the generator, and disables it if we're not
         if (!isEPressed && isLookingAtGenerator) { objectToShow.SetActive(true); }
         else { objectToShow.SetActive(false); }
     }

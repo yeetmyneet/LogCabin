@@ -2,19 +2,15 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 public class MainCamScene1 : MonoBehaviour {
+    #region Play Button
     public void OpenScene2Button ( ) {
 		SimpleSceneFader.ChangeSceneWithFade ("Test Scene 2");
 	}
+    #endregion Play Button
+    #region Quit
     public void Quit()
     {
 		SimpleSceneFader.ChangeSceneWithFade("QuitGame");
     }
-	public void Credits()
-    {
-		SimpleSceneFader.ChangeSceneWithFade("Credits");
-    }
-	public void MainMenu()
-    {
-		SimpleSceneFader.ChangeSceneWithFade("MainMenu");
-    }
+    #endregion Quit
 }
