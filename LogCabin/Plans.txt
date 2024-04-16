@@ -1,0 +1,17 @@
+Future additions
+
+- Cat that needs to be fed
+(Script for the cat getting hungry)
+(Script for the cat starting to make noise and increasing in volume)
+(script for the cat food and being interacted with)
+(script for the monster breaking the window that the cat is in if he makes too much noise)
+(script for feeding the cat with the cat food)
+- Generator
+(Script for the generator counting down from 30 once the slider reaches 0)
+(Script for the generator spawning the monster if the timer reaches 0)
+
+- 2 Windows that needs to be closed (maybe?)
+
+- AI for the monster
+(Script for following the player)
+(Script for navigating the house) 
