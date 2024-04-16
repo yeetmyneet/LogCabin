@@ -17,6 +17,7 @@ public class InteractingScript : MonoBehaviour
     [SerializeField] float sliderSpeedRate = 1f;
     [SerializeField] GameObject sprintAndReticle;
     public float maxInteractionDistance = 5f; // Maximum interaction distance
+    [SerializeField] GeneratorController genControl;
 
     #endregion Variables and Objects
 
@@ -46,6 +47,7 @@ public class InteractingScript : MonoBehaviour
         {
             isEPressed = false;
             scriptToDisable.enabled = true;
+            genControl.ResetSlider();
             sliderObject.SetActive(false);
         }
 
