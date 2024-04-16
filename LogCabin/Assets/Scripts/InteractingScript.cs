@@ -18,17 +18,23 @@ public class InteractingScript : MonoBehaviour
     [SerializeField] GameObject sprintAndReticle;
     public float maxInteractionDistance = 5f; // Maximum interaction distance
     [SerializeField] GeneratorController genControl;
+    public bool generatorBroken;
 
     #endregion Variables and Objects
 
     void Awake()
     {
         sliderObject.SetActive(false);
+        genControl = FindObjectOfType<GeneratorController>();
     }
     void Update()
     {
+        if (genControl != null)
+        {
+            genControl.generatorBroken += OnGeneratorBroken;
+        }
         // Check if E is pressed and is looking at the generator
-        if (Input.GetKeyDown(KeyCode.E) && isLookingAtGenerator)
+        if (Input.GetKeyDown(KeyCode.E) && isLookingAtGenerator && generatorBroken == true)
         {
             isEPressed = true;
             scriptToDisable.enabled = false;
@@ -47,8 +53,16 @@ public class InteractingScript : MonoBehaviour
         {
             isEPressed = false;
             scriptToDisable.enabled = true;
-            genControl.ResetSlider();
             sliderObject.SetActive(false);
+            if (generatorBroken == true)
+            {
+                genControl.ResetSlider();
+                generatorFixed();
+            }
+            else
+            {
+                Debug.LogError("Generator is not broken");
+            }
         }
 
         // Cast a ray from the center of the screen
@@ -65,7 +79,16 @@ public class InteractingScript : MonoBehaviour
         else { isLookingAtGenerator = false; }
 
         //Enables the text if we're looking at the generator, and disables it if we're not
-        if (!isEPressed && isLookingAtGenerator) { objectToShow.SetActive(true); }
+        if (!isEPressed && isLookingAtGenerator && generatorBroken == true) { objectToShow.SetActive(true); }
         else { objectToShow.SetActive(false); }
+    }
+    void OnGeneratorBroken()
+    {
+        generatorBroken = true;
+        Debug.Log("Generator is broken! Do something here...");
+    }
+    public void generatorFixed()
+    {
+        generatorBroken = false;
     }
 }
