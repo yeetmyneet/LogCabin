@@ -8,6 +8,7 @@ public class InteractingScript : MonoBehaviour
     #region Variables and Objects 
 
     string generatorTag = "Generator";
+    string furnaceTag = "Furnace";
     public GameObject objectToShow;
     public Slider slider;
     public GameObject sliderObject;
@@ -19,6 +20,11 @@ public class InteractingScript : MonoBehaviour
     public float maxInteractionDistance = 5f; // Maximum interaction distance
     [SerializeField] GeneratorController genControl;
     public bool generatorBroken;
+    [SerializeField] bool isLookingAtFurnace = false;
+    [SerializeField] bool furnaceBroken = false;
+    [SerializeField] FurnaceController furnaceControl;
+    bool isFixingGenerator;
+    bool isFixingFurnace;
 
     #endregion Variables and Objects
 
@@ -33,12 +39,27 @@ public class InteractingScript : MonoBehaviour
         {
             genControl.generatorBroken += OnGeneratorBroken;
         }
-        // Check if E is pressed and is looking at the generator
-        if (Input.GetKeyDown(KeyCode.E) && isLookingAtGenerator && generatorBroken == true)
+        if (furnaceControl != null)
         {
-            isEPressed = true;
-            scriptToDisable.enabled = false;
-            sliderObject.SetActive(true);
+            furnaceControl.furnaceBroken += OnFurnaceBroken;
+        }
+        // Check if E is pressed and is looking at the generator
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (isLookingAtGenerator && generatorBroken == true)
+            {
+                isEPressed = true;
+                scriptToDisable.enabled = false;
+                sliderObject.SetActive(true);
+                isFixingGenerator = true;
+            }
+            else if (isLookingAtFurnace && furnaceBroken == true)
+            {
+                isEPressed = true;
+                scriptToDisable.enabled = false;
+                sliderObject.SetActive(true);
+                isFixingFurnace = true;
+            }
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {
@@ -54,14 +75,21 @@ public class InteractingScript : MonoBehaviour
             isEPressed = false;
             scriptToDisable.enabled = true;
             sliderObject.SetActive(false);
-            if (generatorBroken == true)
+            if (isFixingGenerator && generatorBroken == true)
             {
                 genControl.ResetSlider();
-                generatorFixed();
+                generatorBroken = false;
+                isFixingGenerator = false;
+            }
+            else if (isFixingFurnace && furnaceBroken == true)
+            {
+                furnaceControl.ResetSlider();
+                furnaceBroken = false;
+                isFixingGenerator = false;
             }
             else
             {
-                Debug.LogError("Generator is not broken");
+                Debug.LogError("Nothing is broken");
             }
         }
 
@@ -71,16 +99,33 @@ public class InteractingScript : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.CompareTag(generatorTag) && Vector3.Distance(transform.position, hit.transform.position) <= maxInteractionDistance) { isLookingAtGenerator = true; }
-
-            else { isLookingAtGenerator = false; }
+            if (hit.collider.CompareTag(generatorTag) && Vector3.Distance(transform.position, hit.transform.position) <= maxInteractionDistance)
+            {
+                isLookingAtGenerator = true;
+            }
+            else if (hit.collider.CompareTag(furnaceTag) && Vector3.Distance(transform.position, hit.transform.position) <= maxInteractionDistance)
+            {
+                isLookingAtFurnace = true;
+            }
+            else
+            {
+                isLookingAtFurnace = false;
+                isLookingAtGenerator = false;
+            }
         }
 
-        else { isLookingAtGenerator = false; }
-
         //Enables the text if we're looking at the generator, and disables it if we're not
-        if (!isEPressed && isLookingAtGenerator && generatorBroken == true) { objectToShow.SetActive(true); }
-        else { objectToShow.SetActive(false); }
+        if (!isEPressed )
+        {
+            if (generatorBroken == true && isLookingAtGenerator || furnaceBroken == true && isLookingAtFurnace)
+            {
+                objectToShow.SetActive(true);
+            }
+            else
+            {
+                objectToShow.SetActive(false);
+            }
+        }
     }
     void OnGeneratorBroken()
     {
@@ -90,5 +135,14 @@ public class InteractingScript : MonoBehaviour
     public void generatorFixed()
     {
         generatorBroken = false;
+    }
+    void OnFurnaceBroken()
+    {
+        furnaceBroken = true;
+        Debug.Log("Furnace is broken!");
+    }
+    public void furnaceFixed()
+    {
+        furnaceBroken = false;
     }
 }
