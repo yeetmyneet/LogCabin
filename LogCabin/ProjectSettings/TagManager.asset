@@ -10,6 +10,7 @@ TagManager:
   - Generator
   - Wood Floor
   - snow
+  - Furnance
   layers:
   - Default
   - TransparentFX
