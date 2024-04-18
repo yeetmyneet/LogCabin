@@ -11,6 +11,7 @@ TagManager:
   - Wood Floor
   - snow
   - Furnace
+  - Radio
   layers:
   - Default
   - TransparentFX

@@ -9,22 +9,30 @@ public class InteractingScript : MonoBehaviour
 
     string generatorTag = "Generator";
     string furnaceTag = "Furnace";
+    string radioTag = "Radio";
     public GameObject objectToShow;
     public Slider slider;
     public GameObject sliderObject;
     public MonoBehaviour scriptToDisable;
     private bool isLookingAtGenerator = false;
     private bool isEPressed = false;
-    [SerializeField] float sliderSpeedRate = 1f;
+    [SerializeField] float sliderSpeedRate;
     [SerializeField] GameObject sprintAndReticle;
     public float maxInteractionDistance = 5f; // Maximum interaction distance
     [SerializeField] GeneratorController genControl;
     public bool generatorBroken;
+    bool isFixingGenerator;
     [SerializeField] bool isLookingAtFurnace = false;
     [SerializeField] bool furnaceBroken = false;
     [SerializeField] FurnaceController furnaceControl;
-    bool isFixingGenerator;
     bool isFixingFurnace;
+    bool isLookingAtRadio = false;
+    bool radioPlaying = false;
+    [SerializeField] RadioController radioControl;
+    bool isFixingRadio;
+    [SerializeField] float genFixSpeed;
+    [SerializeField] float furnFixSpeed;
+    [SerializeField] float radioFixSpeed;
 
     #endregion Variables and Objects
 
@@ -50,6 +58,7 @@ public class InteractingScript : MonoBehaviour
             if (isLookingAtGenerator && generatorBroken == true)
             {
                 isEPressed = true;
+                sliderSpeedRate = genFixSpeed;
                 scriptToDisable.enabled = false;
                 sliderObject.SetActive(true);
                 isFixingGenerator = true;
@@ -57,9 +66,18 @@ public class InteractingScript : MonoBehaviour
             else if (isLookingAtFurnace && furnaceBroken == true)
             {
                 isEPressed = true;
+                sliderSpeedRate = furnFixSpeed;
                 scriptToDisable.enabled = false;
                 sliderObject.SetActive(true);
                 isFixingFurnace = true;
+            }
+            else if (isLookingAtRadio && radioPlaying == true)
+            {
+                isEPressed = true;
+                sliderSpeedRate = radioFixSpeed;
+                scriptToDisable.enabled = false;
+                sliderObject.SetActive(true);
+                isFixingRadio = true;
             }
         }
         else if (Input.GetKeyUp(KeyCode.E))
@@ -81,17 +99,23 @@ public class InteractingScript : MonoBehaviour
             isEPressed = false;
             scriptToDisable.enabled = true;
             sliderObject.SetActive(false);
-            if (isFixingGenerator && generatorBroken == true)
+            if (isFixingGenerator)
             {
                 genControl.ResetSlider();
                 generatorBroken = false;
                 isFixingGenerator = false;
             }
-            else if (isFixingFurnace && furnaceBroken == true)
+            else if (isFixingFurnace)
             {
                 furnaceControl.ResetSlider();
                 furnaceBroken = false;
-                isFixingGenerator = false;
+                isFixingFurnace = false;
+            }
+            else if (isFixingRadio)
+            {
+                radioControl.ResetRadio();
+                radioPlaying = false;
+                isFixingRadio = false;
             }
             else
             {
@@ -113,17 +137,22 @@ public class InteractingScript : MonoBehaviour
             {
                 isLookingAtFurnace = true;
             }
+            else if (hit.collider.CompareTag(radioTag) && Vector3.Distance(transform.position, hit.transform.position) <= maxInteractionDistance)
+            {
+                isLookingAtRadio = true;
+            }
             else
             {
                 isLookingAtFurnace = false;
                 isLookingAtGenerator = false;
+                isLookingAtRadio = false;
             }
         }
 
         //Enables the text if we're looking at the generator, and disables it if we're not
         if (!isEPressed )
         {
-            if (generatorBroken == true && isLookingAtGenerator || furnaceBroken == true && isLookingAtFurnace)
+            if (generatorBroken == true && isLookingAtGenerator || furnaceBroken == true && isLookingAtFurnace || radioPlaying == true && isLookingAtRadio)
             {
                 objectToShow.SetActive(true);
             }
@@ -142,5 +171,9 @@ public class InteractingScript : MonoBehaviour
     {
         furnaceBroken = true;
         Debug.Log("Furnace is broken!");
+    }
+    public void BreakRadio()
+    {
+        radioPlaying = true;
     }
 }

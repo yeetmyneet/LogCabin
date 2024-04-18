@@ -44,7 +44,6 @@ public class FurnaceController : MonoBehaviour
         slider.value = maxValue;
         StartCoroutine(WaitOneSecond());
         furnaceWorking = true;
-        //interactScript.furnaceFixed();
     }
     IEnumerator WaitOneSecond()
     {
