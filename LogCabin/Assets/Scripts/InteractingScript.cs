@@ -46,6 +46,7 @@ public class InteractingScript : MonoBehaviour
         // Check if E is pressed and is looking at the generator
         if (Input.GetKeyDown(KeyCode.E))
         {
+            objectToShow.SetActive(false);
             if (isLookingAtGenerator && generatorBroken == true)
             {
                 isEPressed = true;
@@ -69,7 +70,12 @@ public class InteractingScript : MonoBehaviour
         }
         // If E is held down, increment the slider value
         if (isEPressed) { slider.value += sliderSpeedRate / 100; }
-        else { slider.value = 0f; }
+        else
+        {
+            slider.value = 0f;
+            objectToShow.SetActive(true);
+        }
+
         if (slider.value == 100f)
         {
             isEPressed = false;
@@ -132,17 +138,9 @@ public class InteractingScript : MonoBehaviour
         generatorBroken = true;
         Debug.Log("Generator is broken! Do something here...");
     }
-    public void generatorFixed()
-    {
-        generatorBroken = false;
-    }
     void OnFurnaceBroken()
     {
         furnaceBroken = true;
         Debug.Log("Furnace is broken!");
-    }
-    public void furnaceFixed()
-    {
-        furnaceBroken = false;
     }
 }
