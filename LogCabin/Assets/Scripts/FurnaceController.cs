@@ -42,13 +42,7 @@ public class FurnaceController : MonoBehaviour
     public void ResetSlider()
     {
         slider.value = maxValue;
-        StartCoroutine(WaitOneSecond());
         furnaceWorking = true;
-    }
-    IEnumerator WaitOneSecond()
-    {
-        yield return new WaitForSeconds(1f);
-        Debug.Log("One second has passed.");
     }
     void BreakFurnace()
     {

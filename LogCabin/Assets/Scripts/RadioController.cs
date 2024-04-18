@@ -8,11 +8,12 @@ public class RadioController : MonoBehaviour
     private AudioSource audioSource;
     private bool isPlaying = false;
     [SerializeField] InteractingScript interactScript;
+    [SerializeField] float checkInterval;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        InvokeRepeating("CheckForChance", 0f, 5f); // Check for chance every 5 seconds
+        InvokeRepeating("CheckForChance", 0f, checkInterval ); // Check for chance every 5 seconds
     }
 
     void CheckForChance()

@@ -47,11 +47,6 @@ public class GeneratorController : MonoBehaviour
         generatorWorking = true;
         LightCheck(0);
     }
-    IEnumerator WaitOneSecond()
-    {
-        yield return new WaitForSeconds(1f);
-        Debug.Log("One second has passed.");
-    }
     void BreakGenerator()
     {
         generatorWorking = false;

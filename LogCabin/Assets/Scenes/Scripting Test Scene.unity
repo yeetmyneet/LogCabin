@@ -530,6 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: e8b93613b72065b4592669293655f68c, type: 3}
   interactScript: {fileID: 2033776347}
+  checkInterval: 10
 --- !u!82 &670542254
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3334,9 +3335,9 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1156642723}
   - {fileID: 708540838}
+  - {fileID: 670542258}
   - {fileID: 76038964}
   - {fileID: 543450652904469531}
   - {fileID: 1699847399}
   - {fileID: 188589510}
   - {fileID: 1276384040}
-  - {fileID: 670542258}
