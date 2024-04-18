@@ -16,6 +16,7 @@ public class GeneratorController : MonoBehaviour
     private float timer;
     [SerializeField] bool generatorWorking = true;
     [SerializeField] InteractingScript interactScript;
+    [SerializeField] GameObject[] lights;
 
     #endregion Inspector References
     void Start()
@@ -35,11 +36,7 @@ public class GeneratorController : MonoBehaviour
 
             if (slider.value <= 0)
             {
-                generatorWorking = false;
-                if (generatorBroken != null)
-                {
-                    generatorBroken();
-                }
+                BreakGenerator();
             }
         }
     }
@@ -47,13 +44,33 @@ public class GeneratorController : MonoBehaviour
     public void ResetSlider()
     {
         slider.value = maxValue;
-        StartCoroutine(WaitOneSecond());
         generatorWorking = true;
-        interactScript.generatorFixed();
+        LightCheck(0);
     }
-    IEnumerator WaitOneSecond()
+    void BreakGenerator()
     {
-        yield return new WaitForSeconds(1f);
-        Debug.Log("One second has passed.");
+        generatorWorking = false;
+        if (generatorBroken != null)
+        {
+            generatorBroken();
+        }
+        LightCheck(1);
+    }
+    void LightCheck(int value)
+    {
+        if (value == 1)
+        {
+            foreach (GameObject obj in lights)
+            {
+                obj.SetActive(false);
+            }
+        }
+        else if (value == 0)
+        {
+            foreach (GameObject obj in lights)
+            {
+                obj.SetActive(true);
+            }
+        }
     }
 }
