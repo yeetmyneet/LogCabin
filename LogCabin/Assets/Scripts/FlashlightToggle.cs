@@ -9,6 +9,7 @@ public class FlashlightToggle : MonoBehaviour
     private void Start()
     {
         flashlight = GetComponent<Light>();
+        flashlight.enabled = false;
     }
 
     void Update()
