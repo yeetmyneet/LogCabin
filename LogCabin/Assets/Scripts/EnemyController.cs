@@ -6,6 +6,16 @@ public class EnemyController : MonoBehaviour
 {
     public GameObject prefabToSpawn;
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     void Dissolve()
     {
         // Lock the gameObject in place
