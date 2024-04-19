@@ -13,7 +13,7 @@ public class RadioController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        InvokeRepeating("CheckForChance", 0f, checkInterval ); // Check for chance every 5 seconds
+        InvokeRepeating("CheckForChance", 0f, checkInterval );
     }
 
     void CheckForChance()

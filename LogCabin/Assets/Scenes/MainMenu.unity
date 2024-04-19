@@ -650,8 +650,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Horror Game Essentials Sound Library: Rosalba Vazquez Garc\xEDa\n\nMenu
-    Sound Effects: Akira Yamaoka\n\nSimple Scene Fader: Bhavin Panara\n\n\nThank
-    you so much for letting us use your assets to create this game!"
+    Sound Effects: Akira Yamaoka\n\nSimple Scene Fader: Bhavin Panara\n\nFor_Creators:
+    Deer Sounds\n\n\nThank you so much for letting us use your assets to create this
+    game!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc7eb9f328756174183c8be76d3d8fe0, type: 2}
   m_sharedMaterial: {fileID: -1532583907895928070, guid: fc7eb9f328756174183c8be76d3d8fe0, type: 2}
