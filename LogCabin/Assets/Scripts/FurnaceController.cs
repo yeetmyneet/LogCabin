@@ -34,11 +34,7 @@ public class FurnaceController : MonoBehaviour
 
             if (slider.value <= 0)
             {
-                furnaceWorking = false;
-                if (furnaceBroken != null)
-                {
-                    furnaceBroken();
-                }
+                BreakFurnace();
             }
         }
     }
@@ -46,13 +42,14 @@ public class FurnaceController : MonoBehaviour
     public void ResetSlider()
     {
         slider.value = maxValue;
-        StartCoroutine(WaitOneSecond());
         furnaceWorking = true;
-        interactScript.furnaceFixed();
     }
-    IEnumerator WaitOneSecond()
+    void BreakFurnace()
     {
-        yield return new WaitForSeconds(1f);
-        Debug.Log("One second has passed.");
+        furnaceWorking = false;
+        if (furnaceBroken != null)
+        {
+            furnaceBroken();
+        }
     }
 }
