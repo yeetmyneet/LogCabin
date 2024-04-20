@@ -17,6 +17,8 @@ public class GeneratorController : MonoBehaviour
     [SerializeField] bool generatorWorking = true;
     [SerializeField] InteractingScript interactScript;
     [SerializeField] GameObject[] lights;
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip powerOff;
 
     #endregion Inspector References
     void Start()
