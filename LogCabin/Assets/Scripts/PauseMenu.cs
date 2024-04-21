@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
 			Cursor.lockState = CursorLockMode.Confined;
 			FPC.enabled = false;
 			scriptToDisable.SetActive(false);
+			AudioListener.pause = !AudioListener.pause;
 		}
 	}
 
@@ -33,6 +34,7 @@ public class PauseMenu : MonoBehaviour
 		scriptToDisable.SetActive(true);
 		FPC.enabled = true;
 		Cursor.lockState = CursorLockMode.Locked;
+		AudioListener.pause = !AudioListener.pause;
 	}
 
 	public void ExitGame()
