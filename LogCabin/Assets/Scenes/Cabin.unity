@@ -1099,33 +1099,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 20369710}
     - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: genFixSpeed
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: radioControl
       value: 
       objectReference: {fileID: 1232095777}
-    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: radioFixSpeed
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: furnaceControl
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: maxInteractionDistance
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126778772314453750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459864850019384736, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 487.18
@@ -1166,25 +1142,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: enableCrouch
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: useSprintBar
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Name
       value: FirstPersonController
-      objectReference: {fileID: 0}
-    - target: {fileID: 5724325501834905423, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_Volume
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 6889683316257912029, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
