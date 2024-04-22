@@ -568,7 +568,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4459864850019384750}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -691,7 +691,7 @@ MonoBehaviour:
   sprintCooldown: 1
   sprintFOV: 75
   sprintFOVStepTime: 10
-  useSprintBar: 1
+  useSprintBar: 0
   hideBarWhenFull: 1
   sprintBarBG: {fileID: 4459864851397454648}
   sprintBar: {fileID: 4459864850888339820}
@@ -700,7 +700,7 @@ MonoBehaviour:
   enableJump: 0
   jumpKey: 32
   jumpPower: 5
-  enableCrouch: 1
+  enableCrouch: 0
   holdToCrouch: 1
   crouchKey: 306
   crouchHeight: 0.75
@@ -1131,7 +1131,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1234,12 +1234,16 @@ MonoBehaviour:
   scriptToDisable: {fileID: 4459864850019384740}
   sliderSpeedRate: 25
   sprintAndReticle: {fileID: 4459864851551516604}
-  maxInteractionDistance: 5
+  maxInteractionDistance: 3
   genControl: {fileID: 0}
   generatorBroken: 0
   isLookingAtFurnace: 0
   furnaceBroken: 0
   furnaceControl: {fileID: 0}
+  radioControl: {fileID: 0}
+  genFixSpeed: 25
+  furnFixSpeed: 0
+  radioFixSpeed: 35
 --- !u!82 &3126778772314453750
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2796,7 +2800,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4b8770c15923cd047bf534010e889f1f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.456
+  m_Volume: 0.27
   m_Pitch: 1
   Loop: 1
   Mute: 0
