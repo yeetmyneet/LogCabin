@@ -34,6 +34,7 @@ public class RandomSoundPlayer : MonoBehaviour
     {
         if (soundEffect != null && audioSource != null)
         {
+            Debug.Log("Moo");
             audioSource.PlayOneShot(soundEffect);
         }
     }

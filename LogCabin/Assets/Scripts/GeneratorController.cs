@@ -17,6 +17,9 @@ public class GeneratorController : MonoBehaviour
     [SerializeField] bool generatorWorking = true;
     [SerializeField] InteractingScript interactScript;
     [SerializeField] GameObject[] lights;
+    [SerializeField] AudioSource generatorSource;
+    [SerializeField] AudioSource playerSource;
+    [SerializeField] AudioClip powerOff;
 
     #endregion Inspector References
     void Start()
@@ -24,6 +27,8 @@ public class GeneratorController : MonoBehaviour
         slider.maxValue = maxValue;
         slider.value = maxValue;
         timer = decreaseInterval;
+        generatorSource = GetComponent<AudioSource>();
+        playerSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -46,6 +51,7 @@ public class GeneratorController : MonoBehaviour
         slider.value = maxValue;
         generatorWorking = true;
         LightCheck(0);
+        generatorSource.Play();
     }
     void BreakGenerator()
     {
@@ -54,6 +60,8 @@ public class GeneratorController : MonoBehaviour
         {
             generatorBroken();
         }
+        generatorSource.Stop();
+        playerSource.PlayOneShot(powerOff);
         LightCheck(1);
     }
     void LightCheck(int value)
