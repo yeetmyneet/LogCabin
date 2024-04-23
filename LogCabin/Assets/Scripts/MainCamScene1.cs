@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainCamScene1 : MonoBehaviour {
     #region Play Button
     public void OpenScene2Button ( ) {
-		SimpleSceneFader.ChangeSceneWithFade ("Test Scene 2");
+		SimpleSceneFader.ChangeSceneWithFade ("Cabin");
 	}
     #endregion Play Button
     #region Quit
