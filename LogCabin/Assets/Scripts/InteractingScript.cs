@@ -27,7 +27,7 @@ public class InteractingScript : MonoBehaviour
     [SerializeField] FurnaceController furnaceControl;
     bool isFixingFurnace;
     bool isLookingAtRadio = false;
-    bool radioPlaying = false;
+    public bool radioPlaying = false;
     [SerializeField] RadioController radioControl;
     bool isFixingRadio;
     [SerializeField] float genFixSpeed;

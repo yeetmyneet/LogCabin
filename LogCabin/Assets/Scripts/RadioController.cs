@@ -33,7 +33,7 @@ public class RadioController : MonoBehaviour
             audioSource.clip = musicClip;
             audioSource.Play();
         }
-        interactScript.BreakRadio();
+        interactScript.radioPlaying = true;
         Debug.Log("Playing song from Radio");
     }
 
