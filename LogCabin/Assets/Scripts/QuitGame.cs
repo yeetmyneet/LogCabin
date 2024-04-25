@@ -6,6 +6,13 @@ public class QuitGame : MonoBehaviour
 { 
     void Awake()
     {
-        Application.Quit();
+        if (Application.isEditor)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else
+        { 
+            Application.Quit();
+        }
     }
 }
