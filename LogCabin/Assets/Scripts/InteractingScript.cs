@@ -23,7 +23,7 @@ public class InteractingScript : MonoBehaviour
     public bool generatorBroken;
     bool isFixingGenerator;
     [SerializeField] bool isLookingAtFurnace = false;
-    [SerializeField] bool furnaceBroken = false;
+    [SerializeField] public bool furnaceBroken = false;
     [SerializeField] FurnaceController furnaceControl;
     bool isFixingFurnace;
     bool isLookingAtRadio = false;
@@ -46,10 +46,6 @@ public class InteractingScript : MonoBehaviour
         if (genControl != null)
         {
             genControl.generatorBroken += OnGeneratorBroken;
-        }
-        if (furnaceControl != null)
-        {
-            furnaceControl.furnaceBroken += OnFurnaceBroken;
         }
         // Check if E is pressed and is looking at the generator
         if (Input.GetKeyDown(KeyCode.E))
@@ -166,14 +162,5 @@ public class InteractingScript : MonoBehaviour
     {
         generatorBroken = true;
         Debug.Log("Generator is broken! Do something here...");
-    }
-    void OnFurnaceBroken()
-    {
-        furnaceBroken = true;
-        Debug.Log("Furnace is broken!");
-    }
-    public void BreakRadio()
-    {
-        radioPlaying = true;
     }
 }
