@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     {
         transform.position = targetPosition;
     }
-
+    
     void Dissolve()
     {
         // Lock the gameObject in place

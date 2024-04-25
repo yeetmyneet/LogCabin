@@ -58,7 +58,7 @@ public class InteractingScript : MonoBehaviour
             if (isLookingAtGenerator && generatorBroken == true)
             {
                 isEPressed = true;
-                sliderSpeedRate = genFixSpeed;
+                sliderSpeedRate = genFixSpeed * 100;
                 scriptToDisable.enabled = false;
                 sliderObject.SetActive(true);
                 isFixingGenerator = true;
@@ -66,7 +66,7 @@ public class InteractingScript : MonoBehaviour
             else if (isLookingAtFurnace && furnaceBroken == true)
             {
                 isEPressed = true;
-                sliderSpeedRate = furnFixSpeed;
+                sliderSpeedRate = furnFixSpeed * 100;
                 scriptToDisable.enabled = false;
                 sliderObject.SetActive(true);
                 isFixingFurnace = true;
@@ -74,7 +74,7 @@ public class InteractingScript : MonoBehaviour
             else if (isLookingAtRadio && radioPlaying == true)
             {
                 isEPressed = true;
-                sliderSpeedRate = radioFixSpeed;
+                sliderSpeedRate = radioFixSpeed * 100;
                 scriptToDisable.enabled = false;
                 sliderObject.SetActive(true);
                 isFixingRadio = true;
@@ -87,7 +87,7 @@ public class InteractingScript : MonoBehaviour
             sliderObject.SetActive(false);
         }
         // If E is held down, increment the slider value
-        if (isEPressed) { slider.value += sliderSpeedRate / 100; }
+        if (isEPressed) { slider.value += (sliderSpeedRate / 10) * Time.deltaTime; }
         else
         {
             slider.value = 0f;
