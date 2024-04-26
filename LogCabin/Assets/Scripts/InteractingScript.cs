@@ -43,10 +43,6 @@ public class InteractingScript : MonoBehaviour
     }
     void Update()
     {
-        if (genControl != null)
-        {
-            genControl.generatorBroken += OnGeneratorBroken;
-        }
         // Check if E is pressed and is looking at the generator
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -157,10 +153,5 @@ public class InteractingScript : MonoBehaviour
                 objectToShow.SetActive(false);
             }
         }
-    }
-    void OnGeneratorBroken()
-    {
-        generatorBroken = true;
-        Debug.Log("Generator is broken! Do something here...");
     }
 }
