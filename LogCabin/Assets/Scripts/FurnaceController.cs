@@ -32,10 +32,7 @@ public class FurnaceController : MonoBehaviour
             slider.value -= decreaseAmount;
             timer = decreaseInterval;
 
-            if (slider.value <= 0)
-            {
-                BreakFurnace();
-            }
+            if (slider.value <= 0) { BreakFurnace(); }
         }
     }
 
@@ -47,9 +44,6 @@ public class FurnaceController : MonoBehaviour
     void BreakFurnace()
     {
         furnaceWorking = false;
-        if (furnaceBroken != null)
-        {
-            furnaceBroken();
-        }
+        if (furnaceBroken != null) { furnaceBroken(); }
     }
 }

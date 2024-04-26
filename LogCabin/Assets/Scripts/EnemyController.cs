@@ -7,10 +7,7 @@ public class EnemyController : MonoBehaviour
     public GameObject prefabToSpawn;
     public Vector3 targetPosition;
 
-    public void TeleportToPosition()
-    {
-        transform.position = targetPosition;
-    }
+    public void TeleportToPosition() { transform.position = targetPosition; }
     
     void Dissolve()
     {
