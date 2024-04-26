@@ -39,10 +39,7 @@ public class GeneratorController : MonoBehaviour
             slider.value -= decreaseAmount;
             timer = decreaseInterval;
 
-            if (slider.value <= 0)
-            {
-                BreakGenerator();
-            }
+            if (slider.value <= 0) { BreakGenerator(); }
         }
     }
 
@@ -56,10 +53,7 @@ public class GeneratorController : MonoBehaviour
     void BreakGenerator()
     {
         generatorWorking = false;
-        if (generatorBroken != null)
-        {
-            generatorBroken();
-        }
+        if (generatorBroken != null) { generatorBroken(); }
         generatorSource.Stop();
         playerSource.PlayOneShot(powerOff);
         LightCheck(1);
@@ -68,17 +62,11 @@ public class GeneratorController : MonoBehaviour
     {
         if (value == 1)
         {
-            foreach (GameObject obj in lights)
-            {
-                obj.SetActive(false);
-            }
+            foreach (GameObject obj in lights) { obj.SetActive(false); }
         }
         else if (value == 0)
         {
-            foreach (GameObject obj in lights)
-            {
-                obj.SetActive(true);
-            }
+            foreach (GameObject obj in lights) { obj.SetActive(true); }
         }
     }
 }

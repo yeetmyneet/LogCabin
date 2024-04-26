@@ -19,11 +19,7 @@ public class DeerMovement : MonoBehaviour
     {
         Vector3 moveDir = player.transform.position - transform.position;
         //if the player is close
-        if (moveDir.magnitude < chaseDistance)
-        {
-            //chase the player
-            agent.destination = player.transform.position;
-        }
+        if (moveDir.magnitude < chaseDistance) { agent.destination = player.transform.position; }
         if (moveDir != Vector3.zero)
         {
             // Calculate the rotation to look towards the movement direction
@@ -39,9 +35,6 @@ public class DeerMovement : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, finalRotation, Time.deltaTime * 10f);
         }
         //if the player is too far away
-        else
-        {
-            agent.destination = home;
-        }
+        else { agent.destination = home; }
     }
 }

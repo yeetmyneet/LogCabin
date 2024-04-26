@@ -43,15 +43,11 @@ public class InteractingScript : MonoBehaviour
     }
     void Update()
     {
-        if (genControl != null)
-        {
-            genControl.generatorBroken += OnGeneratorBroken;
-        }
-        if (furnaceControl != null)
-        {
-            furnaceControl.furnaceBroken += OnFurnaceBroken;
-        }
-        // Check if E is pressed and is looking at the generator
+        #region Event Subscriptions
+        if (genControl != null) { genControl.generatorBroken += OnGeneratorBroken; }
+        if (furnaceControl != null) { furnaceControl.furnaceBroken += OnFurnaceBroken; }
+        #endregion Event Subscriptions
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             objectToShow.SetActive(false);
@@ -156,10 +152,7 @@ public class InteractingScript : MonoBehaviour
             {
                 objectToShow.SetActive(true);
             }
-            else
-            {
-                objectToShow.SetActive(false);
-            }
+            else { objectToShow.SetActive(false); }
         }
     }
     void OnGeneratorBroken()
