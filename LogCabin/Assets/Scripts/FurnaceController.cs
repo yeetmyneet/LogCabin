@@ -49,7 +49,7 @@ public class FurnaceController : MonoBehaviour
         furnaceWorking = false;
         if (furnaceBroken != null)
         {
-            interactScript.furnaceBroken = true;
+            furnaceBroken();
         }
     }
 }

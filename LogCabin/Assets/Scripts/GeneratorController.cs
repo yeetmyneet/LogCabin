@@ -58,7 +58,7 @@ public class GeneratorController : MonoBehaviour
         generatorWorking = false;
         if (generatorBroken != null)
         {
-            interactScript.generatorBroken = true;
+            generatorBroken();
         }
         generatorSource.Stop();
         playerSource.PlayOneShot(powerOff);

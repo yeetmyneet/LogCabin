@@ -43,7 +43,7 @@ public class RadioController : MonoBehaviour
         {
             audioSource.Stop();
             isPlaying = false;
-            InvokeRepeating("CheckForChance", 0f, 5f); // Start checking for chance again
+            InvokeRepeating("CheckForChance", 0f, 5f);
         }
     }
 }
