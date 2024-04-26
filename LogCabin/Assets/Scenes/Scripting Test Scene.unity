@@ -483,6 +483,23 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!1 &368644456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 1699847399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &368644465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368644456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34ad286bed2e294aa6d9a4c87fe4488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &422564471
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,7 +910,7 @@ Transform:
   m_GameObject: {fileID: 708540832}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 568.22, y: 0.91, z: 624.37317}
+  m_LocalPosition: {x: 568.22, y: 1.82, z: 624.37317}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1292,6 +1309,10 @@ PrefabInstance:
       propertyPath: furnaceControl
       value: 
       objectReference: {fileID: 708540839}
+    - target: {fileID: 4459864850019384736, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 561.6226
@@ -1332,6 +1353,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: sprintFOV
+      value: 83.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864850019384741, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Name
       value: FirstPersonController
@@ -1359,7 +1388,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 368644465}
   m_SourcePrefab: {fileID: 100100000, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
 --- !u!1 &1956957054
 GameObject:
@@ -1481,7 +1513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 795358197402449417, guid: a22b68c665baac144ba91b419197b1ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.91
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 795358197402449417, guid: a22b68c665baac144ba91b419197b1ae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1569,6 +1601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scary Deer
       objectReference: {fileID: 0}
+    - target: {fileID: 6239852617891885138, guid: ad98fc731cc180447b83570b1a38c233, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7263891458967931209, guid: ad98fc731cc180447b83570b1a38c233, type: 3}
       propertyPath: m_LocalPosition.x
       value: 560.49
@@ -1628,7 +1664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2025846246601033696, guid: a813ac34e8e31d148b24bf872a86a952, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0551327
+      value: 1.9651327
       objectReference: {fileID: 0}
     - target: {fileID: 2025846246601033696, guid: a813ac34e8e31d148b24bf872a86a952, type: 3}
       propertyPath: m_LocalPosition.z
