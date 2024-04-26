@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class QuitGame : MonoBehaviour
-{ 
+{
     void Awake()
     {
         if (Application.isEditor)
@@ -11,7 +11,7 @@ public class QuitGame : MonoBehaviour
             UnityEditor.EditorApplication.isPlaying = false;
         }
         else
-        { 
+        {
             Application.Quit();
         }
     }
