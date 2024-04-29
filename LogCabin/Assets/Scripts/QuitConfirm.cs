@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class QuitConfirm : MonoBehaviour
 {
-    public Canvas mainCanvas;
+    public Canvas[] mainCanvases;
     public Canvas confirmCanvas;
 
     void Start()
     {
-        
         confirmCanvas.gameObject.SetActive(false);
     }
 
-   
+    void HideMainCanvases()
+    {
+        foreach (Canvas canvas in mainCanvases)
+        {
+            canvas.gameObject.SetActive(false);
+        }
+    }
+
     public void ShowConfirm()
     {
-        mainCanvas.gameObject.SetActive(false);
+        HideMainCanvases();
         confirmCanvas.gameObject.SetActive(true);
     }
 
-   
     public void ShowMain()
     {
         confirmCanvas.gameObject.SetActive(false);
-        mainCanvas.gameObject.SetActive(true);
+        foreach (Canvas canvas in mainCanvases)
+        {
+            canvas.gameObject.SetActive(true);
+        }
     }
 }

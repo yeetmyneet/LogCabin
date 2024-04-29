@@ -7,42 +7,58 @@ using UnityEngine.EventSystems;
 public class EventTriggerController : MonoBehaviour
 {
     public Button[] buttons;
-    void Awake()
+    public void DisableEventTriggers(GameObject buttonObject)
     {
-        buttons = GetComponentsInChildren<Button>();
-        Debug.Log("Got Button Components");
-    }
-    public void DisableEventTriggers(Button button)
-    {
-        EventTrigger eventTrigger = button.GetComponent<EventTrigger>();
+        // Get the EventTrigger component attached to the button
+        EventTrigger eventTrigger = buttonObject.GetComponent<EventTrigger>();
+
+        // Check if EventTrigger component is found
         if (eventTrigger != null)
         {
+            // Disable all event triggers attached to the button
             eventTrigger.enabled = false;
         }
-        Debug.Log("disabled" + button.name);
+        else
+        {
+            Debug.LogError("can't find eventTrigger");
+        }
     }
-    public void EnableEventTriggers(Button button)
+
+    // Method to enable all EventTriggers within a TextMeshPro button
+    public void EnableEventTriggers(GameObject buttonObject)
     {
-        EventTrigger eventTrigger = button.GetComponent<EventTrigger>();
+        // Get the EventTrigger component attached to the button
+        EventTrigger eventTrigger = buttonObject.GetComponent<EventTrigger>();
+
+        // Check if EventTrigger component is found
         if (eventTrigger != null)
         {
+            // Enable all event triggers attached to the button
             eventTrigger.enabled = true;
         }
+        else
+        {
+            Debug.LogError("can't find eventTrigger");
+        }
     }
+
+    // Example method to enable EventTriggers of all buttons
     public void EnableAllEventTriggers()
     {
+        // Loop through each button and enable EventTrigger components
         foreach (Button button in buttons)
         {
-            EnableEventTriggers(button);
+            EnableEventTriggers(button.gameObject);
         }
-        Debug.Log("enabling Event Triggers");
     }
+
+    // Method to disable EventTriggers of all buttons
     public void DisableAllEventTriggers()
     {
+        // Loop through each button and disable EventTrigger components
         foreach (Button button in buttons)
         {
-            DisableEventTriggers(button);
+            DisableEventTriggers(button.gameObject);
         }
-        Debug.Log("disabling Event Triggers");
     }
 }

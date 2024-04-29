@@ -8,6 +8,7 @@ public class FadeInEffect : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] float FadeInDelay;
     [SerializeField] float fadeInDuration;
+    [SerializeField] bool isButtons;
     private string booleanKey = "IsEnabled";
     public GameObject enabledObject;
     [SerializeField] EventTriggerController eventControl;
@@ -17,8 +18,6 @@ public class FadeInEffect : MonoBehaviour
         
         canvasGroup = GetComponent<CanvasGroup>();
         Debug.Log("found CanvasGroup");
-
-        eventControl.DisableAllEventTriggers();
         canvasGroup.interactable = false;
         canvasGroup.alpha = 0;
         Debug.Log("Set CanvasGroup Alpha to 0.");
@@ -38,7 +37,7 @@ public class FadeInEffect : MonoBehaviour
     {
         bool isEnabled = PlayerPrefs.GetInt(booleanKey, 1) == 1;
         enabledObject.SetActive(isEnabled);
-
+        eventControl.DisableAllEventTriggers();
         yield return new WaitForSeconds(delay);
         Debug.Log("waiting for specified amount of seconds");
 
@@ -58,7 +57,10 @@ public class FadeInEffect : MonoBehaviour
 
         canvasGroup.alpha = 1f;
         Debug.Log("alpha is finally set to 1");
-        eventControl.EnableAllEventTriggers();
+        if (isButtons)
+        {
+            eventControl.EnableAllEventTriggers();
+        }
         canvasGroup.interactable = true;
     }
 }

@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 public class MainCamScene1 : MonoBehaviour {
-    #region Play Button
+    #region Play
     public void OpenScene2Button ( ) {
 		SimpleSceneFader.ChangeSceneWithFade ("Cabin");
 	}
-    #endregion Play Button
+    #endregion Play
     #region Quit
     public void Quit()
     {
@@ -19,4 +19,8 @@ public class MainCamScene1 : MonoBehaviour {
         SimpleSceneFader.ChangeSceneWithFade("Scripting Test Scene");
     }
     #endregion Endless Mode
+    public void MainMenu()
+    {
+        SimpleSceneFader.ChangeSceneWithFade("Main Menu");
+    }
 }

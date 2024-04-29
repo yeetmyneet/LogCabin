@@ -1346,7 +1346,7 @@ MonoBehaviour:
           m_MethodName: PlayOneShot
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 722498f5007382644b81b3ba0a9c195c, type: 3}
+            m_ObjectArgument: {fileID: 8300000, guid: 77cf57e4e6af19a449a2c86735711192, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -2877,7 +2877,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b5fd4d07419694f90b9c381c19bb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
+  buttons:
+  - {fileID: 9009816617100060409}
+  - {fileID: 1890577341}
+  - {fileID: 873335548}
+  - {fileID: 1203539717}
 --- !u!1 &948648142
 GameObject:
   m_ObjectHideFlags: 0

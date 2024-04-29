@@ -1,0 +1,118 @@
+
+EVENTTRIGGERCONTROLLER
+
+public Button[] buttons;
+    public void DisableEventTriggers(GameObject buttonObject)
+    {
+        // Get the EventTrigger component attached to the button
+        EventTrigger eventTrigger = buttonObject.GetComponent<EventTrigger>();
+
+        // Check if EventTrigger component is found
+        if (eventTrigger != null)
+        {
+            // Disable all event triggers attached to the button
+            eventTrigger.enabled = false;
+        }
+        else
+        {
+            Debug.LogError("can't find eventTrigger");
+        }
+    }
+
+    // Method to enable all EventTriggers within a TextMeshPro button
+    public void EnableEventTriggers(GameObject buttonObject)
+    {
+        // Get the EventTrigger component attached to the button
+        EventTrigger eventTrigger = buttonObject.GetComponent<EventTrigger>();
+
+        // Check if EventTrigger component is found
+        if (eventTrigger != null)
+        {
+            // Enable all event triggers attached to the button
+            eventTrigger.enabled = true;
+        }
+        else
+        {
+            Debug.LogError("can't find eventTrigger");
+        }
+    }
+
+    // Example method to enable EventTriggers of all buttons
+    public void EnableAllEventTriggers()
+    {
+        // Loop through each button and enable EventTrigger components
+        foreach (Button button in buttons)
+        {
+            EnableEventTriggers(button.gameObject);
+        }
+    }
+
+    // Method to disable EventTriggers of all buttons
+    public void DisableAllEventTriggers()
+    {
+        // Loop through each button and disable EventTrigger components
+        foreach (Button button in buttons)
+        {
+            DisableEventTriggers(button.gameObject);
+        }
+    }
+
+
+
+    -------------------GOButtonController----------------------------
+
+ public Button[] buttonsToActivate;
+    public float fadeInDuration;
+    public float fadeDelay;
+    [SerializeField] EventTriggerController eventControl;
+    void Start()
+    {
+        foreach (Button button in buttonsToActivate)
+        {
+            eventControl.DisableAllEventTriggers();
+            button.gameObject.SetActive(false);
+            button.interactable = false;
+            Color buttonColor = button.image.color;
+            buttonColor.a = 0f;
+            button.image.color = buttonColor;
+        }
+        // Start the coroutine to activate buttons after 5 seconds
+        StartCoroutine(ActivateButtonsAfterDelay(fadeDelay));
+    }
+    IEnumerator FadeButtonIn(Button button)
+    {
+        // Get the button's original color
+        Color buttonColor = button.image.color;
+
+        // Fade in loop
+        for (float t = 0; t < 1; t += Time.deltaTime / fadeInDuration)
+        {
+            // Set the alpha value based on the current progress
+            buttonColor.a = Mathf.Lerp(0f, 1f, t);
+            button.image.color = buttonColor;
+            yield return null;
+        }
+
+        // Ensure the final alpha value is exactly 1
+        buttonColor.a = 1f;
+        button.image.color = buttonColor;
+        button.interactable = true;
+        Debug.Log("set button to interactable");
+        eventControl.EnableAllEventTriggers();
+        Debug.Log("enabled event triggers in button controller");
+    }
+    IEnumerator ActivateButtonsAfterDelay(float delay)
+    {
+        // Wait for delay
+        Debug.Log("Waiting to activate buttons");
+        yield return new WaitForSeconds(delay);
+
+        // Enable buttons after delay
+        foreach (Button button in buttonsToActivate)
+        {
+            button.gameObject.SetActive(true);
+            StartCoroutine(FadeButtonIn(button));
+        }
+        Debug.Log("enabled buttons");
+    }
+    }
