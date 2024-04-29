@@ -1046,7 +1046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a4eac702a237c40968f763b48a9079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCanvas: {fileID: 932740833}
+  mainCanvases: []
   confirmCanvas: {fileID: 2142787889}
 --- !u!1001 &342490731
 PrefabInstance:
@@ -2725,6 +2725,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 932740835}
   FadeInDelay: 0
   fadeInDuration: 5
+  isButtons: 0
   enabledObject: {fileID: 1890577338}
   eventControl: {fileID: 932740839}
 --- !u!225 &932740835
@@ -3643,7 +3644,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 11.44
-  m_Range: 1.1416473
+  m_Range: 0.22
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -3876,7 +3877,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 11.44
-  m_Range: 1.1416473
+  m_Range: 0.22
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
