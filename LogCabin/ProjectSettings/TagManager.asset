@@ -12,6 +12,7 @@ TagManager:
   - snow
   - Furnace
   - Radio
+  - Bounds
   layers:
   - Default
   - TransparentFX
