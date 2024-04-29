@@ -47,7 +47,7 @@ public class InteractingScript : MonoBehaviour
         if (genControl != null) { genControl.generatorBroken += OnGeneratorBroken; }
         if (furnaceControl != null) { furnaceControl.furnaceBroken += OnFurnaceBroken; }
         #endregion Event Subscriptions
-
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             objectToShow.SetActive(false);

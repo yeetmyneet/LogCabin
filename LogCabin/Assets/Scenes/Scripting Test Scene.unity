@@ -1597,6 +1597,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1363764477}
+    - target: {fileID: 2868290686635721282, guid: ad98fc731cc180447b83570b1a38c233, type: 3}
+      propertyPath: chaseDistance
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5155931857266809399, guid: ad98fc731cc180447b83570b1a38c233, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6239852617891885138, guid: ad98fc731cc180447b83570b1a38c233, type: 3}
       propertyPath: m_Name
       value: Scary Deer

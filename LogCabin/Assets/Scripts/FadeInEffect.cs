@@ -10,6 +10,7 @@ public class FadeInEffect : MonoBehaviour
     [SerializeField] float fadeInDuration;
     private string booleanKey = "IsEnabled";
     public GameObject enabledObject;
+    [SerializeField] EventTriggerController eventControl;
     #endregion Variables and Objects
     void Awake()
     {
@@ -17,6 +18,7 @@ public class FadeInEffect : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();
         Debug.Log("found CanvasGroup");
 
+        eventControl.DisableAllEventTriggers();
         canvasGroup.interactable = false;
         canvasGroup.alpha = 0;
         Debug.Log("Set CanvasGroup Alpha to 0.");
@@ -56,6 +58,7 @@ public class FadeInEffect : MonoBehaviour
 
         canvasGroup.alpha = 1f;
         Debug.Log("alpha is finally set to 1");
+        eventControl.EnableAllEventTriggers();
         canvasGroup.interactable = true;
     }
 }
