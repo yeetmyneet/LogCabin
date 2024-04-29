@@ -8,6 +8,7 @@ public class CountdownTimer : MonoBehaviour
 {
     public float totalTime = 60f; // Total time for countdown in seconds
     private float remainingTime;
+    [SerializeField] Canvas timer;
     public TMP_Text timerText;
     public TMP_Text timerWords;
 
@@ -19,6 +20,7 @@ public class CountdownTimer : MonoBehaviour
         //   timerText.gameObject.SetActive(false);
         //   timerWords.gameObject.SetActive(false);
         //}
+        timer.enabled = false;
     }
 
     void Update()
@@ -35,6 +37,11 @@ public class CountdownTimer : MonoBehaviour
             {
                 Debug.Log("Time's up!");
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            timer.enabled = !timer.enabled;
         }
     }
 

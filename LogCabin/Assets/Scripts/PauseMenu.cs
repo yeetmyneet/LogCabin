@@ -46,6 +46,7 @@ public class PauseMenu : MonoBehaviour
 	{
 		Time.timeScale = 1;
 		SceneManager.LoadScene("MainMenu");
+		AudioListener.pause = !AudioListener.pause;
 	}
 
 	public void LoadPauseMenu()
