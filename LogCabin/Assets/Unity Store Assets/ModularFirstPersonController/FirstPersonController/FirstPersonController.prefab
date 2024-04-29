@@ -1581,7 +1581,7 @@ MonoBehaviour:
   totalTime: 300
   timer: {fileID: 9046189892039295618}
   timerText: {fileID: 5722080192000958802}
-  timerWords: {fileID: 0}
+  timerWords: {fileID: 6494441553567904605}
 --- !u!1 &4459864851551516604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,7 +1818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6064113960055133866
 RectTransform:
   m_ObjectHideFlags: 0
