@@ -215,6 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcc2c0f628e0d0449c7a2a677011887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClip: {fileID: 8300000, guid: e8b93613b72065b4592669293655f68c, type: 3}
+  musicClip: {fileID: 8300000, guid: 47e06f16968403e45930ba118c5a96a7, type: 3}
   interactScript: {fileID: 0}
   checkInterval: 1

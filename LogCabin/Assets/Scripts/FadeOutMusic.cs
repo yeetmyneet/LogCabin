@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class FadeOutMusic : MonoBehaviour
 {
-    public AudioSource musicSource; // Reference to the AudioSource component containing the music
-    public float fadeDuration = 2f; // Duration of the fade-out effect in seconds
+    public AudioSource musicSource; 
+    public float fadeDuration = 2f;
 
     public void FadeOutButtonFunction()
     {
-        if (musicSource == null)
-        {
-            Debug.LogError("Music source is not assigned to MusicFadeOut script!");
-            return;
-        }
+        if (musicSource == null) { Debug.LogError("Music source is not assigned to MusicFadeOut script!"); }
         StartCoroutine(FadeOut());
     }
     IEnumerator FadeOut()

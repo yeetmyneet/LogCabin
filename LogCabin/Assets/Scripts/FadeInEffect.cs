@@ -45,22 +45,17 @@ public class FadeInEffect : MonoBehaviour
         float duration = fadeInDuration;
         float startTime = Time.time;
 
+        // Fade in calculations
         while (Time.time - startTime <= duration)
         {
-            // Calculate the normalized progress
             float progress = (Time.time - startTime) / duration;
-            // Set the CanvasGroup alpha based on the progress
             canvasGroup.alpha = Mathf.Lerp(0, 1, progress);
-            // Wait for the next frame
             yield return null;
         }
 
         canvasGroup.alpha = 1f;
         Debug.Log("alpha is finally set to 1");
-        if (isButtons)
-        {
-            eventControl.EnableAllEventTriggers();
-        }
+        if (isButtons) { eventControl.EnableAllEventTriggers(); }
         canvasGroup.interactable = true;
     }
 }

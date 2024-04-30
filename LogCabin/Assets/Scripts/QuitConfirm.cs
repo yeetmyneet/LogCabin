@@ -14,10 +14,7 @@ public class QuitConfirm : MonoBehaviour
 
     void HideMainCanvases()
     {
-        foreach (Canvas canvas in mainCanvases)
-        {
-            canvas.gameObject.SetActive(false);
-        }
+        foreach (Canvas canvas in mainCanvases) { canvas.gameObject.SetActive(false); }
     }
 
     public void ShowConfirm()
@@ -29,9 +26,6 @@ public class QuitConfirm : MonoBehaviour
     public void ShowMain()
     {
         confirmCanvas.gameObject.SetActive(false);
-        foreach (Canvas canvas in mainCanvases)
-        {
-            canvas.gameObject.SetActive(true);
-        }
+        foreach (Canvas canvas in mainCanvases) { canvas.gameObject.SetActive(true); }
     }
 }

@@ -11,15 +11,19 @@ public class GeneratorController : MonoBehaviour
     public float maxValue = 100f;
     public float decreaseAmount = 1f;
     public float decreaseInterval = 1f;
+    public float timeThreshold = 10f;
     public delegate void GeneratorBrokenEventHandler();
     public event GeneratorBrokenEventHandler generatorBroken;
     private float timer;
+    private float timeSinceReset;
+    public bool tooLate = false;
     [SerializeField] bool generatorWorking = true;
     [SerializeField] InteractingScript interactScript;
     [SerializeField] GameObject[] lights;
     [SerializeField] AudioSource generatorSource;
     [SerializeField] AudioSource playerSource;
     [SerializeField] AudioClip powerOff;
+    [SerializeField] GameManager gameManager;
 
     #endregion Inspector References
     void Start()
@@ -27,6 +31,7 @@ public class GeneratorController : MonoBehaviour
         slider.maxValue = maxValue;
         slider.value = maxValue;
         timer = decreaseInterval;
+        timeSinceReset = 0f;
         generatorSource = GetComponent<AudioSource>();
         playerSource = GetComponent<AudioSource>();
     }
@@ -34,12 +39,20 @@ public class GeneratorController : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
+        timeSinceReset += Time.deltaTime;
         if (timer <= 0f && generatorWorking)
         {
             slider.value -= decreaseAmount;
             timer = decreaseInterval;
-
-            if (slider.value <= 0) { BreakGenerator(); }
+            if (slider.value <= 0)
+            {
+                BreakGenerator();
+            }
+        }
+        if (timeSinceReset >= timeThreshold && !tooLate)
+        {
+            tooLate = true;
+            gameManager.SpawnPrefabAtTransform1();
         }
     }
 
@@ -49,6 +62,7 @@ public class GeneratorController : MonoBehaviour
         generatorWorking = true;
         LightCheck(0);
         generatorSource.Play();
+       
     }
     void BreakGenerator()
     {

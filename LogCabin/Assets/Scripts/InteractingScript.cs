@@ -113,10 +113,7 @@ public class InteractingScript : MonoBehaviour
                 radioPlaying = false;
                 isFixingRadio = false;
             }
-            else
-            {
-                Debug.LogError("Nothing is broken");
-            }
+            else { Debug.LogError("Nothing is broken"); }
         }
 
         // Cast a ray from the center of the screen
@@ -144,8 +141,6 @@ public class InteractingScript : MonoBehaviour
                 isLookingAtRadio = false;
             }
         }
-
-        //Enables the text if we're looking at the generator, and disables it if we're not
         if (!isEPressed )
         {
             if (generatorBroken == true && isLookingAtGenerator || furnaceBroken == true && isLookingAtFurnace || radioPlaying == true && isLookingAtRadio)

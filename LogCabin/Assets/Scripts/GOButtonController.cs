@@ -18,13 +18,9 @@ public class GOButtonController : MonoBehaviour
             button.gameObject.SetActive(false);
             eventControl.DisableAllEventTriggers();
             Debug.Log("disabled event triggers (GOButtonController)");
-
-            // Set alpha of the button's image
             Color buttonColor = button.image.color;
             buttonColor.a = 0f;
             button.image.color = buttonColor;
-
-            // Set alpha of the button's text
             Text buttonText = button.GetComponentInChildren<Text>();
             if (buttonText != null)
             {
@@ -33,17 +29,12 @@ public class GOButtonController : MonoBehaviour
                 buttonText.color = textColor;
             }
         }
-
-        // Start the coroutine to activate buttons after 5 seconds
         StartCoroutine(ActivateButtonsAfterDelay(5f));
     }
 
     IEnumerator ActivateButtonsAfterDelay(float delay)
     {
-        // Wait for delay
         yield return new WaitForSeconds(delay);
-
-        // Enable buttons after delay and fade them in
         foreach (Button button in buttonsToActivate)
         {
             button.gameObject.SetActive(true);
@@ -53,13 +44,11 @@ public class GOButtonController : MonoBehaviour
 
     IEnumerator FadeButtonIn(Button button)
     {
-        // Get the button's image color
         Color buttonColor = button.image.color;
 
         // Fade in loop
         for (float t = 0; t < 1; t += Time.deltaTime / fadeInDuration)
         {
-            // Set the alpha value of the button's image and text based on the current progress
             buttonColor.a = Mathf.Lerp(0f, 1f, t);
             button.image.color = buttonColor;
 
@@ -74,7 +63,7 @@ public class GOButtonController : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the final alpha value is exactly 1 for the button's image and text
+        // Sets button's alpha to 1
         buttonColor.a = 1f;
         button.image.color = buttonColor;
         eventControl.EnableAllEventTriggers();
@@ -87,8 +76,6 @@ public class GOButtonController : MonoBehaviour
             finalTextColor.a = 1f;
             finalButtonText.color = finalTextColor;
         }
-
-        // Enable interactability after fade-in
         button.interactable = true;
     }
 }
