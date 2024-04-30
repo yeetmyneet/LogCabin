@@ -15,8 +15,11 @@ public class FurnaceController : MonoBehaviour
     private float timer;
     [SerializeField] bool furnaceWorking = true;
     [SerializeField] InteractingScript interactScript;
-
-#endregion Inspector References
+    public float timeThreshold = 10f;
+    private float timeSinceReset;
+    [SerializeField] bool tooLate = false;
+    [SerializeField] GameManager gameManager;
+    #endregion Inspector References
     void Start()
     {
         slider.maxValue = maxValue;
@@ -27,12 +30,18 @@ public class FurnaceController : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
+        timeSinceReset += Time.deltaTime;
         if (timer <= 0f && furnaceWorking)
         {
             slider.value -= decreaseAmount;
             timer = decreaseInterval;
 
             if (slider.value <= 0) { BreakFurnace(); }
+        }
+        if (timeSinceReset >= timeThreshold && !tooLate)
+        {
+            tooLate = true;
+            gameManager.SpawnPrefabAtTransform1();
         }
     }
 
