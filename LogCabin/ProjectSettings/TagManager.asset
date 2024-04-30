@@ -13,6 +13,7 @@ TagManager:
   - Furnace
   - Radio
   - Bounds
+  - Furnance
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
+  - Cloud Layer
+  - Light
   - 
   - 
   - 
