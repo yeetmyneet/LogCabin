@@ -798,6 +798,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224383491}
   m_CullTransparentMesh: 1
+--- !u!1001 &279941525
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 120680, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_Name
+      value: CTI Windzone BIRP
+      objectReference: {fileID: 0}
+    - target: {fileID: 438060, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 96.74407
+      objectReference: {fileID: 0}
+    - target: {fileID: 438060, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000038146973
+      objectReference: {fileID: 0}
+    - target: {fileID: 438060, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 134.13516
+      objectReference: {fileID: 0}
+    - target: {fileID: 438060, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.16668256
+      objectReference: {fileID: 0}
+    - target: {fileID: 438060, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438060, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9860106
+      objectReference: {fileID: 0}
+    - target: {fileID: 438060, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438060, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438060, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -199.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 438060, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 18220932, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
+      propertyPath: m_WindMain
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eaf383cb55cf38f448529df28e28abba, type: 3}
 --- !u!1 &313274051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,7 +1587,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1915,6 +1976,7 @@ GameObject:
   - component: {fileID: 675779285}
   - component: {fileID: 675779284}
   - component: {fileID: 675779283}
+  - component: {fileID: 675779286}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -1996,6 +2058,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!182 &675779286
+WindZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675779282}
+  m_Enabled: 1
+  m_Mode: 0
+  m_Radius: 20
+  m_WindMain: 1
+  m_WindTurbulence: 1
+  m_WindPulseMagnitude: 0.5
+  m_WindPulseFrequency: 0.01
 --- !u!1 &701040408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,7 +3106,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3678,7 +3754,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3911,7 +3987,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5049,3 +5125,4 @@ SceneRoots:
   - {fileID: 1046875444}
   - {fileID: 342490731}
   - {fileID: 94919885}
+  - {fileID: 279941525}
