@@ -227,7 +227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5505840502129001965
 RectTransform:
   m_ObjectHideFlags: 0
@@ -736,6 +736,7 @@ GameObject:
   - component: {fileID: 3713369052339769239}
   - component: {fileID: 2825420987122367119}
   - component: {fileID: 3917232957610265859}
+  - component: {fileID: 7659283268840712606}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -1039,6 +1040,18 @@ MonoBehaviour:
   stepCooldown: 0
   source: {fileID: 3713369052339769239}
   footstep: {fileID: 8300000, guid: 83a657a7bb8d34d32925009e759abc8c, type: 3}
+--- !u!114 &7659283268840712606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459864850019384750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e092f13efaca03849bff021e916c3e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4459864850190357393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,7 +1333,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967103
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1350,11 +1363,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 4b8770c15923cd047bf534010e889f1f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.27
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1462,9 +1475,9 @@ MonoBehaviour:
   furnaceControl: {fileID: 0}
   radioPlaying: 0
   radioControl: {fileID: 0}
-  genFixSpeed: 25
+  genFixSpeed: 5
   furnFixSpeed: 0
-  radioFixSpeed: 35
+  radioFixSpeed: 15
 --- !u!82 &3126778772314453750
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3352,13 +3365,25 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 108038271100546340, guid: d86ca2f4159e6a942abd8dfc52b38395, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108038271100546340, guid: d86ca2f4159e6a942abd8dfc52b38395, type: 3}
       propertyPath: m_Lightmapping
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 108038271100546340, guid: d86ca2f4159e6a942abd8dfc52b38395, type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6859074624529804060, guid: d86ca2f4159e6a942abd8dfc52b38395, type: 3}
+      propertyPath: FL
+      value: 
+      objectReference: {fileID: 5724325501834905423}
+    - target: {fileID: 6859074624529804060, guid: d86ca2f4159e6a942abd8dfc52b38395, type: 3}
+      propertyPath: click
+      value: 
+      objectReference: {fileID: 8300000, guid: 7643a445fc6b6b34c91a580a2147b0f3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3387,9 +3412,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4b8770c15923cd047bf534010e889f1f, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.27
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
