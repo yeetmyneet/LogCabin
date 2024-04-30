@@ -21,6 +21,6 @@ public class MainCamScene1 : MonoBehaviour {
     #endregion Endless Mode
     public void MainMenu()
     {
-        SimpleSceneFader.ChangeSceneWithFade("Main Menu");
+        SimpleSceneFader.ChangeSceneWithFade("MainMenu");
     }
 }
