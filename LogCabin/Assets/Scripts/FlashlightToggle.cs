@@ -5,6 +5,8 @@ using UnityEngine;
 public class FlashlightToggle : MonoBehaviour
 {
     [SerializeField] Light flashlight;
+    [SerializeField] AudioSource FL;
+    [SerializeField] AudioClip click;
 
     private void Start()
     {
@@ -16,6 +18,8 @@ public class FlashlightToggle : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
+            FL.pitch = 1f + Random.Range(-0.2f, 0.2f);
+            FL.PlayOneShot(click);
             flashlight.enabled = !flashlight.enabled;
         }
 

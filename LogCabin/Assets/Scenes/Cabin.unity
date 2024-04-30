@@ -286,6 +286,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &26195312 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5724325501834905423, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 485426624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &34810684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1502877291743220047, guid: 0444a1686fa672146bf8908eced85bfb, type: 3}
@@ -1194,9 +1199,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 20369710}
     - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: genFixSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: radioControl
       value: 
       objectReference: {fileID: 1232095777}
+    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: radioFixSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353082944604840598, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: FL
+      value: 
+      objectReference: {fileID: 26195312}
+    - target: {fileID: 3353082944604840598, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: click
+      value: 
+      objectReference: {fileID: 8300000, guid: 7643a445fc6b6b34c91a580a2147b0f3, type: 3}
+    - target: {fileID: 3713369052339769239, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713369052339769239, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 487.18
@@ -1240,6 +1269,30 @@ PrefabInstance:
     - target: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Name
       value: FirstPersonController
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724325501834905423, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724325501834905423, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889683316257912029, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889683316257912029, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Volume
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889683316257912029, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b8770c15923cd047bf534010e889f1f, type: 3}
+    - target: {fileID: 6889683316257912029, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
