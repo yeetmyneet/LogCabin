@@ -62,7 +62,7 @@ public class GeneratorController : MonoBehaviour
         generatorWorking = true;
         LightCheck(0);
         generatorSource.Play();
-       
+        timeSinceReset = 0f;
     }
     void BreakGenerator()
     {

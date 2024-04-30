@@ -9,11 +9,28 @@ public class RadioController : MonoBehaviour
     private bool isPlaying = false;
     [SerializeField] InteractingScript interactScript;
     [SerializeField] float checkInterval;
+    [SerializeField] bool tooLate = false;
+    private float timeSinceReset;
+    public float timeThreshold = 10f;
+    [SerializeField] GameManager gameManager;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         InvokeRepeating("CheckForChance", 0f, checkInterval );
+    }
+
+    void Update()
+    {
+        if (isPlaying)
+        {
+            timeSinceReset += Time.deltaTime;
+            if (timeSinceReset >= timeThreshold && !tooLate)
+            {
+                tooLate = true;
+                gameManager.SpawnPrefabAtTransform1();
+            }
+        }
     }
 
     void CheckForChance()
@@ -44,6 +61,7 @@ public class RadioController : MonoBehaviour
             audioSource.Stop();
             isPlaying = false;
             InvokeRepeating("CheckForChance", 0f, 5f);
+            timeSinceReset = 0f;
         }
     }
 }
