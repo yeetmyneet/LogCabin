@@ -1024,6 +1024,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34ad286bed2e294aa6d9a4c87fe4488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manScream: {fileID: 0}
+  bloodSound: {fileID: 0}
+  playerScripts: []
 --- !u!114 &3917232957610265859
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9274,8 +9274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919dae4a59658594fabc360e5fdc9f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  chaseDistance: 10
+  chaseDistance: 100000000
 --- !u!54 &8552640450728480134
 Rigidbody:
   m_ObjectHideFlags: 0

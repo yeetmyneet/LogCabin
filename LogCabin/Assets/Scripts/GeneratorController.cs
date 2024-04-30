@@ -24,6 +24,8 @@ public class GeneratorController : MonoBehaviour
     [SerializeField] AudioSource playerSource;
     [SerializeField] AudioClip powerOff;
     [SerializeField] GameManager gameManager;
+    [SerializeField] float brokenInterval;
+    [SerializeField] float brokenTimer = 0f;
 
     #endregion Inspector References
     void Start()
@@ -31,7 +33,7 @@ public class GeneratorController : MonoBehaviour
         slider.maxValue = maxValue;
         slider.value = maxValue;
         timer = decreaseInterval;
-        timeSinceReset = 0f;
+        timeSinceReset = 0;
         generatorSource = GetComponent<AudioSource>();
         playerSource = GetComponent<AudioSource>();
     }
@@ -39,7 +41,7 @@ public class GeneratorController : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        timeSinceReset += Time.deltaTime;
+        brokenTimer += Time.deltaTime;
         if (timer <= 0f && generatorWorking)
         {
             slider.value -= decreaseAmount;
@@ -48,6 +50,12 @@ public class GeneratorController : MonoBehaviour
             {
                 BreakGenerator();
             }
+        }
+        if (brokenTimer >= brokenInterval)
+        {
+            timeSinceReset++;
+            Debug.Log("time since generator reset: " + timeSinceReset);
+            brokenTimer = 0f;
         }
         if (timeSinceReset >= timeThreshold && !tooLate)
         {

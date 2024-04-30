@@ -11,7 +11,6 @@ public class EnemyController : MonoBehaviour
     
     void Dissolve()
     {
-        // Lock the gameObject in place
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         if (rb != null) { rb.constraints = RigidbodyConstraints.FreezeAll; }
         else { Debug.LogError("no Rigidbody attached to Enemy"); }

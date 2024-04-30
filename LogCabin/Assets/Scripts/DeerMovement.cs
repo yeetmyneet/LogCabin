@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class DeerMovement : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    private GameObject player;
     [SerializeField] float chaseDistance = 10;
     NavMeshAgent agent;
     Vector3 home;
@@ -12,6 +12,7 @@ public class DeerMovement : MonoBehaviour
     void Start()
     {
         home = transform.position;
+        player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
     }
 

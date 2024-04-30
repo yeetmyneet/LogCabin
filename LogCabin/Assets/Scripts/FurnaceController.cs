@@ -19,6 +19,8 @@ public class FurnaceController : MonoBehaviour
     private float timeSinceReset;
     [SerializeField] bool tooLate = false;
     [SerializeField] GameManager gameManager;
+    [SerializeField] float brokenInterval;
+    [SerializeField] float brokenTimer = 0f;
     #endregion Inspector References
     void Start()
     {
@@ -30,13 +32,19 @@ public class FurnaceController : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        timeSinceReset += Time.deltaTime;
+        brokenTimer += Time.deltaTime;
         if (timer <= 0f && furnaceWorking)
         {
             slider.value -= decreaseAmount;
             timer = decreaseInterval;
 
             if (slider.value <= 0) { BreakFurnace(); }
+        }
+        if (brokenTimer >= brokenInterval)
+        {
+            timeSinceReset++;
+            Debug.Log("time since furnace reset: " + timeSinceReset);
+            brokenTimer = 0f;
         }
         if (timeSinceReset >= timeThreshold && !tooLate)
         {

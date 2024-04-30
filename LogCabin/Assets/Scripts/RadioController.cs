@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RadioController : MonoBehaviour
 {
-    public AudioClip musicClip; // Assign your music clip in the Unity Editor
+    public AudioClip musicClip;
     private AudioSource audioSource;
     private bool isPlaying = false;
     [SerializeField] InteractingScript interactScript;
@@ -12,6 +12,8 @@ public class RadioController : MonoBehaviour
     [SerializeField] bool tooLate = false;
     private float timeSinceReset;
     public float timeThreshold = 10f;
+    [SerializeField] float brokenInterval;
+    [SerializeField] float brokenTimer = 0f;
     [SerializeField] GameManager gameManager;
 
     void Start()
@@ -24,7 +26,13 @@ public class RadioController : MonoBehaviour
     {
         if (isPlaying)
         {
-            timeSinceReset += Time.deltaTime;
+            brokenTimer += Time.deltaTime;
+            if (brokenTimer >= brokenInterval)
+            {
+                timeSinceReset++;
+                Debug.Log("time since radio reset: " + timeSinceReset);
+                brokenTimer = 0f;
+            }
             if (timeSinceReset >= timeThreshold && !tooLate)
             {
                 tooLate = true;
@@ -38,7 +46,7 @@ public class RadioController : MonoBehaviour
         if (!isPlaying && Random.Range(1, 11) == 1) // Roll a 1 in 10 chance
         {
             PlayMusic();
-            CancelInvoke("CheckForChance"); // Stop checking for chance
+            CancelInvoke("CheckForChance");
         }
     }
 
