@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1250,7 +1250,7 @@ Transform:
   m_GameObject: {fileID: 1276384036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 555.4333, y: 0.97, z: 614.06}
+  m_LocalPosition: {x: 555.4333, y: 2.0532, z: 614.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1590,6 +1590,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1363764477}
+    - target: {fileID: 2868290686635721282, guid: ad98fc731cc180447b83570b1a38c233, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2868290686635721282, guid: ad98fc731cc180447b83570b1a38c233, type: 3}
       propertyPath: chaseDistance
       value: 9999
