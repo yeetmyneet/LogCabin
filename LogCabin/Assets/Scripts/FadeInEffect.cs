@@ -15,7 +15,9 @@ public class FadeInEffect : MonoBehaviour
     #endregion Variables and Objects
     void Awake()
     {
-        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Debug.Log("unlocked cursor");
         canvasGroup = GetComponent<CanvasGroup>();
         Debug.Log("found CanvasGroup");
         canvasGroup.interactable = false;

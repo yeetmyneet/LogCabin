@@ -8,6 +8,7 @@ public class DeerMovement : MonoBehaviour
     [SerializeField] float chaseDistance = 10;
     NavMeshAgent agent;
     Vector3 home;
+    public bool isDead = false;
 
     void Start()
     {
@@ -20,7 +21,7 @@ public class DeerMovement : MonoBehaviour
     {
         Vector3 moveDir = player.transform.position - transform.position;
         //if the player is close
-        if (moveDir.magnitude < chaseDistance) { agent.destination = player.transform.position; }
+        if (moveDir.magnitude < chaseDistance && !isDead) { agent.destination = player.transform.position; }
         if (moveDir != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDir, Vector3.up);

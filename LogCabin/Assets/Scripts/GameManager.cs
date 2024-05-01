@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public Transform spawnPoint1;
     public Transform spawnPoint2;
     public Transform spawnPoint3;
-    public AudioClip spawnSound;
+    public AudioClip doorSound;
     [SerializeField] AudioSource audioSource;
     bool genAttack = false;
     bool furnAttack = false;
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(prefabToSpawn, spawnPoint1.position, spawnPoint1.rotation);
             door.SetActive(false);
-            audioSource.clip = spawnSound;
+            audioSource.clip = doorSound;
             audioSource.Play();
             genAttack = true;
         }
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(prefabToSpawn, spawnPoint2.position, spawnPoint2.rotation);
             door.SetActive(false);
-            audioSource.clip = spawnSound;
+            audioSource.clip = doorSound;
             audioSource.Play();
             furnAttack = true;
         }
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(prefabToSpawn, spawnPoint3.position, spawnPoint3.rotation);
             door.SetActive(false);
-            audioSource.clip = spawnSound;
+            audioSource.clip = doorSound;
             audioSource.Play();
             radioAttack = true;
         }
