@@ -27,7 +27,7 @@ public class RadioController : MonoBehaviour
         if (isPlaying)
         {
             brokenTimer += Time.deltaTime;
-            if (brokenTimer >= brokenInterval)
+            if (brokenTimer >= brokenInterval && isPlaying)
             {
                 timeSinceReset++;
                 Debug.Log("time since radio reset: " + timeSinceReset);

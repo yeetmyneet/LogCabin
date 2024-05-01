@@ -51,7 +51,7 @@ public class GeneratorController : MonoBehaviour
                 BreakGenerator();
             }
         }
-        if (brokenTimer >= brokenInterval)
+        if (brokenTimer >= brokenInterval && !generatorWorking)
         {
             timeSinceReset++;
             Debug.Log("time since generator reset: " + timeSinceReset);
