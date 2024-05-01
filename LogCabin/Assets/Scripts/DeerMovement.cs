@@ -4,10 +4,15 @@ using UnityEngine;
 using UnityEngine.AI;
 public class DeerMovement : MonoBehaviour
 {
+    public float jumpForce = 10f;
+    public float forwardForce = 5f;
+    public GameObject window;
+    private bool hasJumped = false;
     private GameObject player;
     [SerializeField] float chaseDistance = 10;
     NavMeshAgent agent;
     Vector3 home;
+    public bool isDead = false;
 
     void Start()
     {
@@ -20,7 +25,11 @@ public class DeerMovement : MonoBehaviour
     {
         Vector3 moveDir = player.transform.position - transform.position;
         //if the player is close
-        if (moveDir.magnitude < chaseDistance) { agent.destination = player.transform.position; }
+        if (moveDir.magnitude < chaseDistance)
+        {
+            agent.destination = player.transform.position;
+            GetComponent<Animator>().SetTrigger("Chase");
+        }
         if (moveDir != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDir, Vector3.up);
@@ -30,6 +39,23 @@ public class DeerMovement : MonoBehaviour
             // Smoothly rotate towards the target rotation
             transform.rotation = Quaternion.Lerp(transform.rotation, finalRotation, Time.deltaTime * 10f);
         }
-        else { agent.destination = home; }
+        else
+        {
+            agent.destination = home;
+        }
+        if (transform.position == home)
+        {
+            GetComponent<Animator>().SetTrigger("Home");
+        }
+    }
+    public void JumpThroughWindow()
+    {
+        // Play jump animation
+        GetComponent<Animator>().SetTrigger("Jump");
+        window.SetActive(false);
+        GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        // Apply forward force
+        GetComponent<Rigidbody>().AddForce(transform.forward * forwardForce, ForceMode.Impulse);
+        hasJumped = true;
     }
 }

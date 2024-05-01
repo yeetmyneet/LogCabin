@@ -40,7 +40,7 @@ public class FurnaceController : MonoBehaviour
 
             if (slider.value <= 0) { BreakFurnace(); }
         }
-        if (brokenTimer >= brokenInterval)
+        if (brokenTimer >= brokenInterval && !furnaceWorking)
         {
             timeSinceReset++;
             Debug.Log("time since furnace reset: " + timeSinceReset);
