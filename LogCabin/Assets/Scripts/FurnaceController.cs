@@ -49,7 +49,7 @@ public class FurnaceController : MonoBehaviour
         if (timeSinceReset >= timeThreshold && !tooLate)
         {
             tooLate = true;
-            gameManager.SpawnPrefabAtTransform1();
+            gameManager.SpawnPrefabAtTransform1(2);
         }
     }
 

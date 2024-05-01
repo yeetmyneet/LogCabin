@@ -7,7 +7,6 @@ public class DeerMovement : MonoBehaviour
     public float jumpForce = 10f;
     public float forwardForce = 5f;
     public GameObject window;
-    private bool hasJumped = false;
     private GameObject player;
     [SerializeField] float chaseDistance = 10;
     NavMeshAgent agent;
@@ -47,15 +46,5 @@ public class DeerMovement : MonoBehaviour
         {
             GetComponent<Animator>().SetTrigger("Home");
         }
-    }
-    public void JumpThroughWindow()
-    {
-        // Play jump animation
-        GetComponent<Animator>().SetTrigger("Jump");
-        window.SetActive(false);
-        GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        // Apply forward force
-        GetComponent<Rigidbody>().AddForce(transform.forward * forwardForce, ForceMode.Impulse);
-        hasJumped = true;
     }
 }

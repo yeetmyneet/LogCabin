@@ -776,7 +776,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4459864850019384750}
   m_Enabled: 0
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1027,6 +1027,12 @@ MonoBehaviour:
   manScream: {fileID: 0}
   bloodSound: {fileID: 0}
   playerScripts: []
+  controllers: []
+  fadeImage: {fileID: 0}
+  fadeSpeed: 1
+  fadeScript: {fileID: 0}
+  lockPosition: 0
+  deerChase: {fileID: 0}
 --- !u!114 &3917232957610265859
 MonoBehaviour:
   m_ObjectHideFlags: 0
