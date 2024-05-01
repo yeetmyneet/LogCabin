@@ -172,6 +172,8 @@ MonoBehaviour:
   playerSource: {fileID: 1164570000}
   powerOff: {fileID: 8300000, guid: d6dc6f6ee366bd94db07869806abd382, type: 3}
   gameManager: {fileID: 0}
+  brokenInterval: 0
+  brokenTimer: 0
 --- !u!65 &20369711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -205,7 +207,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ca093c46d3e353c4f99e9d4673f3a85a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1212,7 +1214,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8f102a758da5ae64aa4bd59481216620, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1112116720}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -1018664272722485354, guid: 8f102a758da5ae64aa4bd59481216620, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1756729977}
   m_SourcePrefab: {fileID: 100100000, guid: 8f102a758da5ae64aa4bd59481216620, type: 3}
 --- !u!1 &452120722 stripped
 GameObject:
@@ -1249,6 +1254,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 197980071011233016, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: genControl
       value: 
@@ -1300,6 +1309,22 @@ PrefabInstance:
     - target: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Name
       value: FirstPersonController
+      objectReference: {fileID: 0}
+    - target: {fileID: 5438192484180589161, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889683316257912029, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Pitch
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889683316257912029, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967514212622073192, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2830,6 +2855,8 @@ MonoBehaviour:
   checkInterval: 30
   tooLate: 0
   timeThreshold: 10
+  brokenInterval: 0
+  brokenTimer: 0
   gameManager: {fileID: 0}
 --- !u!82 &1232095778
 AudioSource:
@@ -4943,6 +4970,33 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1756729973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1018664272722485354, guid: 8f102a758da5ae64aa4bd59481216620, type: 3}
+  m_PrefabInstance: {fileID: 442606191}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1756729977
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756729973}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4711208715938537054, guid: 8f102a758da5ae64aa4bd59481216620, type: 3}
 --- !u!1 &1778412258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8485173162082002552, guid: 0444a1686fa672146bf8908eced85bfb, type: 3}

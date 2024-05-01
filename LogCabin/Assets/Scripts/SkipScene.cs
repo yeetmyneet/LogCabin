@@ -16,5 +16,10 @@ public class SkipScene : MonoBehaviour
         {
             SceneManager.LoadScene("Cabin");
         }
+
+        if (Input.GetKeyDown(KeyCode.PageDown))
+        {
+            SceneManager.LoadScene("HuntingGrounds");
+        }
     }
 }
