@@ -22,6 +22,5 @@ public class FlashlightToggle : MonoBehaviour
             FL.PlayOneShot(click);
             flashlight.enabled = !flashlight.enabled;
         }
-
     }
 }
