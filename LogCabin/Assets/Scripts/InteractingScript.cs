@@ -18,8 +18,9 @@ public class InteractingScript : MonoBehaviour
     private bool isEPressed = false;
     [SerializeField] float sliderSpeedRate;
     [SerializeField] GameObject sprintAndReticle;
-    public float maxInteractionDistance = 5f; // Maximum interaction distance
+    public float maxInteractionDistance = 5f;
     [SerializeField] GeneratorController genControl;
+    [SerializeField] ObjectiveUI objectiveUI;
     public bool generatorBroken;
     bool isFixingGenerator;
     [SerializeField] bool isLookingAtFurnace = false;
@@ -35,11 +36,11 @@ public class InteractingScript : MonoBehaviour
     [SerializeField] float radioFixSpeed;
 
     #endregion Variables and Objects
-
     void Awake()
     {
         sliderObject.SetActive(false);
         genControl = FindObjectOfType<GeneratorController>();
+        objectiveUI.Objective("Survive the Deer");
     }
     void Update()
     {

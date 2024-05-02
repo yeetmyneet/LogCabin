@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     bool radioAttack = false;
     public DeerMovement deerMovement;
     bool spawnedDeer = false;
-
     public void SpawnPrefabAtTransform1(int attackType)
     {
         if (prefabToSpawn != null && spawnPoint1 != null && !spawnedDeer && attackType == 1)
