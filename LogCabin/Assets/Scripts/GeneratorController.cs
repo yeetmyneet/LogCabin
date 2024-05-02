@@ -51,7 +51,7 @@ public class GeneratorController : MonoBehaviour
                 BreakGenerator();
             }
         }
-        if (brokenTimer >= brokenInterval)
+        if (brokenTimer >= brokenInterval && !generatorWorking)
         {
             timeSinceReset++;
             Debug.Log("time since generator reset: " + timeSinceReset);
@@ -60,7 +60,7 @@ public class GeneratorController : MonoBehaviour
         if (timeSinceReset >= timeThreshold && !tooLate)
         {
             tooLate = true;
-            gameManager.SpawnPrefabAtTransform1();
+            gameManager.SpawnPrefabAtTransform1(1);
         }
     }
 

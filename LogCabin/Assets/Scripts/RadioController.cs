@@ -27,7 +27,7 @@ public class RadioController : MonoBehaviour
         if (isPlaying)
         {
             brokenTimer += Time.deltaTime;
-            if (brokenTimer >= brokenInterval)
+            if (brokenTimer >= brokenInterval && isPlaying)
             {
                 timeSinceReset++;
                 Debug.Log("time since radio reset: " + timeSinceReset);
@@ -36,7 +36,7 @@ public class RadioController : MonoBehaviour
             if (timeSinceReset >= timeThreshold && !tooLate)
             {
                 tooLate = true;
-                gameManager.SpawnPrefabAtTransform1();
+                gameManager.SpawnPrefabAtTransform1(3);
             }
         }
     }

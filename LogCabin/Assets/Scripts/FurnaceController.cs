@@ -40,7 +40,7 @@ public class FurnaceController : MonoBehaviour
 
             if (slider.value <= 0) { BreakFurnace(); }
         }
-        if (brokenTimer >= brokenInterval)
+        if (brokenTimer >= brokenInterval && !furnaceWorking)
         {
             timeSinceReset++;
             Debug.Log("time since furnace reset: " + timeSinceReset);
@@ -49,7 +49,7 @@ public class FurnaceController : MonoBehaviour
         if (timeSinceReset >= timeThreshold && !tooLate)
         {
             tooLate = true;
-            gameManager.SpawnPrefabAtTransform1();
+            gameManager.SpawnPrefabAtTransform1(2);
         }
     }
 

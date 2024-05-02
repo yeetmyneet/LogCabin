@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GasStation.unity
     guid: 574d785a3f3f9f34a86ab855a859c221
   - enabled: 1
+    path: Assets/Scenes/HuntingGrounds.unity
+    guid: b08e30002f7b71b4aaece8be68dbf05f
+  - enabled: 1
     path: Assets/Scenes/QuitGame.unity
     guid: ae2a642111fa6de489c1532625e9c204
   - enabled: 1
