@@ -22,6 +22,6 @@ public class ObjectiveUI : MonoBehaviour
     public void Objective(string objective)
     {
         objectiveText.text = (objective);
-        Debug.Log("changed objective to " + objective);
+        Debug.Log("changed objective to: " + objective);
     }
 }
