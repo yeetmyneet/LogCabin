@@ -10,7 +10,6 @@ public class CountdownTimer : MonoBehaviour
     private float remainingTime;
     [SerializeField] Canvas timer;
     public TMP_Text timerText;
-    public TMP_Text timerWords;
 
     void Start()
     {
