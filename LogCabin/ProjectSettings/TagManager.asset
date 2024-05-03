@@ -15,6 +15,7 @@ TagManager:
   - Bounds
   - Furnance
   - MenuAudio
+  - Cups
   layers:
   - Default
   - TransparentFX
