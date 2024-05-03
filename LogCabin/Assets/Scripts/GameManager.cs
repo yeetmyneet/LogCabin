@@ -15,9 +15,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioSource audioSource1;
     [SerializeField] AudioSource audioSource2;
     [SerializeField] AudioSource audioSource3;
-    bool genAttack = false;
-    bool furnAttack = false;
-    bool radioAttack = false;
     public DeerMovement deerMovement;
     bool spawnedDeer = false;
     public void SpawnPrefabAtTransform1(int attackType)
