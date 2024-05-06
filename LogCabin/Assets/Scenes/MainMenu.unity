@@ -2724,6 +2724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 0}
   hover: {fileID: 0}
+  enabledObject: {fileID: 1890577338}
 --- !u!114 &932740831
 MonoBehaviour:
   m_ObjectHideFlags: 0
