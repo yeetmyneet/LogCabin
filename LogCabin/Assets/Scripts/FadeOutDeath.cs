@@ -64,4 +64,13 @@ public class FadeOutDeath : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);
     }
+    public IEnumerator LoadWinScreen()
+    {
+        fadeImage.canvasRenderer.SetAlpha(0.0f);
+
+        fadeImage.CrossFadeAlpha(1.0f, fadeSpeed, false);
+        yield return new WaitForSeconds(fadeSpeed);
+
+        SceneManager.LoadScene("WinScreen");
+    }
 }
