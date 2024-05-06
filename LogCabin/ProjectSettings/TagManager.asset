@@ -17,6 +17,7 @@ TagManager:
   - MenuAudio
   - Cups
   - Truck
+  - Gas Can
   layers:
   - Default
   - TransparentFX
