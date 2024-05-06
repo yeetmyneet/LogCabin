@@ -16,6 +16,7 @@ TagManager:
   - Furnance
   - MenuAudio
   - Cups
+  - Truck
   layers:
   - Default
   - TransparentFX
