@@ -8,6 +8,7 @@ public class FadeOutDeath : MonoBehaviour
 {
     public Image fadeImage;
     public float fadeSpeed = 2f;
+    public float secondFadeSpeed = 4f;
     [SerializeField] CanvasGroup confirmCanvas;
     public AudioSource menuAudioSource;
     public AudioClip select;
@@ -53,7 +54,7 @@ public class FadeOutDeath : MonoBehaviour
         Debug.Log("confirmCanvas not interactable");
         foreach (AudioSource audioSource in allAudioSources)
         {
-            if (audioSource.CompareTag("MenuAudio"))
+            if (audioSource.CompareTag("MenuAudio") || audioSource.CompareTag("Player"))
             {
                 yield return new WaitForSeconds(0.5f);
             }
@@ -66,10 +67,12 @@ public class FadeOutDeath : MonoBehaviour
     }
     public IEnumerator LoadWinScreen()
     {
+        StartCoroutine(DisableAudioSources());
+        yield return null;
         fadeImage.canvasRenderer.SetAlpha(0.0f);
 
-        fadeImage.CrossFadeAlpha(1.0f, fadeSpeed, false);
-        yield return new WaitForSeconds(fadeSpeed);
+        fadeImage.CrossFadeAlpha(1.0f, secondFadeSpeed, false);
+        yield return new WaitForSeconds(secondFadeSpeed);
 
         SceneManager.LoadScene("WinScreen");
     }

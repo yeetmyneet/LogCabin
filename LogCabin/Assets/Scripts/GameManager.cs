@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region Inspector References
     public GameObject prefabToSpawn;
     public GameObject door;
     public GameObject window;
@@ -12,11 +13,15 @@ public class GameManager : MonoBehaviour
     public Transform spawnPoint3;
     public AudioClip doorSound;
     public AudioClip windowSound;
+    public AudioClip doorOpenSound;
+    public MonoBehaviour[] scriptsToDisable;
     [SerializeField] AudioSource audioSource1;
     [SerializeField] AudioSource audioSource2;
     [SerializeField] AudioSource audioSource3;
     public DeerMovement deerMovement;
     bool spawnedDeer = false;
+    [SerializeField] ObjectiveUI objectiveUI;
+    #endregion Inspector References
     public void SpawnPrefabAtTransform1(int attackType)
     {
         if (prefabToSpawn != null && spawnPoint1 != null && !spawnedDeer && attackType == 1)
@@ -45,5 +50,16 @@ public class GameManager : MonoBehaviour
             audioSource3.Play();
             spawnedDeer = true;
         }
+    }
+    public void EndTimer()
+    {
+        door.SetActive(false);
+        foreach (MonoBehaviour scripts in scriptsToDisable)
+        {
+            scripts.enabled = false;
+        }
+        audioSource1.clip = doorOpenSound;
+        audioSource1.Play();
+        objectiveUI.Objective("Escape The House!");
     }
 }

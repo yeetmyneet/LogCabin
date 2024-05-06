@@ -25,6 +25,7 @@ public class PlayerCollision : MonoBehaviour
     {
         audioSource1 = gameObject.AddComponent<AudioSource>();
         audioSource2 = gameObject.AddComponent<AudioSource>();
+        audioSource3 = gameObject.AddComponent<AudioSource>();
     }
     void OnCollisionEnter(Collision collision)
     {
