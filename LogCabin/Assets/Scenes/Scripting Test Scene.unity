@@ -756,6 +756,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcc2c0f628e0d0449c7a2a677011887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &691742753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 639915712243015387, guid: 47ec854eca89b4b4bb79c7e2c6006a29, type: 3}
+  m_PrefabInstance: {fileID: 833068168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,6 +1167,18 @@ PrefabInstance:
       propertyPath: interactScript
       value: 
       objectReference: {fileID: 2033776347}
+    - target: {fileID: 7554643592838437465, guid: 47ec854eca89b4b4bb79c7e2c6006a29, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.602826
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554643592838437465, guid: 47ec854eca89b4b4bb79c7e2c6006a29, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.58862
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554643592838437465, guid: 47ec854eca89b4b4bb79c7e2c6006a29, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.000090953
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1169,6 +1186,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4318324268677413279, guid: 47ec854eca89b4b4bb79c7e2c6006a29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 151909102}
+    - targetCorrespondingSourceObject: {fileID: 639915712243015387, guid: 47ec854eca89b4b4bb79c7e2c6006a29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 833068173}
   m_SourcePrefab: {fileID: 100100000, guid: 47ec854eca89b4b4bb79c7e2c6006a29, type: 3}
 --- !u!65 &833068169 stripped
 BoxCollider:
@@ -1186,6 +1206,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e704867973b164db1b6ad354d02ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &833068173
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691742753}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!114 &911310222 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1084529541564147964, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
@@ -1671,6 +1718,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: hasGasCan
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: genControl
       value: 
       objectReference: {fileID: 1156642725}
@@ -1706,6 +1757,10 @@ PrefabInstance:
       propertyPath: furnaceControl
       value: 
       objectReference: {fileID: 708540839}
+    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: gasPickupSpeed
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 1656673609336404253, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

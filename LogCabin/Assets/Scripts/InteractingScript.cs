@@ -12,6 +12,7 @@ public class InteractingScript : MonoBehaviour
     [SerializeField] string radioTag = "Radio";
     [SerializeField] string truckTag = "Truck";
     [SerializeField] string gasTag = "Gas Can";
+    [SerializeField] string truckExitTag = "TruckExit";
     public GameObject objectToShow;
     public Slider slider;
     public GameObject sliderObject;
@@ -45,8 +46,12 @@ public class InteractingScript : MonoBehaviour
     [SerializeField] bool hasGasCan = false;
     [SerializeField] bool isGettingGas;
     [SerializeField] bool gasCanShowing = true;
-    [SerializeField] float gasPickupSpeed = 1000f;
+    [SerializeField] float gasPickupSpeed = 6f;
     [SerializeField] GameObject gasCanObject;
+    [SerializeField] bool isLookingAtTruckDoor = false;
+    [SerializeField] bool isEnteringTruck = false;
+    [SerializeField] float truckEnterSpeed = 30f;
+    [SerializeField] PlayerCollision playerCollision;
     #endregion Variables and Objects
     void Awake()
     {
@@ -88,7 +93,7 @@ public class InteractingScript : MonoBehaviour
                 sliderObject.SetActive(true);
                 isFixingRadio = true;
             }
-            else if (isLookingAtTruck && truckOutOfGas == true && hasGasCan)
+            else if (isLookingAtTruck && truckOutOfGas == true && hasGasCan == true)
             {
                 isEPressed = true;
                 sliderSpeedRate = truckFixSpeed * 100;
@@ -100,9 +105,19 @@ public class InteractingScript : MonoBehaviour
             {
                 isEPressed = true;
                 sliderSpeedRate = gasPickupSpeed * 100;
+                Debug.Log("picking up gas at speed of: " + sliderSpeedRate);
                 scriptToDisable.enabled = false;
                 sliderObject.SetActive(true);
+                Debug.Log("enabled slider and disabled scripts");
                 isGettingGas = true;
+            }
+            else if (isLookingAtTruckDoor && !truckOutOfGas)
+            {
+                isEPressed = true;
+                sliderSpeedRate = truckEnterSpeed * 100;
+                scriptToDisable.enabled = false;
+                sliderObject.SetActive(true);
+                isEnteringTruck = true;
             }
         }
         else if (Input.GetKeyUp(KeyCode.E))
@@ -151,9 +166,16 @@ public class InteractingScript : MonoBehaviour
             else if (isGettingGas)
             {
                 gasCanObject.SetActive(false);
+                Debug.Log("got gas can");
                 gasCanShowing = false;
                 isGettingGas = false;
                 hasGasCan = true;
+            }
+            if (isEnteringTruck)
+            {
+                playerCollision.ExitGame();
+                Debug.Log("player is exiting game");
+                isEnteringTruck = false;
             }
             else { Debug.LogError("Nothing is broken"); }
         }
@@ -185,6 +207,11 @@ public class InteractingScript : MonoBehaviour
             {
                 isLookingAtGas = true;
                 Debug.Log("looking at gas");
+            }
+            else if (hit.collider.CompareTag(truckExitTag) && Vector3.Distance(transform.position, hit.transform.position) <= maxInteractionDistance)
+            {
+                isLookingAtTruckDoor = true;
+                Debug.Log("looking at truck door");
             }
             else
             {
