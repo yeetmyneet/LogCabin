@@ -1761,6 +1761,10 @@ PrefabInstance:
       propertyPath: gasPickupSpeed
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: playerCollision
+      value: 
+      objectReference: {fileID: 1699847409}
     - target: {fileID: 1656673609336404253, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2152,6 +2156,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66a4eac702a237c40968f763b48a9079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1699847409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 1699847399}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34ad286bed2e294aa6d9a4c87fe4488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1716378360 stripped
