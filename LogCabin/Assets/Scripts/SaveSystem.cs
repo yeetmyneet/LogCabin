@@ -5,6 +5,7 @@ using System.IO;
 
 public class SaveSystem : MonoBehaviour
 {
+    public string keyWord = "123456789";
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,9 @@ public class SaveSystem : MonoBehaviour
         myData.z = transform.position.z;
         string myDataString = JsonUtility.ToJson(myData);
         string file = Application.persistentDataPath + "/" + gameObject.name + ".json";
+        myDataString = EncryptDecryptData(myDataString);
         System.IO.File.WriteAllText(file, myDataString);
+        Debug.Log(Application.persistentDataPath);
     }
     public void Load()
     {
@@ -41,17 +44,21 @@ public class SaveSystem : MonoBehaviour
         if (File.Exists(file))
         {
             var jsonData = File.ReadAllText(file);
+            jsonData = EncryptDecryptData(jsonData);
             SaveData myData = JsonUtility.FromJson<SaveData>(jsonData);
             transform.position = new Vector3(myData.x, myData.y, myData.z);
         }
     }
-    public string EncryptAndDecrypt(string data)
+    public string EncryptDecryptData(string data)
     {
-        string Results;
+        string result = "";
+        for (int i = 0; i < data.Length; i++)
+        {
+            result += (char)(data[i] ^ keyWord[i % keyWord.Length]);
+        }
 
-        for()
         
-        return Results;
+        return result;
     }
 }
 
