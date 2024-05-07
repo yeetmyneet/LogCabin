@@ -18,6 +18,7 @@ TagManager:
   - Cups
   - Truck
   - Gas Can
+  - Matches
   layers:
   - Default
   - TransparentFX
