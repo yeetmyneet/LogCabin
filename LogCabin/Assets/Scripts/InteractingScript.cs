@@ -7,9 +7,11 @@ public class InteractingScript : MonoBehaviour
 {
     #region Variables and Objects 
 
-    string generatorTag = "Generator";
-    string furnaceTag = "Furnace";
-    string radioTag = "Radio";
+    [SerializeField] string generatorTag = "Generator";
+    [SerializeField] string furnaceTag = "Furnace";
+    [SerializeField] string radioTag = "Radio";
+    [SerializeField] string truckTag = "Truck";
+    [SerializeField] string gasTag = "Gas Can";
     public GameObject objectToShow;
     public Slider slider;
     public GameObject sliderObject;
@@ -34,7 +36,17 @@ public class InteractingScript : MonoBehaviour
     [SerializeField] float genFixSpeed;
     [SerializeField] float furnFixSpeed;
     [SerializeField] float radioFixSpeed;
-
+    [SerializeField] bool isLookingAtTruck = false;
+    [SerializeField] public bool truckOutOfGas = false;
+    [SerializeField] bool isFixingTruck;
+    [SerializeField] float truckFixSpeed = 30f;
+    [SerializeField] TruckController truckControl;
+    [SerializeField] bool isLookingAtGas;
+    [SerializeField] bool hasGasCan = false;
+    [SerializeField] bool isGettingGas;
+    [SerializeField] bool gasCanShowing = true;
+    [SerializeField] float gasPickupSpeed = 1000f;
+    [SerializeField] GameObject gasCanObject;
     #endregion Variables and Objects
     void Awake()
     {
@@ -76,6 +88,22 @@ public class InteractingScript : MonoBehaviour
                 sliderObject.SetActive(true);
                 isFixingRadio = true;
             }
+            else if (isLookingAtTruck && truckOutOfGas == true && hasGasCan)
+            {
+                isEPressed = true;
+                sliderSpeedRate = truckFixSpeed * 100;
+                scriptToDisable.enabled = false;
+                sliderObject.SetActive(true);
+                isFixingTruck = true;
+            }
+            else if (isLookingAtGas && gasCanShowing)
+            {
+                isEPressed = true;
+                sliderSpeedRate = gasPickupSpeed * 100;
+                scriptToDisable.enabled = false;
+                sliderObject.SetActive(true);
+                isGettingGas = true;
+            }
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {
@@ -114,6 +142,19 @@ public class InteractingScript : MonoBehaviour
                 radioPlaying = false;
                 isFixingRadio = false;
             }
+            else if (isFixingTruck && hasGasCan)
+            {
+                truckControl.FixTruck();
+                truckOutOfGas = false;
+                isFixingTruck = false;
+            }
+            else if (isGettingGas)
+            {
+                gasCanObject.SetActive(false);
+                gasCanShowing = false;
+                isGettingGas = false;
+                hasGasCan = true;
+            }
             else { Debug.LogError("Nothing is broken"); }
         }
 
@@ -135,11 +176,23 @@ public class InteractingScript : MonoBehaviour
             {
                 isLookingAtRadio = true;
             }
+            else if (hit.collider.CompareTag(truckTag) && Vector3.Distance(transform.position, hit.transform.position) <= maxInteractionDistance)
+            {
+                isLookingAtTruck = true;
+                Debug.Log("looking at truck");
+            }
+            else if (hit.collider.CompareTag(gasTag) && Vector3.Distance(transform.position, hit.transform.position) <= maxInteractionDistance)
+            {
+                isLookingAtGas = true;
+                Debug.Log("looking at gas");
+            }
             else
             {
                 isLookingAtFurnace = false;
                 isLookingAtGenerator = false;
                 isLookingAtRadio = false;
+                isLookingAtTruck = false;
+                isLookingAtGas = false;
             }
         }
         if (!isEPressed )

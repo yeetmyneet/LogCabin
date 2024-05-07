@@ -56,7 +56,7 @@ public class PlayerCollision : MonoBehaviour
             deerChase.isDead = true;
             fadeScript.StartCoroutine(fadeScript.FadeToBlackAndLoadScene());
         }
-        if (collision.gameObject.CompareTag("Truck"))
+        if (collision.gameObject.CompareTag("TruckExit"))
         {
             Rigidbody rb = GetComponent<Rigidbody>();
             foreach (MonoBehaviour scripts in playerScripts)
