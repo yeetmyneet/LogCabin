@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: f52714937ef612b4b840e7b5812fbf0a
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 025d3cb1f59a8bf47b78b82df78c1f75
+  - enabled: 1
     path: Assets/Scenes/Cabin.unity
     guid: 110912d3400376343b8bc178d4f15bfd
   - enabled: 1
@@ -26,9 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeathScreen.unity
     guid: 6bb555f7e6fdd4a47912cdbbb9874d4f
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 025d3cb1f59a8bf47b78b82df78c1f75
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: dc1c04c7d2603e84484ba62f8235598e
