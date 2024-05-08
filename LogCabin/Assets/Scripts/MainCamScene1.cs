@@ -21,4 +21,8 @@ public class MainCamScene1 : MonoBehaviour {
     {
         SimpleSceneFader.ChangeSceneWithFade("Tutorial");
     }
+    public void MainMenuNoFade()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
