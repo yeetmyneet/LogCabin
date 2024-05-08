@@ -8,9 +8,11 @@ public class PauseMenu : MonoBehaviour
 	[SerializeField] Canvas pauseMenu;
 	[SerializeField] GameObject scriptToDisable;
 	[SerializeField] FirstPersonController FPC;
+	[SerializeField] AudioSource MenuAudioSource;
 
     private void Start()
     {
+		MenuAudioSource.Pause();
 		pauseMenu.enabled = false;
     }
 
@@ -23,7 +25,7 @@ public class PauseMenu : MonoBehaviour
 			Cursor.lockState = CursorLockMode.Confined;
 			FPC.enabled = false;
 			scriptToDisable.SetActive(false);
-			AudioListener.pause = !AudioListener.pause;
+			DisableAudio();
 		}
 	}
 
@@ -34,7 +36,7 @@ public class PauseMenu : MonoBehaviour
 		scriptToDisable.SetActive(true);
 		FPC.enabled = true;
 		Cursor.lockState = CursorLockMode.Locked;
-		AudioListener.pause = !AudioListener.pause;
+		EnableAudio();
 	}
 
 	public void ExitGame()
@@ -46,7 +48,7 @@ public class PauseMenu : MonoBehaviour
 	{
 		Time.timeScale = 1;
 		SceneManager.LoadScene("MainMenu");
-		AudioListener.pause = !AudioListener.pause;
+		EnableAudio();
 	}
 
 	public void LoadPauseMenu()
@@ -54,5 +56,45 @@ public class PauseMenu : MonoBehaviour
 		Time.timeScale = 0;
 		Cursor.lockState = CursorLockMode.Confined;
 		pauseMenu.enabled = true;
+	}
+	void DisableAudio()
+    {
+		// Find all audio sources in the scene
+		AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
+		foreach (AudioSource audioSource in allAudioSources)
+		{
+			if (audioSource.CompareTag("MenuAudio"))
+			{
+				audioSource.UnPause();
+			}
+			else
+			{
+				if (audioSource.isPlaying)
+				{
+					audioSource.Pause();
+					Debug.Log("paused audio source");
+				}
+			}
+		}
+	}
+	void EnableAudio()
+    {
+		// Find all audio sources in the scene
+		AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
+		foreach (AudioSource audioSource in allAudioSources)
+		{
+			if (audioSource.CompareTag("MenuAudio"))
+			{
+				if (audioSource.isPlaying)
+				{
+					audioSource.Pause();
+				}
+			}
+			else
+			{
+				audioSource.UnPause();
+				Debug.Log("unpaused audio source");
+			}
+		}
 	}
 }

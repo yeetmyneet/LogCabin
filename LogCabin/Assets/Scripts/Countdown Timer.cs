@@ -10,6 +10,7 @@ public class CountdownTimer : MonoBehaviour
     private float remainingTime;
     [SerializeField] Canvas timer;
     public TMP_Text timerText;
+    public GameManager gamemanager;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class CountdownTimer : MonoBehaviour
             if (remainingTime <= 0f)
             {
                 Debug.Log("Time's up!");
+                gamemanager.EndTimer();
             }
         }
 

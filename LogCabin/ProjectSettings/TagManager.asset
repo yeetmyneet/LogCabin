@@ -14,6 +14,11 @@ TagManager:
   - Radio
   - Bounds
   - Furnance
+  - MenuAudio
+  - Cups
+  - Truck
+  - Gas Can
+  - Matches
   layers:
   - Default
   - TransparentFX
