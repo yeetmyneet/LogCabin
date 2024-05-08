@@ -68,8 +68,8 @@ public class GeneratorController : MonoBehaviour
     {
         slider.value = maxValue;
         generatorWorking = true;
-        LightCheck(0);
         generatorSource.Play();
+        LightCheck(0);
         timeSinceReset = 0f;
     }
     void BreakGenerator()

@@ -2596,15 +2596,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2218556668395907480, guid: a22b68c665baac144ba91b419197b1ae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4542103326746475775, guid: a22b68c665baac144ba91b419197b1ae, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4542103326746475775, guid: a22b68c665baac144ba91b419197b1ae, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8846632192703932357, guid: a22b68c665baac144ba91b419197b1ae, type: 3}
       propertyPath: powerOff
@@ -2620,7 +2620,7 @@ PrefabInstance:
       objectReference: {fileID: 2033776350}
     - target: {fileID: 8846632192703932357, guid: a22b68c665baac144ba91b419197b1ae, type: 3}
       propertyPath: timeThreshold
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8846632192703932357, guid: a22b68c665baac144ba91b419197b1ae, type: 3}
       propertyPath: brokenInterval
