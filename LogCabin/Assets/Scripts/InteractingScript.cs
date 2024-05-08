@@ -177,7 +177,7 @@ public class InteractingScript : MonoBehaviour
                 Debug.Log("player is exiting game");
                 isEnteringTruck = false;
             }
-            else { Debug.LogError("Nothing is broken"); }
+            //else { Debug.LogError("Nothing is broken"); }
         }
 
         // Cast a ray from the center of the screen
@@ -220,11 +220,12 @@ public class InteractingScript : MonoBehaviour
                 isLookingAtRadio = false;
                 isLookingAtTruck = false;
                 isLookingAtGas = false;
+                isLookingAtTruckDoor = false;
             }
         }
         if (!isEPressed )
         {
-            if (generatorBroken == true && isLookingAtGenerator || furnaceBroken == true && isLookingAtFurnace || radioPlaying == true && isLookingAtRadio)
+            if (generatorBroken == true && isLookingAtGenerator || furnaceBroken == true && isLookingAtFurnace || radioPlaying == true && isLookingAtRadio || isLookingAtTruck && truckOutOfGas == true && hasGasCan == true || isLookingAtGas && gasCanShowing || isLookingAtTruckDoor && !truckOutOfGas)
             {
                 objectToShow.SetActive(true);
             }

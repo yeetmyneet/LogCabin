@@ -171,8 +171,8 @@ MonoBehaviour:
   generatorSource: {fileID: 20369714}
   playerSource: {fileID: 1164570000}
   powerOff: {fileID: 8300000, guid: d6dc6f6ee366bd94db07869806abd382, type: 3}
-  gameManager: {fileID: 0}
-  brokenInterval: 0
+  gameManager: {fileID: 527119033}
+  brokenInterval: 1
   brokenTimer: 0
 --- !u!65 &20369711
 BoxCollider:
@@ -370,6 +370,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6788767473957102781, guid: 47ec854eca89b4b4bb79c7e2c6006a29, type: 3}
+      propertyPath: gasCollider
+      value: 
+      objectReference: {fileID: 1165075961}
+    - target: {fileID: 6788767473957102781, guid: 47ec854eca89b4b4bb79c7e2c6006a29, type: 3}
+      propertyPath: interactScript
+      value: 
+      objectReference: {fileID: 1164569996}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1360,6 +1368,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0444a1686fa672146bf8908eced85bfb, type: 3}
   m_PrefabInstance: {fileID: 1276440595}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &527119033 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8378115033769307306, guid: 004c5ce3f76e5d4498b78de4c86dd55c, type: 3}
+  m_PrefabInstance: {fileID: 663436620}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c2c5666e5afa54db2a51e25bcfc322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &534713481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3031,6 +3050,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 6889683316257912029, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 485426624}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1165075961 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2707263205427160831, guid: 47ec854eca89b4b4bb79c7e2c6006a29, type: 3}
+  m_PrefabInstance: {fileID: 43228548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1208778558 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -466329591000292508, guid: 0444a1686fa672146bf8908eced85bfb, type: 3}
@@ -3082,7 +3106,7 @@ MonoBehaviour:
   timeThreshold: 10
   brokenInterval: 0
   brokenTimer: 0
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 527119033}
 --- !u!82 &1232095778
 AudioSource:
   m_ObjectHideFlags: 0
