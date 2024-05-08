@@ -18865,6 +18865,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6419604580342832736, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
   m_PrefabInstance: {fileID: 745135690}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &561747457 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4459864851551516593, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 618420798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &563251527
 GameObject:
   m_ObjectHideFlags: 0
@@ -25064,6 +25069,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6549093881368065742, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 561747457}
+    - target: {fileID: 6549093881368065742, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: MenuAudioSource
       value: 
       objectReference: {fileID: 1075018156}
@@ -26429,6 +26438,8 @@ MonoBehaviour:
   CupCollect: 0
   MatchesCollected: 0
   DollsCollected: 0
+  coolText: {fileID: 1624894839}
+  collection: {fileID: 845276873}
 --- !u!114 &708343147 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -27389,7 +27400,7 @@ GameObject:
   - component: {fileID: 845276874}
   - component: {fileID: 845276873}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Collection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
