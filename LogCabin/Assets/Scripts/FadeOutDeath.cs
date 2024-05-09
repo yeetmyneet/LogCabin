@@ -76,4 +76,12 @@ public class FadeOutDeath : MonoBehaviour
 
         SceneManager.LoadScene("WinScreen");
     }
+
+    public IEnumerator FadeToBlack()
+    {
+        fadeImage.canvasRenderer.SetAlpha(0.0f);
+
+        fadeImage.CrossFadeAlpha(1.0f, fadeSpeed, false);
+        yield return new WaitForSeconds(fadeSpeed);
+    }
 }

@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     #region Inspector References
     public GameObject prefabToSpawn;
     public GameObject door;
+    public GameObject doorBlocker;
     public GameObject window;
     public Transform spawnPoint1;
     public Transform spawnPoint2;
     public Transform spawnPoint3;
     public AudioClip doorSound;
     public AudioClip windowSound;
+    public AudioClip deerChaseMusic;
     public AudioClip doorOpenSound;
     public MonoBehaviour[] scriptsToDisable;
     [SerializeField] AudioSource audioSource1;
@@ -21,7 +24,24 @@ public class GameManager : MonoBehaviour
     public DeerMovement deerMovement;
     bool spawnedDeer = false;
     [SerializeField] ObjectiveUI objectiveUI;
+    public int cabinBuildIndex;
+    public int gasStationBuildIndex;
     #endregion Inspector References
+    private void Awake()
+    {
+        // Get the current scene's build index
+        int currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Check if the current scene's build index matches the target build index
+        if (currentBuildIndex == cabinBuildIndex)
+        {
+            objectiveUI.Objective("Survive The Deer");
+        }
+        if (currentBuildIndex == gasStationBuildIndex)
+        {
+            objectiveUI.Objective("Get the Gas Can");
+        }
+    }
     public void SpawnPrefabAtTransform1(int attackType)
     {
         if (prefabToSpawn != null && spawnPoint1 != null && !spawnedDeer && attackType == 1)
@@ -29,31 +49,46 @@ public class GameManager : MonoBehaviour
             Instantiate(prefabToSpawn, spawnPoint1.position, spawnPoint1.rotation);
             Debug.Log("spawned deer at spawnpoint1");
             door.SetActive(false);
+            doorBlocker.SetActive(true);
             Debug.Log("broke door");
             audioSource1.clip = doorSound;
             audioSource1.Play();
+            audioSource2.clip = deerChaseMusic;
+            audioSource2.Play();
             spawnedDeer = true;
             Debug.Log("set spawnedDeer to true");
         }
         else if (prefabToSpawn != null && spawnPoint2 != null && !spawnedDeer && attackType == 2)
         {
             Instantiate(prefabToSpawn, spawnPoint2.position, spawnPoint2.rotation);
-            window.SetActive(false);
-            Debug.Log("spawned at spawnpoint2");
+            door.SetActive(false);
+            doorBlocker.SetActive(true);
+            Debug.Log("broke door");
+            audioSource1.clip = doorSound;
+            audioSource1.Play();
+            audioSource2.clip = deerChaseMusic;
+            audioSource2.Play();
             spawnedDeer = true;
+            Debug.Log("set spawnedDeer to true");
         }
         else if (prefabToSpawn != null && spawnPoint3 != null && !spawnedDeer && attackType == 3)
         {
             Instantiate(prefabToSpawn, spawnPoint3.position, spawnPoint3.rotation);
-            window.SetActive(false);
-            audioSource3.clip = windowSound;
-            audioSource3.Play();
+            door.SetActive(false);
+            doorBlocker.SetActive(true);
+            Debug.Log("broke door");
+            audioSource1.clip = doorSound;
+            audioSource1.Play();
+            audioSource2.clip = deerChaseMusic;
+            audioSource2.Play();
             spawnedDeer = true;
+            Debug.Log("set spawnedDeer to true");
         }
     }
     public void EndTimer()
     {
         door.SetActive(false);
+        doorBlocker.SetActive(false);
         foreach (MonoBehaviour scripts in scriptsToDisable)
         {
             scripts.enabled = false;
