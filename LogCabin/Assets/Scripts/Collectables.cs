@@ -16,23 +16,21 @@ public class Collectables : MonoBehaviour
         {
             CupCollect++;
             collection.text = "Current Collectables: " + CupCollect;
-            Debug.Log("collected cup");
             Destroy(collision.gameObject);
 
-            if (CupCollect == 10)
+            if (CupCollect == 5)
             {
-                collection.text = "All Cups Collected!";
+                collection.text = "Make Coffee!!";
             }
         }
 
         if (collision.gameObject.tag == "Matches")
         {
             MatchesCollected++;
-            Debug.Log("Collected matches");
             collection.text = "Current Collectables: " + MatchesCollected;
             Destroy(collision.gameObject);
 
-            if(MatchesCollected == 5)
+            if(MatchesCollected == 4)
             {
                 collection.text = "Start a Fire!";
             }
@@ -42,7 +40,6 @@ public class Collectables : MonoBehaviour
         {
             DollsCollected++;
             collection.text = "Current Collectables: " + DollsCollected;
-            Debug.Log("Doll collected");
             Destroy(collision.gameObject); 
 
             if (DollsCollected == 4)
@@ -54,7 +51,7 @@ public class Collectables : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             coolText.enabled = !coolText.enabled;
         }
