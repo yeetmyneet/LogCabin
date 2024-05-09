@@ -20,6 +20,7 @@ TagManager:
   - Gas Can
   - Matches
   - TruckExit
+  - Dolls
   layers:
   - Default
   - TransparentFX
