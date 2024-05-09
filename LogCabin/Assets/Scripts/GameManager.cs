@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +22,24 @@ public class GameManager : MonoBehaviour
     public DeerMovement deerMovement;
     bool spawnedDeer = false;
     [SerializeField] ObjectiveUI objectiveUI;
+    public int cabinBuildIndex;
+    public int gasStationBuildIndex;
     #endregion Inspector References
+    private void Awake()
+    {
+        // Get the current scene's build index
+        int currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Check if the current scene's build index matches the target build index
+        if (currentBuildIndex == cabinBuildIndex)
+        {
+            objectiveUI.Objective("Survive The Deer");
+        }
+        if (currentBuildIndex == gasStationBuildIndex)
+        {
+            objectiveUI.Objective("Get the Gas Can");
+        }
+    }
     public void SpawnPrefabAtTransform1(int attackType)
     {
         if (prefabToSpawn != null && spawnPoint1 != null && !spawnedDeer && attackType == 1)
