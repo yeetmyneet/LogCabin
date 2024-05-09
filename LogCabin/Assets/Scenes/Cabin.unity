@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1288031000}
   maxValue: 100
-  decreaseAmount: 1
+  decreaseAmount: 50
   decreaseInterval: 1
   timeThreshold: 10
   tooLate: 0
@@ -1256,6 +1256,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1756729977}
   m_SourcePrefab: {fileID: 100100000, guid: 8f102a758da5ae64aa4bd59481216620, type: 3}
+--- !u!1 &443587368 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7029948723529949830, guid: 08448637e1af75341a030d701957c1c5, type: 3}
+  m_PrefabInstance: {fileID: 1601427577}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &452120722 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -208595431880416365, guid: 0444a1686fa672146bf8908eced85bfb, type: 3}
@@ -2041,7 +2046,7 @@ PrefabInstance:
     - target: {fileID: 8378115033769307306, guid: 004c5ce3f76e5d4498b78de4c86dd55c, type: 3}
       propertyPath: door
       value: 
-      objectReference: {fileID: 729105459}
+      objectReference: {fileID: 443587368}
     - target: {fileID: 8378115033769307306, guid: 004c5ce3f76e5d4498b78de4c86dd55c, type: 3}
       propertyPath: window
       value: 
@@ -2343,59 +2348,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7431666735180143259, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
   m_PrefabInstance: {fileID: 677169880}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &729105459 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -8068073526183931155, guid: 08448637e1af75341a030d701957c1c5, type: 3}
-  m_PrefabInstance: {fileID: 1601427577}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &729105467
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729105459}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.020000001, y: 0.020000009, z: 0.020000001}
-  m_Center: {x: 0, y: 0, z: -0.000000014901161}
---- !u!54 &729105468
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729105459}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &741697638
 GameObject:
   m_ObjectHideFlags: 0
@@ -5346,6 +5298,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 08448637e1af75341a030d701957c1c5, type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 08448637e1af75341a030d701957c1c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1950733119399844177, guid: 08448637e1af75341a030d701957c1c5, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.36
@@ -5381,12 +5341,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5845375464428368027, guid: 08448637e1af75341a030d701957c1c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 811103504}
-    - targetCorrespondingSourceObject: {fileID: -8068073526183931155, guid: 08448637e1af75341a030d701957c1c5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 729105467}
-    - targetCorrespondingSourceObject: {fileID: -8068073526183931155, guid: 08448637e1af75341a030d701957c1c5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 729105468}
     - targetCorrespondingSourceObject: {fileID: 2550463727306718371, guid: 08448637e1af75341a030d701957c1c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1787095310}
