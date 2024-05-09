@@ -19,6 +19,7 @@ TagManager:
   - Truck
   - Gas Can
   - Matches
+  - TruckExit
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - UI
   - Cloud Layer
   - Light
-  - 
+  - Enemy
   - 
   - 
   - 

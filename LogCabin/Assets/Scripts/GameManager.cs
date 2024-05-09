@@ -38,17 +38,22 @@ public class GameManager : MonoBehaviour
         else if (prefabToSpawn != null && spawnPoint2 != null && !spawnedDeer && attackType == 2)
         {
             Instantiate(prefabToSpawn, spawnPoint2.position, spawnPoint2.rotation);
-            window.SetActive(false);
-            Debug.Log("spawned at spawnpoint2");
+            door.SetActive(false);
+            Debug.Log("broke door");
+            audioSource1.clip = doorSound;
+            audioSource1.Play();
             spawnedDeer = true;
+            Debug.Log("set spawnedDeer to true");
         }
         else if (prefabToSpawn != null && spawnPoint3 != null && !spawnedDeer && attackType == 3)
         {
             Instantiate(prefabToSpawn, spawnPoint3.position, spawnPoint3.rotation);
-            window.SetActive(false);
-            audioSource3.clip = windowSound;
-            audioSource3.Play();
+            door.SetActive(false);
+            Debug.Log("broke door");
+            audioSource1.clip = doorSound;
+            audioSource1.Play();
             spawnedDeer = true;
+            Debug.Log("set spawnedDeer to true");
         }
     }
     public void EndTimer()
