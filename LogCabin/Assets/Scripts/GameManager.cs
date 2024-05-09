@@ -8,12 +8,14 @@ public class GameManager : MonoBehaviour
     #region Inspector References
     public GameObject prefabToSpawn;
     public GameObject door;
+    public GameObject doorBlocker;
     public GameObject window;
     public Transform spawnPoint1;
     public Transform spawnPoint2;
     public Transform spawnPoint3;
     public AudioClip doorSound;
     public AudioClip windowSound;
+    public AudioClip deerChaseMusic;
     public AudioClip doorOpenSound;
     public MonoBehaviour[] scriptsToDisable;
     [SerializeField] AudioSource audioSource1;
@@ -47,9 +49,12 @@ public class GameManager : MonoBehaviour
             Instantiate(prefabToSpawn, spawnPoint1.position, spawnPoint1.rotation);
             Debug.Log("spawned deer at spawnpoint1");
             door.SetActive(false);
+            doorBlocker.SetActive(true);
             Debug.Log("broke door");
             audioSource1.clip = doorSound;
             audioSource1.Play();
+            audioSource2.clip = deerChaseMusic;
+            audioSource2.Play();
             spawnedDeer = true;
             Debug.Log("set spawnedDeer to true");
         }
@@ -57,9 +62,12 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(prefabToSpawn, spawnPoint2.position, spawnPoint2.rotation);
             door.SetActive(false);
+            doorBlocker.SetActive(true);
             Debug.Log("broke door");
             audioSource1.clip = doorSound;
             audioSource1.Play();
+            audioSource2.clip = deerChaseMusic;
+            audioSource2.Play();
             spawnedDeer = true;
             Debug.Log("set spawnedDeer to true");
         }
@@ -67,9 +75,12 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(prefabToSpawn, spawnPoint3.position, spawnPoint3.rotation);
             door.SetActive(false);
+            doorBlocker.SetActive(true);
             Debug.Log("broke door");
             audioSource1.clip = doorSound;
             audioSource1.Play();
+            audioSource2.clip = deerChaseMusic;
+            audioSource2.Play();
             spawnedDeer = true;
             Debug.Log("set spawnedDeer to true");
         }
@@ -77,6 +88,7 @@ public class GameManager : MonoBehaviour
     public void EndTimer()
     {
         door.SetActive(false);
+        doorBlocker.SetActive(false);
         foreach (MonoBehaviour scripts in scriptsToDisable)
         {
             scripts.enabled = false;
