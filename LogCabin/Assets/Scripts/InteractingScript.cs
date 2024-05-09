@@ -57,7 +57,6 @@ public class InteractingScript : MonoBehaviour
     {
         sliderObject.SetActive(false);
         genControl = FindObjectOfType<GeneratorController>();
-        objectiveUI.Objective("Survive the Deer");
     }
     void Update()
     {
