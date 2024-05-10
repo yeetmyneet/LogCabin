@@ -22,6 +22,9 @@ TagManager:
   - TruckExit
   - Snow Floor
   - Concrete Floor
+  - Dolls
+  - Gun
+  - Ammo
   layers:
   - Default
   - TransparentFX

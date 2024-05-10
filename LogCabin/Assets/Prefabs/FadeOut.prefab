@@ -224,3 +224,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1084529541564147964}
   fadeSpeed: 2
+  secondFadeSpeed: 4
+  confirmCanvas: {fileID: 0}
+  menuAudioSource: {fileID: 0}
+  select: {fileID: 8300000, guid: 722498f5007382644b81b3ba0a9c195c, type: 3}
+  raycaster: {fileID: 0}
