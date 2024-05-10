@@ -13,9 +13,9 @@ public class LevelExit : MonoBehaviour
     [SerializeField] float levelLoadDelay = 7f;
     [SerializeField] FirstPersonController MOVE;
     [SerializeField] FootstepSound stepStomp;
-    private void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Truck")
+        if (other.gameObject.tag == "TruckExit")
         {
             fadeScript.StartCoroutine(fadeScript.FadeToBlack());
             StartCoroutine(LoadNextLevel());

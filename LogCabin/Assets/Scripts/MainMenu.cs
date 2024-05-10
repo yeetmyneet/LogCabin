@@ -7,29 +7,56 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] public new AudioSource audio;
     [SerializeField] public AudioClip hover;
-    private string booleanKey = "IsEnabled";
+    public string booleanKey = "IsEnabled";
+    public string previousBuildIndex = "prevBuildIndex";
+    private int previousSceneBuildIndex;
     public GameObject enabledObject;
 
     void Awake()
     {
-        if (!PlayerPrefs.HasKey(booleanKey))
+        enabledObject.SetActive(false);
+        // Get the current scene
+        int passedValue = PlayerPrefs.GetInt(previousBuildIndex, 0);
+        Debug.Log("passedvalue: " + passedValue);
+        if (passedValue == 2 || passedValue == 3 || passedValue == 4 || passedValue == 7 || passedValue == 8)
         {
-            // If the key doesn't exist, set its default value to false
-            PlayerPrefs.SetInt(booleanKey, 0); // 0 represents false
+            Debug.Log("came from win screen");
+            return;
         }
-        Scene previousScene = SceneManager.GetActiveScene();
-        if (previousScene.name == "WinScreen")
+        else
         {
-            // Set IsEnabled to true
-            PlayerPrefs.SetInt(booleanKey, 1); // 1 represents true
-            PlayerPrefs.Save(); // Make sure to call Save to persist the changes
+#if UNITY_EDITOR
+            PlayerPrefs.DeleteKey(booleanKey); // Delete the boolean key only if running in the Unity Editor
+            Debug.Log("being ran in unity editor");
+            PlayerPrefs.Save(); // Save the changes
+#endif
         }
     }
-
     void Start()
     {
-        bool isEnabled = PlayerPrefs.GetInt(booleanKey, 1) == 1;
+        bool isEnabled = false;
+        if (!PlayerPrefs.HasKey(booleanKey))
+        {
+            PlayerPrefs.SetInt(booleanKey, 0);
+            Debug.Log("Created booleanKey");
+        }
+        else
+        {
+            Debug.Log("already has booleanKey");
+        }
+        if (PlayerPrefs.GetInt(booleanKey, 0) == 1)
+        {
+            isEnabled = true;
+            Debug.Log("The boolean key is set to true.");
+        }
+        else
+        {
+            isEnabled = false;
+            Debug.Log("The boolean key is not set to true.");
+        }
+        Debug.Log("checked for completion");
         enabledObject.SetActive(isEnabled);
+        Debug.Log("set button to active/inactive");
     }
 
     public void Play()
@@ -45,5 +72,11 @@ public class MainMenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+    void OnApplicationQuit()
+    {
+        // Delete the PlayerPrefs value when the game exits
+        PlayerPrefs.DeleteKey(previousBuildIndex);
+        Debug.Log("Value deleted from PlayerPrefs on application quit.");
     }
 }
