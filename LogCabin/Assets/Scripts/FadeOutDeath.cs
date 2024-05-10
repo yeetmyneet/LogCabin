@@ -49,6 +49,7 @@ public class FadeOutDeath : MonoBehaviour
     }
     IEnumerator DisableAudioSources()
     {
+        //menuAudioSource.PlayOneShot(select, 1f);
         AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
         raycaster.enabled = false;
         Debug.Log("confirmCanvas not interactable");

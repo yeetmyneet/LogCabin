@@ -2622,6 +2622,7 @@ MonoBehaviour:
   isEnteringTruck: 0
   truckEnterSpeed: 30
   playerCollision: {fileID: 0}
+  leave: {fileID: 0}
 --- !u!82 &3126778772314453750
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3441,7 +3442,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &214001353685383848
 MonoBehaviour:
@@ -3495,6 +3496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84571606d9ab4e28bfb751320d66ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  previousBuildIndex: prevBuildIndex
 --- !u!225 &8165617255434436239
 CanvasGroup:
   m_ObjectHideFlags: 0

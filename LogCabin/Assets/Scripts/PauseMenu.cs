@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour
 	[SerializeField] Canvas pauseMenu;
 	[SerializeField] Canvas crosshair;
 	[SerializeField] GameObject scriptToDisable;
+	[SerializeField] ObjectiveUI objectiveUI;
+	[SerializeField] MonoBehaviour timer;
+	[SerializeField] Collectables collect;
 	[SerializeField] FirstPersonController FPC;
 	[SerializeField] AudioSource MenuAudioSource;
 
@@ -27,6 +30,9 @@ public class PauseMenu : MonoBehaviour
 			Time.timeScale = 0;
 			Cursor.lockState = CursorLockMode.Confined;
 			FPC.enabled = false;
+			timer.enabled = false;
+			objectiveUI.enabled = false;
+			collect.enabled = false;
 			scriptToDisable.SetActive(false);
 			DisableAudio();
 		}
@@ -39,6 +45,9 @@ public class PauseMenu : MonoBehaviour
 		crosshair.enabled = true;
 		scriptToDisable.SetActive(true);
 		FPC.enabled = true;
+		timer.enabled = true;
+		objectiveUI.enabled = true;
+		collect.enabled = true;
 		Cursor.lockState = CursorLockMode.Locked;
 		EnableAudio();
 	}
