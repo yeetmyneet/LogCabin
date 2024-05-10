@@ -7,6 +7,7 @@ public class TruckController : MonoBehaviour
     [SerializeField] InteractingScript interactScript;
     public Collider gasCollider;
     [SerializeField] bool hasGas;
+    [SerializeField] ObjectiveUI objectiveUI;
     void Awake()
     {
         hasGas = false;
@@ -27,6 +28,7 @@ public class TruckController : MonoBehaviour
         gasCollider.enabled = true;
         hasGas = true;
         Debug.Log("truck exit collider enabled");
+        objectiveUI.Objective("Explore or Leave");
     }
 
 }

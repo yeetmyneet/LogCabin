@@ -167,6 +167,7 @@ public class InteractingScript : MonoBehaviour
             {
                 gasCanObject.SetActive(false);
                 Debug.Log("got gas can");
+                objectiveUI.Objective("Load your truck up");
                 gasCanShowing = false;
                 isGettingGas = false;
                 hasGasCan = true;
@@ -207,6 +208,7 @@ public class InteractingScript : MonoBehaviour
             {
                 isLookingAtGas = true;
                 Debug.Log("looking at gas");
+                objectiveUI.Objective("Pickup your Mobile Order");
             }
             else if (hit.collider.CompareTag(truckExitTag) && Vector3.Distance(transform.position, hit.transform.position) <= maxInteractionDistance)
             {
