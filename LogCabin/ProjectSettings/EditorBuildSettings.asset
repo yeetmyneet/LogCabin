@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GasStation.unity
     guid: 574d785a3f3f9f34a86ab855a859c221
   - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: dc1c04c7d2603e84484ba62f8235598e
+  - enabled: 1
     path: Assets/Scenes/HuntingGrounds.unity
     guid: b08e30002f7b71b4aaece8be68dbf05f
   - enabled: 1
@@ -29,8 +32,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeathScreen.unity
     guid: 6bb555f7e6fdd4a47912cdbbb9874d4f
-  - enabled: 1
-    path: Assets/Scenes/WinScreen.unity
-    guid: dc1c04c7d2603e84484ba62f8235598e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
