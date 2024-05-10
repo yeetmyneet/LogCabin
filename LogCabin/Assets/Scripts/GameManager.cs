@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] ObjectiveUI objectiveUI;
     public int cabinBuildIndex;
     public int gasStationBuildIndex;
+    public int huntingGroundsIndex;
     #endregion Inspector References
     private void Awake()
     {
@@ -35,11 +36,15 @@ public class GameManager : MonoBehaviour
         // Check if the current scene's build index matches the target build index
         if (currentBuildIndex == cabinBuildIndex)
         {
-            objectiveUI.Objective("Survive The Deer");
+            objectiveUI.Objective("Don't make a Sound");
         }
         if (currentBuildIndex == gasStationBuildIndex)
         {
-            objectiveUI.Objective("Get the Gas Can");
+            objectiveUI.Objective("Pickup your Mobile Order");
+        }
+        if(currentBuildIndex == huntingGroundsIndex)
+        {
+            objectiveUI.Objective("Hunt the Deer");
         }
     }
     public void SpawnPrefabAtTransform1(int attackType)
