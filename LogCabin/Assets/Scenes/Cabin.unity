@@ -407,11 +407,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7431666735180143259, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
   m_PrefabInstance: {fileID: 1324098336}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &74321386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 485426624}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &122370422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1696,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6816923578559255103, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: fadeScript
+      value: 
+      objectReference: {fileID: 1838314954}
+    - target: {fileID: 6816923578559255103, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: truckSounds
+      value: 
+      objectReference: {fileID: 1783503828}
     - target: {fileID: 6889683316257912029, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Pitch
       value: 0.9
@@ -1777,10 +1780,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1195470961792858082, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1402228918}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
 --- !u!114 &485426625 stripped
 MonoBehaviour:
@@ -4846,7 +4846,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 434559651598613732, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 485426624}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74321386}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d64376a8d16b904296b29c8427487fc, type: 3}
@@ -4857,7 +4857,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 485426624}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74321386}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
@@ -4868,7 +4868,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3564806073364240872, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 485426624}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74321386}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc243d7f12df52344acefb4d760d8bed, type: 3}
@@ -4879,32 +4879,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3917232957610265859, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 485426624}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74321386}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d42bf06b657d7048b6ebed2147107b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1402228918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74321386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515725843af22cc4a89437afb8abed8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeScript: {fileID: 1838314954}
-  truckSounds: {fileID: 1783503828}
-  truckStart: {fileID: 8300000, guid: 07cdf498e4a2444408e95029e23bd852, type: 3}
-  isCabin: 1
-  isGasStation: 0
-  levelLoadDelay: 4
-  MOVE: {fileID: 1402228904}
-  stepStomp: {fileID: 1402228908}
 --- !u!4 &1404010033 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7431666735180143259, guid: b8cb7bf12dbc8a74ea494bd941c8b497, type: 3}
@@ -6558,14 +6538,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2265888132005461761, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
-      propertyPath: select
-      value: 
-      objectReference: {fileID: 8300000, guid: 722498f5007382644b81b3ba0a9c195c, type: 3}
-    - target: {fileID: 2265888132005461761, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
-      propertyPath: fadeImage
-      value: 
-      objectReference: {fileID: 1838314955}
-    - target: {fileID: 2265888132005461761, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
       propertyPath: raycaster
       value: 
       objectReference: {fileID: 1774938286}
@@ -6620,10 +6592,6 @@ PrefabInstance:
     - target: {fileID: 9027243559998923134, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
       propertyPath: m_Name
       value: FadeOut
-      objectReference: {fileID: 0}
-    - target: {fileID: 9027243559998923134, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

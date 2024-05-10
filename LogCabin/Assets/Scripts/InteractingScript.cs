@@ -52,6 +52,7 @@ public class InteractingScript : MonoBehaviour
     [SerializeField] bool isEnteringTruck = false;
     [SerializeField] float truckEnterSpeed = 30f;
     [SerializeField] PlayerCollision playerCollision;
+    [SerializeField] Collider leave;
     #endregion Variables and Objects
     void Awake()
     {
@@ -172,7 +173,7 @@ public class InteractingScript : MonoBehaviour
             }
             if (isEnteringTruck)
             {
-                playerCollision.ExitGame();
+                leave.enabled = true;
                 Debug.Log("player is exiting game");
                 isEnteringTruck = false;
             }
