@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InteractingScript : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class InteractingScript : MonoBehaviour
     public float maxInteractionDistance = 5f;
     [SerializeField] GeneratorController genControl;
     [SerializeField] ObjectiveUI objectiveUI;
+    [SerializeField] TextMeshProUGUI nextObj;
     public bool generatorBroken;
     bool isFixingGenerator;
     [SerializeField] bool isLookingAtFurnace = false;
@@ -58,6 +60,7 @@ public class InteractingScript : MonoBehaviour
     {
         sliderObject.SetActive(false);
         genControl = FindObjectOfType<GeneratorController>();
+        nextObj.text = "-Pickup your Mobile Order";
     }
     void Update()
     {
@@ -168,6 +171,7 @@ public class InteractingScript : MonoBehaviour
                 gasCanObject.SetActive(false);
                 Debug.Log("got gas can");
                 objectiveUI.Objective("Load your truck up");
+                nextObj.text = "-Explore or Leave";
                 gasCanShowing = false;
                 isGettingGas = false;
                 hasGasCan = true;
@@ -209,6 +213,7 @@ public class InteractingScript : MonoBehaviour
                 isLookingAtGas = true;
                 Debug.Log("looking at gas");
                 objectiveUI.Objective("Pickup your Mobile Order");
+                nextObj.text = "-Load your truck up";
             }
             else if (hit.collider.CompareTag(truckExitTag) && Vector3.Distance(transform.position, hit.transform.position) <= maxInteractionDistance)
             {

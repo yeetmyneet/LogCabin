@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TruckController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class TruckController : MonoBehaviour
     public Collider gasCollider;
     [SerializeField] bool hasGas;
     [SerializeField] ObjectiveUI objectiveUI;
+    [SerializeField] TextMeshProUGUI nextObj;
     void Awake()
     {
         hasGas = false;
@@ -29,6 +31,7 @@ public class TruckController : MonoBehaviour
         hasGas = true;
         Debug.Log("truck exit collider enabled");
         objectiveUI.Objective("Explore or Leave");
+        nextObj.text = " ";
     }
 
 }
