@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         }
         if (currentBuildIndex == gasStationBuildIndex)
         {
-            objectiveUI.Objective("Pickup your Mobile Order");
+            objectiveUI.Objective("Find your Mobile Order");
         }
         if(currentBuildIndex == huntingGroundsIndex)
         {
