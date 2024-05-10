@@ -2061,9 +2061,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepRate: 0.5
+  woodSurfaceTag: Wood Floor
+  snowSurfaceTag: Snow Floor
+  concreteSurfaceTag: Concrete Floor
   stepCooldown: 0
   source: {fileID: 3713369052339769239}
-  footstep: {fileID: 8300000, guid: 83a657a7bb8d34d32925009e759abc8c, type: 3}
+  woodFootstep: {fileID: 0}
+  snowFootstep: {fileID: 0}
+  concreteFootstep: {fileID: 0}
 --- !u!114 &7659283268840712606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5822,7 +5827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -860, y: -515}
+  m_AnchoredPosition: {x: -809, y: -515}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &106972535106989442

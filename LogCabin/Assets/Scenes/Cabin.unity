@@ -1449,6 +1449,10 @@ PrefabInstance:
       propertyPath: radioControl
       value: 
       objectReference: {fileID: 1232095777}
+    - target: {fileID: 1660365621878297686, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1990436760252567077, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Type
       value: 0
@@ -1485,6 +1489,10 @@ PrefabInstance:
       propertyPath: fadeImage
       value: 
       objectReference: {fileID: 1838314955}
+    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: manScream
       value: 
@@ -1545,6 +1553,14 @@ PrefabInstance:
       propertyPath: playerScripts.Array.data[6]
       value: 
       objectReference: {fileID: 1762828586}
+    - target: {fileID: 3917232957610265859, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917232957610265859, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: woodFootstep
+      value: 
+      objectReference: {fileID: 8300000, guid: 04e4402f821e6471094d05dd86ce31bf, type: 3}
     - target: {fileID: 4280461861002062047, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -1621,6 +1637,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4459864851508666809, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5380196571956609447, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -1645,6 +1665,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.99
       objectReference: {fileID: 0}
+    - target: {fileID: 5592375408882579033, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975821173337255012, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: gamemanager
+      value: 
+      objectReference: {fileID: 527119033}
     - target: {fileID: 6325989413862582020, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1665,6 +1693,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 023d884d55ee1b54aa2e7a04c7eb095d, type: 3}
+    - target: {fileID: 6761465428682996847, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6889683316257912029, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Pitch
       value: 0.9
@@ -2231,6 +2263,14 @@ PrefabInstance:
       propertyPath: deerChaseMusic
       value: 
       objectReference: {fileID: 8300000, guid: e993f8619049b43489fdeb51245b8920, type: 3}
+    - target: {fileID: 8378115033769307306, guid: 004c5ce3f76e5d4498b78de4c86dd55c, type: 3}
+      propertyPath: cabinBuildIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378115033769307306, guid: 004c5ce3f76e5d4498b78de4c86dd55c, type: 3}
+      propertyPath: gasStationBuildIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8378115033769307306, guid: 004c5ce3f76e5d4498b78de4c86dd55c, type: 3}
       propertyPath: scriptsToDisable.Array.size
       value: 3
