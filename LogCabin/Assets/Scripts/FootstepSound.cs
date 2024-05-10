@@ -22,7 +22,7 @@ public class FootstepSound : MonoBehaviour
         {
             source.pitch = 1f + Random.Range(-0.2f, 0.2f);
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
+            if (Physics.Raycast(transform.position, Vector3.down, out hit))
             {
                 if (hit.collider.CompareTag(woodSurfaceTag))
                 {

@@ -20,6 +20,8 @@ TagManager:
   - Gas Can
   - Matches
   - TruckExit
+  - Snow Floor
+  - Concrete Floor
   layers:
   - Default
   - TransparentFX
