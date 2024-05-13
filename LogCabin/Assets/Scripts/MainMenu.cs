@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] public new AudioSource audio;
     [SerializeField] public AudioClip hover;
     public string booleanKey = "IsEnabled";
+    public string endlessModeTrigger = "EndlessTrigger";
     public string previousBuildIndex = "prevBuildIndex";
     private int previousSceneBuildIndex;
     public GameObject enabledObject;
@@ -30,6 +31,11 @@ public class MainMenu : MonoBehaviour
             Debug.Log("being ran in unity editor");
             PlayerPrefs.Save(); // Save the changes
 #endif
+        }
+        if (!PlayerPrefs.HasKey(endlessModeTrigger))
+        {
+            PlayerPrefs.SetInt(endlessModeTrigger, 0);
+            Debug.Log("Created endlessModeTrigger");
         }
     }
     void Start()
@@ -77,6 +83,6 @@ public class MainMenu : MonoBehaviour
     {
         // Delete the PlayerPrefs value when the game exits
         PlayerPrefs.DeleteKey(previousBuildIndex);
-        Debug.Log("Value deleted from PlayerPrefs on application quit.");
+        Debug.Log("Value previousBuildIndex deleted from PlayerPrefs on application quit.");
     }
 }

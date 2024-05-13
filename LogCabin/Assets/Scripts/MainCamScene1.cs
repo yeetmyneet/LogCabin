@@ -3,8 +3,11 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 public class MainCamScene1 : MonoBehaviour {
     public string previousBuildIndex = "prevBuildIndex";
+    public string endlessModeTrigger = "EndlessTrigger";
     public void OpenScene2Button ( ) {
         Scene currentScene = SceneManager.GetActiveScene();
+        PlayerPrefs.SetInt(endlessModeTrigger, 0);
+        Debug.Log("Set endlessmodetrigger to 0");
         PlayerPrefs.SetInt(previousBuildIndex, currentScene.buildIndex);
         SimpleSceneFader.ChangeSceneWithFade ("Cabin");
 	}
@@ -17,8 +20,10 @@ public class MainCamScene1 : MonoBehaviour {
     public void Endless()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+        PlayerPrefs.SetInt(endlessModeTrigger, 1);
+        Debug.Log("Set endlessmodetrigger to 1");
         PlayerPrefs.SetInt(previousBuildIndex, currentScene.buildIndex);
-        SimpleSceneFader.ChangeSceneWithFade("Scripting Test Scene");
+        SimpleSceneFader.ChangeSceneWithFade("Cabin");
     }
     public void MainMenu()
     {

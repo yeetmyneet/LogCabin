@@ -19,6 +19,7 @@ public class PlayerCollision : MonoBehaviour
     public FadeOutDeath fadeScript;
     public bool lockPosition = false;
     public DeerMovement deerChase;
+    public GameManager gameManager;
     #endregion Inspector References
 
     void Start()
@@ -54,6 +55,7 @@ public class PlayerCollision : MonoBehaviour
                 Debug.LogWarning("Rigidbody component not found. Cannot lock position.");
             }
             deerChase.isDead = true;
+            gameManager.StopStopwatchAndSaveTime();
             fadeScript.StartCoroutine(fadeScript.FadeToBlackAndLoadScene());
         }
         if (collision.gameObject.CompareTag("TruckExit"))

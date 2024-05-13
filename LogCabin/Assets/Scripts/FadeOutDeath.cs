@@ -13,6 +13,7 @@ public class FadeOutDeath : MonoBehaviour
     public AudioSource menuAudioSource;
     public AudioClip select;
     [SerializeField] private GraphicRaycaster raycaster;
+    public CountdownTimer countdownTimer;
     private void Awake()
     {
         fadeImage.canvasRenderer.SetAlpha(0.0f);
@@ -30,6 +31,7 @@ public class FadeOutDeath : MonoBehaviour
     public IEnumerator SendToMainMenu()
     {
         StartCoroutine(DisableAudioSources());
+        countdownTimer.enabled = false;
         Debug.Log("PlayAudioClip");
         yield return null;
         

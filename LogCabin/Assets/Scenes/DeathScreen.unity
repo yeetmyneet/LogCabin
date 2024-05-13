@@ -547,6 +547,7 @@ MonoBehaviour:
   isButtons: 1
   enabledObject: {fileID: 1291807818}
   eventControl: {fileID: 2062397305}
+  endlessModeTrigger: EndlessTrigger
 --- !u!1001 &669413921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5852,7 +5853,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.3
+  m_fontSize: 78
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5888,7 +5889,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -88.57344, y: 0, z: -94.2878, w: -37.14368}
+  m_margin: {x: -180.96869, y: -8.869915, z: -155.63818, w: -37.14368}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -12140,6 +12141,7 @@ MonoBehaviour:
   isButtons: 0
   enabledObject: {fileID: 1291807818}
   eventControl: {fileID: 2062397305}
+  endlessModeTrigger: EndlessTrigger
 --- !u!1 &2051205017
 GameObject:
   m_ObjectHideFlags: 0
@@ -12334,6 +12336,7 @@ GameObject:
   - component: {fileID: 2062397302}
   - component: {fileID: 2062397303}
   - component: {fileID: 2062397305}
+  - component: {fileID: 2062397307}
   - component: {fileID: 2062397306}
   m_Layer: 0
   m_Name: Main Camera
@@ -12433,6 +12436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previousBuildIndex: prevBuildIndex
+  endlessModeTrigger: EndlessTrigger
 --- !u!114 &2062397302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12574,6 +12578,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2062397307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062397295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfb865aae2b24a1449bc4cc56186e356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endlessModeTrigger: EndlessTrigger
+  deathText: {fileID: 892642708}
 --- !u!1 &2114423111
 GameObject:
   m_ObjectHideFlags: 0

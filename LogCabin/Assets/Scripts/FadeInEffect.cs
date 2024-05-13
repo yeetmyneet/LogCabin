@@ -11,6 +11,7 @@ public class FadeInEffect : MonoBehaviour
     [SerializeField] bool isButtons;
     public GameObject enabledObject;
     [SerializeField] EventTriggerController eventControl;
+    public string endlessModeTrigger = "EndlessTrigger";
     #endregion Variables and Objects
     void Awake()
     {
@@ -48,5 +49,11 @@ public class FadeInEffect : MonoBehaviour
         Debug.Log("alpha is finally set to 1");
         if (isButtons) { eventControl.EnableAllEventTriggers(); }
         canvasGroup.interactable = true;
+    }
+    void OnApplicationQuit()
+    {
+        // Delete the PlayerPrefs value when the game exits
+        PlayerPrefs.DeleteKey(endlessModeTrigger);
+        Debug.Log("Value endlessModeTrigger deleted from PlayerPrefs on application quit.");
     }
 }

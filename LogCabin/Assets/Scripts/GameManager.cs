@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     #region Inspector References
     public GameObject prefabToSpawn;
+    private float startTime;
+    public GameObject countdownTimer;
+    public string endlessModeTrigger = "EndlessTrigger";
     public GameObject door;
     public GameObject doorBlocker;
     public GameObject window;
@@ -28,15 +31,25 @@ public class GameManager : MonoBehaviour
     public int gasStationBuildIndex;
     public int huntingGroundsIndex;
     #endregion Inspector References
-    private void Awake()
+    void Awake()
     {
+        
         // Get the current scene's build index
         int currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
 
         // Check if the current scene's build index matches the target build index
         if (currentBuildIndex == cabinBuildIndex)
         {
-            objectiveUI.Objective("Don't make a Sound");
+            if (PlayerPrefs.GetInt(endlessModeTrigger, 0) == 1)
+            {
+                StartStopwatch();
+                countdownTimer.SetActive(false);
+                objectiveUI.Objective("Survive!");
+            }
+            else
+            {
+                objectiveUI.Objective("Don't make a Sound");
+            }
         }
         if (currentBuildIndex == gasStationBuildIndex)
         {
@@ -101,5 +114,30 @@ public class GameManager : MonoBehaviour
         audioSource1.clip = doorOpenSound;
         audioSource1.Play();
         objectiveUI.Objective("Escape The House!");
+    }
+    public void StartStopwatch()
+    {
+        startTime = Time.time;
+        Debug.Log("Stopwatch started.");
+    }
+
+    public void StopStopwatchAndSaveTime()
+    {
+        float elapsedTime = Time.time - startTime;
+        SaveTime(elapsedTime);
+        Debug.Log("Stopwatch stopped. Elapsed time: " + elapsedTime + " seconds.");
+    }
+
+    public void SaveTime(float time)
+    {
+        PlayerPrefs.SetFloat("StopwatchTime", time);
+        PlayerPrefs.Save();
+        Debug.Log("Time saved: " + time + " seconds.");
+    }
+    void OnApplicationQuit()
+    {
+        // Delete the PlayerPrefs value when the game exits
+        PlayerPrefs.DeleteKey(endlessModeTrigger);
+        Debug.Log("Value endlessModeTrigger deleted from PlayerPrefs on application quit.");
     }
 }
