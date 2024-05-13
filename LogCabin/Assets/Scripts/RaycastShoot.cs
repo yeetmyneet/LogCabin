@@ -5,17 +5,16 @@ using UnityEngine;
 public class RaycastShoot : MonoBehaviour
 {
     public EnemyController enemyController;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    [SerializeField] AudioClip gunshot;
+    [SerializeField] Animator gunAnim;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            gunAnim.SetTrigger("shot");
+            Debug.Log("shooting");
             RaycastHit hit;
             Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
             if (Physics.Raycast(ray, out hit))
