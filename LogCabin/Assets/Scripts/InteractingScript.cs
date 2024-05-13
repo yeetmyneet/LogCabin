@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class InteractingScript : MonoBehaviour
@@ -55,12 +56,28 @@ public class InteractingScript : MonoBehaviour
     [SerializeField] float truckEnterSpeed = 30f;
     [SerializeField] PlayerCollision playerCollision;
     [SerializeField] Collider leave;
+    public int cabinLevel;
+    public int gasStationLevel;
+    public int huntingGroundsLevel;
     #endregion Variables and Objects
     void Awake()
     {
         sliderObject.SetActive(false);
         genControl = FindObjectOfType<GeneratorController>();
-        nextObj.text = "-Pickup your Mobile Order";
+
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        if (currentLevel == cabinLevel)
+        {
+            nextObj.text = "-Don't make a Sound";
+        }
+        if (currentLevel == gasStationLevel)
+        {
+            nextObj.text = "-Pickup your Mobile Order";
+        }
+        if (currentLevel == huntingGroundsLevel)
+        {
+            nextObj.text = "-Hunt the Deer Down";
+        }
     }
     void Update()
     {

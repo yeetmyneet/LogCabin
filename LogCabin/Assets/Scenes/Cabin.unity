@@ -1361,6 +1361,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4292154010595695564, guid: 08448637e1af75341a030d701957c1c5, type: 3}
   m_PrefabInstance: {fileID: 1601427577}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &447461762 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 319381054239067229, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 485426624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &452120722 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -208595431880416365, guid: 0444a1686fa672146bf8908eced85bfb, type: 3}
@@ -1410,7 +1421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1094007713446122145, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1113919855861368883, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: coolText
@@ -1440,6 +1451,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 023d884d55ee1b54aa2e7a04c7eb095d, type: 3}
+    - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: nextObj
+      value: 
+      objectReference: {fileID: 447461762}
     - target: {fileID: 1595992364856448043, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: genControl
       value: 
@@ -1846,6 +1861,10 @@ PrefabInstance:
       objectReference: {fileID: 4439797209150626595, guid: e65a391fd20bd8844a87f74bfe8d8afc, type: 2}
     - target: {fileID: 7035270922191712264, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741042036378502180, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7757695260397338378, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -6759,6 +6778,10 @@ PrefabInstance:
     - target: {fileID: 9027243559998923134, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
       propertyPath: m_Name
       value: FadeOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027243559998923134, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9080782081941242950, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
       propertyPath: m_SortingOrder
