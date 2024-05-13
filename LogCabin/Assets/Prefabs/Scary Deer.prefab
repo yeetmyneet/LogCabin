@@ -9190,6 +9190,7 @@ GameObject:
   - component: {fileID: 7379749362379649591}
   - component: {fileID: 2868290686635721282}
   - component: {fileID: 8552640450728480134}
+  - component: {fileID: 8070809802700606713}
   - component: {fileID: 629919751715296768}
   m_Layer: 0
   m_Name: Scary Deer
@@ -9278,7 +9279,7 @@ MonoBehaviour:
   forwardForce: 5
   window: {fileID: 6124660310299557832, guid: f89894c9f7da82949a75fe07de00be5d, type: 3}
   chaseDistance: 100000000
-  isDead: 0
+  isDead: 1
 --- !u!54 &8552640450728480134
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9306,6 +9307,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &8070809802700606713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6239852617891885138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a078f8d2b4bc5c4db194bdf79134ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 3288818061928282575, guid: c6071573d85d11b45af515ff00a349bd, type: 3}
+  targetPosition: {x: 0, y: 0, z: 0}
+  deerHealth: 3
+  deerMovement: {fileID: 2868290686635721282}
 --- !u!95 &629919751715296768
 Animator:
   serializedVersion: 5

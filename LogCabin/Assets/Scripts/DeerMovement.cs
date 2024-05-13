@@ -24,19 +24,30 @@ public class DeerMovement : MonoBehaviour
     {
         Vector3 moveDir = player.transform.position - transform.position;
         //if the player is close
-        if (moveDir.magnitude < chaseDistance)
+        if (moveDir.magnitude < chaseDistance && isDead == false)
         {
             agent.destination = player.transform.position;
             GetComponent<Animator>().SetTrigger("Chase");
         }
+        else
+        {
+            Debug.Log("deer is dead");
+        }
         if (moveDir != Vector3.zero)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(moveDir, Vector3.up);
-            // Add 90 degrees to the rotation
-            Quaternion additionalRotation = Quaternion.Euler(0, 90, 0);
-            Quaternion finalRotation = targetRotation * additionalRotation;
-            // Smoothly rotate towards the target rotation
-            transform.rotation = Quaternion.Lerp(transform.rotation, finalRotation, Time.deltaTime * 10f);
+            if (isDead == false)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(moveDir, Vector3.up);
+                // Add 90 degrees to the rotation
+                Quaternion additionalRotation = Quaternion.Euler(0, 90, 0);
+                Quaternion finalRotation = targetRotation * additionalRotation;
+                // Smoothly rotate towards the target rotation
+                transform.rotation = Quaternion.Lerp(transform.rotation, finalRotation, Time.deltaTime * 10f);
+            }
+            else
+            {
+                Debug.Log("deer is dead");
+            }
         }
         else
         {

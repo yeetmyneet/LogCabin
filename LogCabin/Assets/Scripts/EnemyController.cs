@@ -6,10 +6,30 @@ public class EnemyController : MonoBehaviour
 {
     public GameObject prefabToSpawn;
     public Vector3 targetPosition;
+    public int deerHealth = 3;
+    public DeerMovement deerMovement;
 
     public void TeleportToPosition() { transform.position = targetPosition; }
-    
-    void Dissolve()
+
+    void Update()
+    {
+        
+    }
+
+    public void TakeDamage()
+    {
+       if (deerHealth <= 0)
+        {
+            deerMovement.isDead = true;
+            Dissolve();
+        }
+       else
+        {
+            deerHealth--;
+        }
+    }
+
+    public void Dissolve()
     {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         if (rb != null) { rb.constraints = RigidbodyConstraints.FreezeAll; }
