@@ -30,7 +30,7 @@ public class Collectables : MonoBehaviour
             collection.text = "Current Collectables: " + MatchesCollected;
             Destroy(collision.gameObject);
 
-            if(MatchesCollected == 4)
+            if(MatchesCollected == 2)
             {
                 collection.text = "Start a Fire!";
             }
