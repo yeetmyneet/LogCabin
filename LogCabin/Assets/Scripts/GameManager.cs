@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour
     public GameObject prefabToSpawn;
     private float startTime;
     public GameObject countdownTimer;
+    public float fadeOutDelay;
     public string endlessModeTrigger = "EndlessTrigger";
     public GameObject door;
+    public MonoBehaviour[] playerScripts;
+    public GameObject[] controllers;
     public GameObject doorBlocker;
     public GameObject window;
     public Transform spawnPoint1;
@@ -24,6 +27,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioSource audioSource1;
     [SerializeField] AudioSource audioSource2;
     [SerializeField] AudioSource audioSource3;
+    [SerializeField] PlayerCollision playerCollision;
+    public FadeOutDeath fadeScript;
     public DeerMovement deerMovement;
     bool spawnedDeer = false;
     [SerializeField] ObjectiveUI objectiveUI;
@@ -139,5 +144,21 @@ public class GameManager : MonoBehaviour
         // Delete the PlayerPrefs value when the game exits
         PlayerPrefs.DeleteKey(endlessModeTrigger);
         Debug.Log("Value endlessModeTrigger deleted from PlayerPrefs on application quit.");
+    }
+    public void BeatGame()
+    {
+        DisableScriptsAndControllers();
+        fadeScript.StartCoroutine(fadeScript.LoadWinScreen(1f));
+    }
+    public void DisableScriptsAndControllers()
+    {
+        foreach (MonoBehaviour scripts in playerScripts)
+        {
+            scripts.enabled = false;
+        }
+        foreach (GameObject obj in controllers)
+        {
+            obj.SetActive(false);
+        }
     }
 }

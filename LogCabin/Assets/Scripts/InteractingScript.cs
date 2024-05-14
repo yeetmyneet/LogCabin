@@ -16,6 +16,7 @@ public class InteractingScript : MonoBehaviour
     [SerializeField] string gasTag = "Gas Can";
     [SerializeField] string truckExitTag = "TruckExit";
     public GameObject objectToShow;
+    public GameManager gameManager;
     public Slider slider;
     public GameObject sliderObject;
     public MonoBehaviour scriptToDisable;

@@ -34,14 +34,7 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.Log("Player collided with an enemy!");
             Rigidbody rb = GetComponent<Rigidbody>();
-            foreach (MonoBehaviour scripts in playerScripts)
-            {
-                scripts.enabled = false;
-            }
-            foreach (GameObject obj in controllers)
-            {
-                obj.SetActive(false);
-            }
+            DisableScriptsAndControllers();
             audioSource1.clip = manScream;
             audioSource2.clip = bloodSound;
             audioSource1.Play();
@@ -66,14 +59,7 @@ public class PlayerCollision : MonoBehaviour
     public void ExitGame()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
-        foreach (MonoBehaviour scripts in playerScripts)
-        {
-            scripts.enabled = false;
-        }
-        foreach (GameObject obj in controllers)
-        {
-            obj.SetActive(false);
-        }
+        DisableScriptsAndControllers();
         audioSource3.clip = truckEnterSound;
         audioSource3.Play();
         if (rb != null)
@@ -107,6 +93,17 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.LogWarning("Object with tag 'Enemy' not found!");
         }
-        fadeScript.StartCoroutine(fadeScript.LoadWinScreen());
+        fadeScript.StartCoroutine(fadeScript.LoadWinScreen(0f));
+    }
+    public void DisableScriptsAndControllers()
+    {
+        foreach (MonoBehaviour scripts in playerScripts)
+        {
+            scripts.enabled = false;
+        }
+        foreach (GameObject obj in controllers)
+        {
+            obj.SetActive(false);
+        }
     }
 }
