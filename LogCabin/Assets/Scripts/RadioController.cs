@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RadioController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class RadioController : MonoBehaviour
     [SerializeField] float brokenInterval;
     [SerializeField] float brokenTimer = 0f;
     [SerializeField] GameManager gameManager;
+    [SerializeField] TextMeshProUGUI nextObj;
+    [SerializeField] TextMeshProUGUI currentObj;
 
     void Start()
     {
@@ -59,6 +62,8 @@ public class RadioController : MonoBehaviour
             audioSource.Play();
         }
         interactScript.radioPlaying = true;
+        currentObj.text = "Turn the radio off";
+        nextObj.text = "- Don't make a Sound";
         Debug.Log("Playing song from Radio");
     }
 
@@ -68,6 +73,8 @@ public class RadioController : MonoBehaviour
         {
             audioSource.Stop();
             isPlaying = false;
+            currentObj.text = "Don't make a Sound";
+            nextObj.text = "-wait.";
             InvokeRepeating("CheckForChance", 0f, 5f);
             timeSinceReset = 0f;
         }

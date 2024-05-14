@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     #endregion Inspector References
     void Awake()
     {
-        
         // Get the current scene's build index
         int currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
 
@@ -69,6 +68,7 @@ public class GameManager : MonoBehaviour
             door.SetActive(false);
             doorBlocker.SetActive(true);
             Debug.Log("broke door");
+            objectiveUI.Objective("Accept your fate");
             audioSource1.clip = doorSound;
             audioSource1.Play();
             audioSource2.clip = deerChaseMusic;

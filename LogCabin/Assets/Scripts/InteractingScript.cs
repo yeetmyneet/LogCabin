@@ -68,15 +68,17 @@ public class InteractingScript : MonoBehaviour
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
         if (currentLevel == cabinLevel)
         {
-            nextObj.text = "-Don't make a Sound";
+            objectiveUI.Objective("Don't make a sound");
+            nextObj.text = "- wait.";
         }
         if (currentLevel == gasStationLevel)
         {
-            nextObj.text = "-Pickup your Mobile Order";
+            objectiveUI.Objective("Find your Mobile Order");
+            nextObj.text = "- Pickup your Mobile Order";
         }
         if (currentLevel == huntingGroundsLevel)
         {
-            nextObj.text = "-Hunt the Deer Down";
+            objectiveUI.Objective("Hunt the Deer");
         }
     }
     void Update()
@@ -188,7 +190,7 @@ public class InteractingScript : MonoBehaviour
                 gasCanObject.SetActive(false);
                 Debug.Log("got gas can");
                 objectiveUI.Objective("Load your truck up");
-                nextObj.text = "-Explore or Leave";
+                nextObj.text = "- Explore or Leave";
                 gasCanShowing = false;
                 isGettingGas = false;
                 hasGasCan = true;
@@ -230,7 +232,7 @@ public class InteractingScript : MonoBehaviour
                 isLookingAtGas = true;
                 Debug.Log("looking at gas");
                 objectiveUI.Objective("Pickup your Mobile Order");
-                nextObj.text = "-Load your truck up";
+                nextObj.text = "- Load your truck up";
             }
             else if (hit.collider.CompareTag(truckExitTag) && Vector3.Distance(transform.position, hit.transform.position) <= maxInteractionDistance)
             {
@@ -260,6 +262,8 @@ public class InteractingScript : MonoBehaviour
     {
         generatorBroken = true;
         Debug.Log("Generator is broken! Do something here...");
+        objectiveUI.Objective("Don't let the lights go out");
+        nextObj.text = "- Don't make a sound";
     }
     void OnFurnaceBroken()
     {

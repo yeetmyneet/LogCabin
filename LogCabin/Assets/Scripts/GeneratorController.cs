@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GeneratorController : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class GeneratorController : MonoBehaviour
     private float timeSinceReset;
     public bool tooLate = false;
     [SerializeField] bool generatorWorking = true;
+    [SerializeField] TextMeshProUGUI nextObj;
+    [SerializeField] TextMeshProUGUI currentObj;
     [SerializeField] InteractingScript interactScript;
     [SerializeField] GameObject[] lights;
     [SerializeField] AudioSource generatorSource;
@@ -70,6 +73,8 @@ public class GeneratorController : MonoBehaviour
         generatorWorking = true;
         generatorSource.Play();
         LightCheck(0);
+        nextObj.text = "- wait.";
+        currentObj.text = "Don't make a Sound";
         timeSinceReset = 0f;
     }
     void BreakGenerator()
