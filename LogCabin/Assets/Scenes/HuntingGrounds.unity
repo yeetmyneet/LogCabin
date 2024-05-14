@@ -721,7 +721,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1026,9 +1026,8 @@ MonoBehaviour:
   muzzle: {fileID: 693019747}
   muzzleFlash: {fileID: 748781637555137343, guid: b9e4e185fe3d3674ab50aa2a10a663cc, type: 3}
   enemyController: {fileID: 1555017443}
-  shotgun: {fileID: 693019748}
   gunshot: {fileID: 0}
-  pump: {fileID: 8300000, guid: 2ee610645feadf746a9117bfa1522d68, type: 3}
+  cooldownDuration: 1.584
   gunAnim: {fileID: 2028036683}
 --- !u!1001 &1264396871
 PrefabInstance:
