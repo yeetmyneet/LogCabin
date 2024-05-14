@@ -19,7 +19,7 @@ public class RaycastShoot : MonoBehaviour
             if (CanUse())
             {
                 gunAnim.SetTrigger("shot");
-
+                MarkUsed();
                 if (muzzleFlash != null)
                 {
                     Instantiate(muzzleFlash, muzzle.position, Quaternion.identity); ;

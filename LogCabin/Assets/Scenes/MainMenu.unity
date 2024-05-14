@@ -1010,6 +1010,7 @@ GameObject:
   - component: {fileID: 313274057}
   - component: {fileID: 313274059}
   - component: {fileID: 313274060}
+  - component: {fileID: 313274061}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1265,6 +1266,21 @@ MonoBehaviour:
   endlessModeTrigger: EndlessTrigger
   previousBuildIndex: prevBuildIndex
   enabledObject: {fileID: 1890577338}
+--- !u!114 &313274061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313274051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058b8e5e4e829c14aba536a7b6b3d4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomedInFOV: 30
+  zoomedOutFOV: 60
+  duration: 5
 --- !u!1001 &342490731
 PrefabInstance:
   m_ObjectHideFlags: 0
