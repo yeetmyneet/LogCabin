@@ -607,6 +607,10 @@ PrefabInstance:
       propertyPath: deerHealth
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8070809802700606713, guid: ad98fc731cc180447b83570b1a38c233, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 3284835}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

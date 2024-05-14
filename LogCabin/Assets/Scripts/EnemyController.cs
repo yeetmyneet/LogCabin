@@ -6,8 +6,9 @@ public class EnemyController : MonoBehaviour
 {
     public GameObject prefabToSpawn;
     public Vector3 targetPosition;
-    public int deerHealth = 3;
+    public float deerHealth = 3f;
     public GameManager gameManager;
+    public float deerDamage = 1f;
     public DeerMovement deerMovement;
     [SerializeField] AudioClip hitSound;
     [SerializeField] AudioClip deathSound;
@@ -27,9 +28,10 @@ public class EnemyController : MonoBehaviour
         }
        else
         {
-            deerHealth--;
+            deerHealth -= deerDamage;
             hitSource.PlayOneShot(hitSound);
             Debug.Log("deer took damage");
+            Debug.Log("deer health: " + deerHealth);
         }
     }
 
