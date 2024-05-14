@@ -2120,6 +2120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previousBuildIndex: prevBuildIndex
+  endlessModeTrigger: EndlessTrigger
 --- !u!1 &821302546
 GameObject:
   m_ObjectHideFlags: 0
@@ -4106,15 +4107,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '\u2022 Don''t let the deer into the house.
+  m_text: '\u2022 Don''t let the deer into the house
 
     \u2022 Remember to keep
-    quiet, the deer hears very well.
+    quiet, the deer will hear you
 
-    \u2022 Keep the generator running.
+    \u2022 Keep the generator running
 
     \u2022
-    Survive 6 minutes and then you can leave.'
+    Survive for 5 minutes and then you can leave'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c5eaf7507ecdb7b4ca254d5efd9f8e37, type: 2}
   m_sharedMaterial: {fileID: 3461954757246342769, guid: c5eaf7507ecdb7b4ca254d5efd9f8e37, type: 2}
@@ -4141,7 +4142,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.9
+  m_fontSize: 49
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
