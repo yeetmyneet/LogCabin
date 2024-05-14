@@ -12,7 +12,7 @@ public class DeerMovement : MonoBehaviour
     NavMeshAgent agent;
     Vector3 home;
     public bool isDead = false;
-
+    public bool deerIsAlive = true;
     void Start()
     {
         home = transform.position;
@@ -24,18 +24,18 @@ public class DeerMovement : MonoBehaviour
     {
         Vector3 moveDir = player.transform.position - transform.position;
         //if the player is close
-        if (moveDir.magnitude < chaseDistance && isDead == false)
+        if (moveDir.magnitude < chaseDistance && isDead == false && deerIsAlive == true)
         {
             agent.destination = player.transform.position;
             GetComponent<Animator>().SetTrigger("Chase");
         }
         else
         {
-            Debug.Log("deer is dead");
+            Debug.Log("player/deer is dead");
         }
         if (moveDir != Vector3.zero)
         {
-            if (isDead == false)
+            if (isDead == false && deerIsAlive == true)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(moveDir, Vector3.up);
                 // Add 90 degrees to the rotation
@@ -46,7 +46,7 @@ public class DeerMovement : MonoBehaviour
             }
             else
             {
-                Debug.Log("deer is dead");
+                Debug.Log("player/deer is dead");
             }
         }
         else

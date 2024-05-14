@@ -21,11 +21,13 @@ public class EnemyController : MonoBehaviour
             deerMovement.isDead = true;
             Dissolve();
             hitSource.PlayOneShot(deathSound);
+            Debug.Log("deer died");
         }
        else
         {
             deerHealth--;
             hitSource.PlayOneShot(hitSound);
+            Debug.Log("deer took damage");
         }
     }
 
@@ -35,7 +37,11 @@ public class EnemyController : MonoBehaviour
         if (rb != null) { rb.constraints = RigidbodyConstraints.FreezeAll; }
         else { Debug.LogError("no Rigidbody attached to Enemy"); }
         // Spawn the prefab on the gameObject
-        if (prefabToSpawn != null) { Instantiate(prefabToSpawn, transform.position, Quaternion.identity); }
+        if (prefabToSpawn != null)
+        {
+            Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+            Debug.Log("spawned smoke on deer");
+        }
         else { Debug.LogError("no prefab attached to Enemy"); }
         StartCoroutine(DestroyAfterDelay(0.5f));
     }
