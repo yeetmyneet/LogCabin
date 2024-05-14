@@ -68,12 +68,12 @@ public class FadeOutDeath : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);
     }
-    public IEnumerator LoadWinScreen()
+    public IEnumerator LoadWinScreen(float waitTime)
     {
         StartCoroutine(DisableAudioSources());
         yield return null;
         fadeImage.canvasRenderer.SetAlpha(0.0f);
-
+        yield return new WaitForSeconds(waitTime);
         fadeImage.CrossFadeAlpha(1.0f, secondFadeSpeed, false);
         yield return new WaitForSeconds(secondFadeSpeed);
 

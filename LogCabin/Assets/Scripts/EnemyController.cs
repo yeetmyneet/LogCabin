@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public GameObject prefabToSpawn;
     public Vector3 targetPosition;
     public int deerHealth = 3;
+    public GameManager gameManager;
     public DeerMovement deerMovement;
     [SerializeField] AudioClip hitSound;
     [SerializeField] AudioClip deathSound;
@@ -19,8 +20,9 @@ public class EnemyController : MonoBehaviour
        if (deerHealth <= 0)
         {
             deerMovement.isDead = true;
-            Dissolve();
             hitSource.PlayOneShot(deathSound);
+            Dissolve();
+            gameManager.BeatGame();
             Debug.Log("deer died");
         }
        else
