@@ -617,6 +617,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4325411583208656484, guid: f6f05d317cc544f4a9eb22f93c2e8c35, type: 3}
   m_PrefabInstance: {fileID: 507970265}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &693019746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693019747}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693019747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693019746}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.9, y: 5.2, z: -17.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 895929855}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &706135026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7742ac4f32c2212408dfd6a1ec13fc25, type: 3}
@@ -879,6 +910,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8fe20ea4e759bc4da151c6352fec798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  muzzle: {fileID: 693019747}
+  muzzleFlash: {fileID: 748781637555137343, guid: b9e4e185fe3d3674ab50aa2a10a663cc, type: 3}
   enemyController: {fileID: 1555017443}
   gunshot: {fileID: 0}
   gunAnim: {fileID: 2028036683}
@@ -1026,7 +1059,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4459864851310106429, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 895929855}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -1426,7 +1459,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: c6317c20f7131a247846595b830b6460, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c6317c20f7131a247846595b830b6460, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 693019747}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c6317c20f7131a247846595b830b6460, type: 3}
       insertIndex: -1
