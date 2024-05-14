@@ -8,13 +8,11 @@ public class EnemyController : MonoBehaviour
     public Vector3 targetPosition;
     public int deerHealth = 3;
     public DeerMovement deerMovement;
+    [SerializeField] AudioClip hitSound;
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] AudioSource hitSource;
 
     public void TeleportToPosition() { transform.position = targetPosition; }
-
-    void Update()
-    {
-        
-    }
 
     public void TakeDamage()
     {
@@ -22,10 +20,12 @@ public class EnemyController : MonoBehaviour
         {
             deerMovement.isDead = true;
             Dissolve();
+            hitSource.PlayOneShot(deathSound);
         }
        else
         {
             deerHealth--;
+            hitSource.PlayOneShot(hitSound);
         }
     }
 
@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
         // Spawn the prefab on the gameObject
         if (prefabToSpawn != null) { Instantiate(prefabToSpawn, transform.position, Quaternion.identity); }
         else { Debug.LogError("no prefab attached to Enemy"); }
-        StartCoroutine(DestroyAfterDelay(1f));
+        StartCoroutine(DestroyAfterDelay(0.5f));
     }
     IEnumerator DestroyAfterDelay(float delay)
     {
