@@ -31,7 +31,7 @@ public class DeerMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("player/deer is dead");
+            Debug.Log("player is alive: " + isDead + ", deer is dead: " + deerIsAlive);
         }
         if (moveDir != Vector3.zero)
         {
@@ -46,7 +46,7 @@ public class DeerMovement : MonoBehaviour
             }
             else
             {
-                Debug.Log("player/deer is dead");
+                Debug.Log("player is alive: " + isDead + ", deer is dead: " + deerIsAlive);
             }
         }
         else
