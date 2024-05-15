@@ -2175,16 +2175,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34ad286bed2e294aa6d9a4c87fe4488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manScream: {fileID: 0}
-  bloodSound: {fileID: 0}
-  truckEnterSound: {fileID: 0}
-  playerScripts: []
-  controllers: []
+  manScream: {fileID: 8300000, guid: c6b188743a91fa148ac2fbd275fdc7cd, type: 3}
+  bloodSound: {fileID: 8300000, guid: 83776413010cbce4289049e2d4cc2877, type: 3}
+  truckEnterSound: {fileID: 8300000, guid: 47782e0033f1b2842922581e33e3b8c1, type: 3}
+  playerScripts:
+  - {fileID: 4459864850019384740}
+  - {fileID: 5975821173337255012}
+  - {fileID: 1595992364856448043}
+  - {fileID: 3917232957610265859}
+  - {fileID: 434559651598613732}
+  - {fileID: 3564806073364240872}
+  - {fileID: 4850775223916616721}
+  controllers:
+  - {fileID: 0}
+  - {fileID: 0}
   fadeImage: {fileID: 0}
   fadeSpeed: 1
   fadeScript: {fileID: 0}
   lockPosition: 0
-  deerChase: {fileID: 0}
+  deerChase: {fileID: 2868290686635721282, guid: ad98fc731cc180447b83570b1a38c233, type: 3}
   gameManager: {fileID: 0}
 --- !u!114 &3917232957610265859
 MonoBehaviour:
@@ -2727,6 +2736,7 @@ MonoBehaviour:
   gasTag: Gas Can
   truckExitTag: TruckExit
   objectToShow: {fileID: 5438192484180589161}
+  gameManager: {fileID: 0}
   slider: {fileID: 544850670295433960}
   sliderObject: {fileID: 7967514212622073192}
   scriptToDisable: {fileID: 4459864850019384740}

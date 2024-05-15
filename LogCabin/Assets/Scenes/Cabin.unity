@@ -1566,25 +1566,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: deerChase
-      value: 
-      objectReference: {fileID: 2868290686635721282, guid: ad98fc731cc180447b83570b1a38c233, type: 3}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: fadeImage
       value: 
       objectReference: {fileID: 1838314955}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: manScream
-      value: 
-      objectReference: {fileID: 8300000, guid: c6b188743a91fa148ac2fbd275fdc7cd, type: 3}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: bloodSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 83776413010cbce4289049e2d4cc2877, type: 3}
     - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: fadeScript
       value: 
@@ -1594,18 +1578,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 527119033}
     - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: truckEnterSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 47782e0033f1b2842922581e33e3b8c1, type: 3}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: controllers.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: playerScripts.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: controllers.Array.data[0]
       value: 
       objectReference: {fileID: 20369708}
@@ -1613,34 +1585,6 @@ PrefabInstance:
       propertyPath: controllers.Array.data[1]
       value: 
       objectReference: {fileID: 1232095776}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: playerScripts.Array.data[0]
-      value: 
-      objectReference: {fileID: 1402228904}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: playerScripts.Array.data[1]
-      value: 
-      objectReference: {fileID: 1166647813}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: playerScripts.Array.data[2]
-      value: 
-      objectReference: {fileID: 1164569996}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: playerScripts.Array.data[3]
-      value: 
-      objectReference: {fileID: 1402228908}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: playerScripts.Array.data[4]
-      value: 
-      objectReference: {fileID: 1402228901}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: playerScripts.Array.data[5]
-      value: 
-      objectReference: {fileID: 1402228906}
-    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: playerScripts.Array.data[6]
-      value: 
-      objectReference: {fileID: 1762828586}
     - target: {fileID: 3713369052339769239, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -5075,39 +5019,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d64376a8d16b904296b29c8427487fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1402228904 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 485426624}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1402228906 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3564806073364240872, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 485426624}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc243d7f12df52344acefb4d760d8bed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1402228908 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3917232957610265859, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 485426624}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d42bf06b657d7048b6ebed2147107b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1402228912 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1113919855861368883, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -6466,17 +6377,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4711208715938537054, guid: 8f102a758da5ae64aa4bd59481216620, type: 3}
---- !u!114 &1762828586 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4850775223916616721, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 485426624}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!225 &1774938284 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 8165617255434436239, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}

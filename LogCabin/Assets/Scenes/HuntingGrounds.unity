@@ -693,6 +693,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4325411583208656484, guid: f6f05d317cc544f4a9eb22f93c2e8c35, type: 3}
   m_PrefabInstance: {fileID: 507970265}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &516276972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1084529541564147964, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
+  m_PrefabInstance: {fileID: 1953445831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &693019746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,9 +1198,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 023d884d55ee1b54aa2e7a04c7eb095d, type: 3}
     - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 516276972}
+    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: fadeScript
+      value: 
+      objectReference: {fileID: 1789177583}
+    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 3284835}
+    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: controllers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825420987122367119, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: controllers.Array.data[0]
+      value: 
+      objectReference: {fileID: 1555017441}
     - target: {fileID: 3171120656863951945, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_margin.z
       value: -0.58813477
@@ -1229,6 +1260,14 @@ PrefabInstance:
     - target: {fileID: 3606048520322131511, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 236.00003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713369052339769239, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713369052339769239, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3917232957610265859, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: footstep
