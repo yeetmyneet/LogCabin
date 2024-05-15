@@ -1295,7 +1295,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Log Cabin
+  m_text: 'The Deer
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e65a391fd20bd8844a87f74bfe8d8afc, type: 2}
   m_sharedMaterial: {fileID: 4439797209150626595, guid: e65a391fd20bd8844a87f74bfe8d8afc, type: 2}

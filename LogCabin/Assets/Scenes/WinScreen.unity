@@ -543,6 +543,7 @@ MonoBehaviour:
   isButtons: 1
   enabledObject: {fileID: 1291807818}
   eventControl: {fileID: 2062397305}
+  endlessModeTrigger: EndlessTrigger
 --- !u!1 &788638672
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +839,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2d3e04c83505db4479024ec1d3b9dd47, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5feb2b994b9363f43b74d61cea5ed554, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2003,6 +2004,7 @@ MonoBehaviour:
   isButtons: 0
   enabledObject: {fileID: 1291807818}
   eventControl: {fileID: 2062397305}
+  endlessModeTrigger: EndlessTrigger
 --- !u!1 &2051205017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,6 +2298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84571606d9ab4e28bfb751320d66ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  previousBuildIndex: prevBuildIndex
+  endlessModeTrigger: EndlessTrigger
 --- !u!82 &2062397301
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2450,6 +2454,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   booleanKey: IsEnabled
+  endlessModeTrigger: EndlessTrigger
+  timerText: {fileID: 0}
 --- !u!1 &491714780471862658
 GameObject:
   m_ObjectHideFlags: 0
