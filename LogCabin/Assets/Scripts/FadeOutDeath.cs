@@ -14,6 +14,7 @@ public class FadeOutDeath : MonoBehaviour
     public AudioClip select;
     [SerializeField] private GraphicRaycaster raycaster;
     public CountdownTimer countdownTimer;
+    [SerializeField] int nextSceneIndex;
     private void Awake()
     {
         fadeImage.canvasRenderer.SetAlpha(0.0f);
@@ -86,5 +87,19 @@ public class FadeOutDeath : MonoBehaviour
 
         fadeImage.CrossFadeAlpha(1.0f, fadeSpeed, false);
         yield return new WaitForSeconds(fadeSpeed);
+    }
+    public void SceneTransition()
+    {
+        StartCoroutine(LoadNextScene(0f, nextSceneIndex));
+    }
+    public IEnumerator LoadNextScene(float waitTime, int nextScene)
+    {
+        StartCoroutine(DisableAudioSources());
+        yield return null;
+        fadeImage.canvasRenderer.SetAlpha(0.0f);
+        yield return new WaitForSeconds(waitTime);
+        fadeImage.CrossFadeAlpha(1.0f, secondFadeSpeed, false);
+        yield return new WaitForSeconds(secondFadeSpeed);
+        SceneManager.LoadScene(nextScene);
     }
 }

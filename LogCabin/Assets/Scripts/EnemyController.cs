@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public GameObject prefabToSpawn;
+    public PlayerCollision collisionScript;
     public Vector3 targetPosition;
     public float deerHealth = 3f;
     public GameManager gameManager;
@@ -42,8 +43,14 @@ public class EnemyController : MonoBehaviour
 
     public void Dissolve()
     {
+        collisionScript.deerDead = true;
+        Debug.Log("Set collisonscript.deerdead to true");
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-        if (rb != null) { rb.constraints = RigidbodyConstraints.FreezeAll; }
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+            Debug.Log("deer rigidbody frozen.");
+        }
         else { Debug.LogError("no Rigidbody attached to Enemy"); }
         // Spawn the prefab on the gameObject
         if (prefabToSpawn != null)

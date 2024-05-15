@@ -25,6 +25,7 @@ TagManager:
   - Dolls
   - Gun
   - Ammo
+  - TruckTransition
   layers:
   - Default
   - TransparentFX

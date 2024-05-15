@@ -7,6 +7,7 @@ public class PlayerCollision : MonoBehaviour
 {
     #region Inspector References
     public AudioClip manScream;
+    public bool deerDead = false;
     public AudioClip bloodSound;
     public AudioClip truckEnterSound;
     private AudioSource audioSource1;
@@ -30,7 +31,7 @@ public class PlayerCollision : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && deerDead == false)
         {
             Debug.Log("Player collided with an enemy!");
             Rigidbody rb = GetComponent<Rigidbody>();
@@ -54,6 +55,10 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("TruckExit"))
         {
             ExitGame();
+        }
+        if (collision.gameObject.CompareTag("TruckTransition"))
+        {
+            fadeScript.SceneTransition();
         }
     }
     public void ExitGame()
