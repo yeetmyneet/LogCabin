@@ -6,11 +6,16 @@ public class RaycastShoot : MonoBehaviour
 {
     public Transform muzzle;
     public GameObject muzzleFlash;
+    public GameObject impact;
     public EnemyController enemyController;
-    [SerializeField] AudioClip gunshot;
-    public float cooldownDuration = 3f;
-    private float lastUsedTime;
     [SerializeField] Animator gunAnim;
+    [SerializeField] AudioSource shotgun;
+    [SerializeField] AudioClip gunshot;
+    [SerializeField] AudioClip triggerPull;
+    [SerializeField] AudioClip pump;
+    [SerializeField] Light flash;
+    public float cooldownDuration = 1.32f;
+    private float lastUsedTime;
 
     void Update()
     {
@@ -18,8 +23,12 @@ public class RaycastShoot : MonoBehaviour
         {  
             if (CanUse())
             {
-                gunAnim.SetTrigger("shot");
+                gunAnim.SetTrigger("shoot");
+                shotgun.PlayOneShot(triggerPull);
+                shotgun.PlayOneShot(gunshot);
+                shotgun.PlayOneShot(pump);
                 MarkUsed();
+                StartCoroutine(flashDuration(0.1f));
                 if (muzzleFlash != null)
                 {
                     Instantiate(muzzleFlash, muzzle.position, Quaternion.identity); ;
@@ -38,12 +47,14 @@ public class RaycastShoot : MonoBehaviour
                             enemyController.TakeDamage();
                             Debug.Log("Enemy Took Damage");
                         }
+                        Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
                     }
                 }
             }
             else
             {
                 Debug.Log("cooldown still present");
+                shotgun.PlayOneShot(triggerPull);
             }
         }
     }
@@ -55,5 +66,14 @@ public class RaycastShoot : MonoBehaviour
     public void MarkUsed()
     {
         lastUsedTime = Time.time;
+        gunAnim.SetTrigger("pumpOver");
+    }
+    IEnumerator flashDuration(float duration)
+    {
+        flash.enabled = true;
+
+        yield return new WaitForSeconds(duration);
+
+        flash.enabled = false;
     }
 }

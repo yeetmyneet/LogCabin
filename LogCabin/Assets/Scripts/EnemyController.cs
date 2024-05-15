@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public float deerDamage = 1f;
     public DeerMovement deerMovement;
     [SerializeField] AudioClip hitSound;
+    [SerializeField] AudioClip hurtSound;
     [SerializeField] AudioClip deathSound;
     [SerializeField] AudioSource hitSource;
 
@@ -24,10 +25,14 @@ public class EnemyController : MonoBehaviour
             hitSource.PlayOneShot(deathSound);
             Dissolve();
             gameManager.BeatGame();
+            hitSource.pitch = 1;
+            hitSource.PlayOneShot(deathSound);
             Debug.Log("deer died");
         }
        else
         {
+            hitSource.PlayOneShot(hurtSound);
+            hitSource.pitch = 1f + Random.Range(-0.2f, 0.2f);
             deerHealth -= deerDamage;
             hitSource.PlayOneShot(hitSound);
             Debug.Log("deer took damage");
@@ -47,7 +52,7 @@ public class EnemyController : MonoBehaviour
             Debug.Log("spawned smoke on deer");
         }
         else { Debug.LogError("no prefab attached to Enemy"); }
-        StartCoroutine(DestroyAfterDelay(0.5f));
+        StartCoroutine(DestroyAfterDelay(3f));
     }
     IEnumerator DestroyAfterDelay(float delay)
     {
