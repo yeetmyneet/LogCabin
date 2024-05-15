@@ -85,4 +85,9 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.DeleteKey(previousBuildIndex);
         Debug.Log("Value previousBuildIndex deleted from PlayerPrefs on application quit.");
     }
+    public void ResetData()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("Deleted Data");
+    }
 }
