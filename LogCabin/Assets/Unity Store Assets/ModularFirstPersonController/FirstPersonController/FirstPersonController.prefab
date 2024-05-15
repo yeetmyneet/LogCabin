@@ -2176,6 +2176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manScream: {fileID: 8300000, guid: c6b188743a91fa148ac2fbd275fdc7cd, type: 3}
+  deerDead: 0
   bloodSound: {fileID: 8300000, guid: 83776413010cbce4289049e2d4cc2877, type: 3}
   truckEnterSound: {fileID: 8300000, guid: 47782e0033f1b2842922581e33e3b8c1, type: 3}
   playerScripts:
@@ -5185,9 +5186,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8221720307152123472}
   - component: {fileID: 6325989413862582020}
+  - component: {fileID: 6549093881368065742}
   - component: {fileID: 4850775223916616721}
   - component: {fileID: 2193488503765128161}
-  - component: {fileID: 6549093881368065742}
   m_Layer: 0
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -5243,6 +5244,26 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &6549093881368065742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620365275600471593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9684a806900b5174184ef1260d9b8f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 6325989413862582020}
+  crosshair: {fileID: 0}
+  scriptToDisable: {fileID: 8195693559990523602}
+  objectiveUI: {fileID: 0}
+  timer: {fileID: 0}
+  collect: {fileID: 0}
+  FPC: {fileID: 4459864850019384740}
+  MenuAudioSource: {fileID: 0}
 --- !u!114 &4850775223916616721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5283,26 +5304,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6549093881368065742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6620365275600471593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9684a806900b5174184ef1260d9b8f13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 6325989413862582020}
-  crosshair: {fileID: 0}
-  scriptToDisable: {fileID: 8195693559990523602}
-  objectiveUI: {fileID: 0}
-  timer: {fileID: 0}
-  collect: {fileID: 0}
-  FPC: {fileID: 4459864850019384740}
-  MenuAudioSource: {fileID: 0}
 --- !u!1 &6908915732377590765
 GameObject:
   m_ObjectHideFlags: 0

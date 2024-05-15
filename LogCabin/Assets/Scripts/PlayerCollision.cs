@@ -36,6 +36,7 @@ public class PlayerCollision : MonoBehaviour
             Debug.Log("Player collided with an enemy!");
             Rigidbody rb = GetComponent<Rigidbody>();
             DisableScriptsAndControllers();
+            Debug.Log("disabled Scripts and Controllers");
             audioSource1.clip = manScream;
             audioSource2.clip = bloodSound;
             audioSource1.Play();

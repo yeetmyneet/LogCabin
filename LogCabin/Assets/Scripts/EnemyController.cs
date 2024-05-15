@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public GameManager gameManager;
     public float deerDamage = 1f;
     public DeerMovement deerMovement;
+    [SerializeField] Animator deeranim;
     [SerializeField] AudioClip hitSound;
     [SerializeField] AudioClip hurtSound;
     [SerializeField] AudioClip deathSound;
@@ -44,6 +45,7 @@ public class EnemyController : MonoBehaviour
     public void Dissolve()
     {
         collisionScript.deerDead = true;
+        deeranim.SetTrigger("Idle");
         Debug.Log("Set collisonscript.deerdead to true");
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         if (rb != null)
@@ -59,12 +61,13 @@ public class EnemyController : MonoBehaviour
             Debug.Log("spawned smoke on deer");
         }
         else { Debug.LogError("no prefab attached to Enemy"); }
-        StartCoroutine(DestroyAfterDelay(3f));
+        StartCoroutine(DestroyAfterDelay(1f));
     }
     IEnumerator DestroyAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
+        Debug.Log("Destroyed deer after delay");
         if (prefabToSpawn != null) { Destroy(prefabToSpawn); }
     }
 }

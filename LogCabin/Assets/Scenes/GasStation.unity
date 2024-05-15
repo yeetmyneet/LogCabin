@@ -32727,6 +32727,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1326731103}
     - target: {fileID: 2265888132005461761, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
+      propertyPath: nextSceneIndex
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265888132005461761, guid: aa00f3f27a75cf24d96d88cfc0f18955, type: 3}
       propertyPath: menuAudioSource
       value: 
       objectReference: {fileID: 1075018156}

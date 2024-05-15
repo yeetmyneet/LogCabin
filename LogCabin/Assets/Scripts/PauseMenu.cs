@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
 	[SerializeField] GameObject scriptToDisable;
 	[SerializeField] ObjectiveUI objectiveUI;
 	[SerializeField] MonoBehaviour timer;
+	[SerializeField] RaycastShoot raycastShoot;
 	[SerializeField] Collectables collect;
 	[SerializeField] FirstPersonController FPC;
 	[SerializeField] AudioSource MenuAudioSource;
@@ -31,6 +32,7 @@ public class PauseMenu : MonoBehaviour
 			Cursor.lockState = CursorLockMode.Confined;
 			FPC.enabled = false;
 			timer.enabled = false;
+			raycastShoot.enabled = false;
 			objectiveUI.enabled = false;
 			collect.enabled = false;
 			scriptToDisable.SetActive(false);
@@ -48,6 +50,7 @@ public class PauseMenu : MonoBehaviour
 		timer.enabled = true;
 		objectiveUI.enabled = true;
 		collect.enabled = true;
+		raycastShoot.enabled = true;
 		Cursor.lockState = CursorLockMode.Locked;
 		EnableAudio();
 	}
