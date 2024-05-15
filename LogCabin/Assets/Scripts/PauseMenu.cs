@@ -32,7 +32,11 @@ public class PauseMenu : MonoBehaviour
 			Cursor.lockState = CursorLockMode.Confined;
 			FPC.enabled = false;
 			timer.enabled = false;
-			raycastShoot.enabled = false;
+			if (raycastShoot != null)
+			{
+				raycastShoot.enabled = false;
+			}
+			else { Debug.Log("no raycastshoot"); }
 			objectiveUI.enabled = false;
 			collect.enabled = false;
 			scriptToDisable.SetActive(false);
@@ -50,7 +54,11 @@ public class PauseMenu : MonoBehaviour
 		timer.enabled = true;
 		objectiveUI.enabled = true;
 		collect.enabled = true;
-		raycastShoot.enabled = true;
+		if (raycastShoot != null)
+        {
+			raycastShoot.enabled = true;
+		}
+		else { Debug.Log("no raycastshoot"); }
 		Cursor.lockState = CursorLockMode.Locked;
 		EnableAudio();
 	}
