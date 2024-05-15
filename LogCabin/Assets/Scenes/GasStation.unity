@@ -25489,13 +25489,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6549093881368065742, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 985884557}
+    - target: {fileID: 6549093881368065742, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: collect
+      value: 
+      objectReference: {fileID: 2087070991}
+    - target: {fileID: 6549093881368065742, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 561747457}
     - target: {fileID: 6549093881368065742, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: objectiveUI
+      value: 
+      objectReference: {fileID: 708343141}
+    - target: {fileID: 6549093881368065742, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: MenuAudioSource
       value: 
       objectReference: {fileID: 1075018156}
+    - target: {fileID: 6721903466957063482, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721903466957063482, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b8770c15923cd047bf534010e889f1f, type: 3}
+    - target: {fileID: 6721903466957063482, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6727542845606438838, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Type
       value: 0
@@ -25523,6 +25547,10 @@ PrefabInstance:
     - target: {fileID: 6816923578559255103, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: isGasStation
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889683316257912029, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7035270922191712264, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_fontAsset
@@ -28484,6 +28512,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5287425419667122880, guid: 8da4cc2dc4c4e9b4fa81763fc57e0eae, type: 3}
+--- !u!114 &985884557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5722080192000958802, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 618420798}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &993098217 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1446566258047096, guid: 47ec854eca89b4b4bb79c7e2c6006a29, type: 3}
@@ -39970,6 +40009,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3905057b3b5ceb044bbc9e0a6359ca8c, type: 3}
+--- !u!114 &2087070991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1113919855861368883, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 618420798}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937ebaef0195e1f4ebc1593f83ad38a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2088397656
 PrefabInstance:
   m_ObjectHideFlags: 0
