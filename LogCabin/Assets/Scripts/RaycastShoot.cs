@@ -24,6 +24,7 @@ public class RaycastShoot : MonoBehaviour
             if (CanUse())
             {
                 gunAnim.SetTrigger("shoot");
+                Debug.Log("shoot trigger for animator");
                 shotgun.PlayOneShot(triggerPull);
                 shotgun.PlayOneShot(gunshot);
                 shotgun.PlayOneShot(pump);
