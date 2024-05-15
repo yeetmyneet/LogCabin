@@ -25292,22 +25292,6 @@ PrefabInstance:
       propertyPath: huntingGroundsLevel
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1675667961851824184, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 633.3257
-      objectReference: {fileID: 0}
-    - target: {fileID: 1675667961851824184, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 102.5115
-      objectReference: {fileID: 0}
-    - target: {fileID: 1675667961851824184, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1300
-      objectReference: {fileID: 0}
-    - target: {fileID: 1675667961851824184, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -51.25586
-      objectReference: {fileID: 0}
     - target: {fileID: 1990436760252567077, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Type
       value: 0
@@ -25595,18 +25579,6 @@ PrefabInstance:
     - target: {fileID: 8126476249086387374, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Intensity
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365430390499523521, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 758.6167
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365430390499523521, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1218.3545
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365430390499523521, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -125.04999
       objectReference: {fileID: 0}
     - target: {fileID: 8370618767267458288, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalScale.x

@@ -919,9 +919,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 151851052348946098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1778, y: -51.25586}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 142, y: -51.25586}
   m_SizeDelta: {x: 291.20386, y: 102.511475}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8726708502036014036
@@ -1203,10 +1203,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 151851052348946098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1281, y: -125.05}
-  m_SizeDelta: {x: 633.3257, y: 45.0734}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 701.6455, y: -125.04999}
+  m_SizeDelta: {x: 758.6167, y: 45.0734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7249614115962388582
 CanvasRenderer:
@@ -5261,6 +5261,7 @@ MonoBehaviour:
   scriptToDisable: {fileID: 8195693559990523602}
   objectiveUI: {fileID: 0}
   timer: {fileID: 0}
+  raycastShoot: {fileID: 0}
   collect: {fileID: 0}
   FPC: {fileID: 4459864850019384740}
   MenuAudioSource: {fileID: 0}
@@ -5470,10 +5471,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 151851052348946098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1425, y: -51.25586}
-  m_SizeDelta: {x: 291.20386, y: 102.511475}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 620, y: -51.25586}
+  m_SizeDelta: {x: 633.3257, y: 102.5115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4035025915659979572
 CanvasRenderer:
