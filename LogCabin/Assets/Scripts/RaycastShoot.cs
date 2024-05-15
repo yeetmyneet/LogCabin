@@ -8,14 +8,20 @@ public class RaycastShoot : MonoBehaviour
     public GameObject muzzleFlash;
     public GameObject impact;
     public EnemyController enemyController;
+    public float distance = 1f; 
+    public float duration = 1f;
+    public float rotateAngle = 0f;
+    public float rotateDuration = 1f;
+    public float cooldownDuration = 1.32f;
     [SerializeField] Animator gunAnim;
     [SerializeField] AudioSource shotgun;
     [SerializeField] AudioClip gunshot;
     [SerializeField] AudioClip triggerPull;
     [SerializeField] AudioClip pump;
     [SerializeField] Light flash;
-    public float cooldownDuration = 1.32f;
     private float lastUsedTime;
+    private Vector3 originalLocalPosition;
+    private Quaternion originalLocalRotation;
 
     void Update()
     {
@@ -30,6 +36,10 @@ public class RaycastShoot : MonoBehaviour
                 shotgun.PlayOneShot(pump);
                 MarkUsed();
                 StartCoroutine(flashDuration(0.1f));
+                originalLocalPosition = transform.localPosition;
+                originalLocalRotation = transform.localRotation;
+                StartCoroutine(RotateAndReturn());
+                StartCoroutine(MoveBackAndForth());
                 if (muzzleFlash != null)
                 {
                     Instantiate(muzzleFlash, muzzle.position, Quaternion.identity); ;
@@ -76,5 +86,49 @@ public class RaycastShoot : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         flash.enabled = false;
+    }
+
+    IEnumerator MoveBackAndForth()
+    {
+        // Move back on the Z axis
+        yield return MoveOverSeconds(new Vector3(originalLocalPosition.x, originalLocalPosition.y, originalLocalPosition.z - distance), duration);
+        // Return to original local position
+        yield return MoveOverSeconds(originalLocalPosition, duration);
+    }
+
+    IEnumerator MoveOverSeconds(Vector3 end, float seconds)
+    {
+        float elapsedTime = 0;
+        Vector3 startingPos = transform.localPosition;
+        while (elapsedTime < seconds)
+        {
+            transform.localPosition = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        transform.localPosition = end;
+    }
+
+    IEnumerator RotateAndReturn()
+    {
+        // Rotate around the X axis
+        yield return RotateOverSeconds(Vector3.right, rotateAngle, rotateDuration);
+        // Return to original local rotation
+        yield return RotateOverSeconds(Vector3.right, -rotateAngle, rotateDuration);
+    }
+
+    IEnumerator RotateOverSeconds(Vector3 axis, float speed, float seconds)
+    {
+        float elapsedTime = 0;
+        Quaternion startingRot = transform.localRotation;
+        Quaternion endRotation = startingRot * Quaternion.Euler(axis * speed * seconds);
+
+        while (elapsedTime < seconds)
+        {
+            transform.localRotation = Quaternion.Lerp(startingRot, endRotation, (elapsedTime / seconds));
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        transform.localRotation = endRotation;
     }
 }
