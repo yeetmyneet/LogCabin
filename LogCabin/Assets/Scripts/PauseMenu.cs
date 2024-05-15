@@ -23,7 +23,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.L) && Time.timeScale == 1)
+		if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
 		{
 			pauseMenu.enabled = true;
 			crosshair.enabled = false;
