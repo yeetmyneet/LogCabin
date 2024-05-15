@@ -80,6 +80,7 @@ public class InteractingScript : MonoBehaviour
         if (currentLevel == huntingGroundsLevel)
         {
             objectiveUI.Objective("Hunt the Deer");
+            nextObj.text = " ";
         }
     }
     void Update()
