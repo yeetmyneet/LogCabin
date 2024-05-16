@@ -88,6 +88,7 @@ public class MainMenu : MonoBehaviour
     public void ResetData()
     {
         PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Main Menu");
         Debug.Log("Deleted Data");
     }
 }
