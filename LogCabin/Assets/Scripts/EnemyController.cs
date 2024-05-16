@@ -66,7 +66,7 @@ public class EnemyController : MonoBehaviour
     IEnumerator DestroyAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
+        DestroyImmediate(gameObject, true);
         Debug.Log("Destroyed deer after delay");
         if (prefabToSpawn != null) { Destroy(prefabToSpawn); }
     }
