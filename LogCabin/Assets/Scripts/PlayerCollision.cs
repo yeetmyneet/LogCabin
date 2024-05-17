@@ -78,13 +78,10 @@ public class PlayerCollision : MonoBehaviour
         }
         GameObject enemyObject = GameObject.FindGameObjectWithTag("Enemy");
 
-        // Check if GameObject with tag "Enemy" is found
         if (enemyObject != null)
         {
-            // Get the Rigidbody component attached to the enemy GameObject
             Rigidbody enemyRb = enemyObject.GetComponent<Rigidbody>();
 
-            // Check if Rigidbody is not null
             if (enemyRb != null)
             {
                 // Freeze position and rotation

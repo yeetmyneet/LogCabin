@@ -17,10 +17,8 @@ public class DeathScreen : MonoBehaviour
             Debug.Log("Saved time: " + savedTime + " seconds");
             deathText.font = newFont;
             string formattedTime = FormatTime(savedTime);
-            Debug.Log("Formatted time: " + formattedTime);
             deathText.text = "Time Survived: " + formattedTime;
             Debug.Log(deathText.text);
-            //PlayerPrefs.SetFloat("StopwatchTime", 0f);
         }
         else
         {
